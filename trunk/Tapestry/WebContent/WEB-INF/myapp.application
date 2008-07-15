@@ -5,6 +5,9 @@
 <application name="Tapestry">
 	<description>FBF Tapestry Servlet</description>
 	<meta key="org.apache.tapestry.template-extension" value="html" />
+	<!-- setting the encoding here produce encoding as big5 in Show Page Info
+	     setting it in the .page showing the encoding as UTF-8 
+	     alough both dispaly big5 characters correctly -->
 	<!--
 	<meta key="org.apache.tapestry.messages-encoding" value="big5"/>
 	<meta key="org.apache.tapestry.template-encoding" value="big5" />
