@@ -1,4 +1,4 @@
-package edu.effective.java;
+package edu.effective.java.annotations;
 
 public enum AdvancedOperation implements Operations {
 	EXP("^") {public double apply(double x, double y) {return Math.pow(x, y);} },

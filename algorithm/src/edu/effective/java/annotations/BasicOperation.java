@@ -1,4 +1,4 @@
-package edu.effective.java;
+package edu.effective.java.annotations;
 
 public enum BasicOperation implements Operations {
 	PLUS("+") {public double apply(double x, double y) {return x+y;} },
