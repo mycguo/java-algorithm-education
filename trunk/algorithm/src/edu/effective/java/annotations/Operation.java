@@ -1,4 +1,4 @@
-package edu.effective.java;
+package edu.effective.java.annotations;
 
 public enum Operation {
 	

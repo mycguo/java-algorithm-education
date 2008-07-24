@@ -1,4 +1,4 @@
-package edu.effective.java;
+package edu.effective.java.annotations;
 
 import java.util.Arrays;
 import java.util.Collection;
