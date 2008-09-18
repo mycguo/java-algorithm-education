@@ -24,7 +24,7 @@ public class GamePlayer implements Runnable {
 
 	protected void move() throws InterruptedException {
 		System.out.println(Thread.currentThread().getName() + " is moving");
-		Thread.sleep(10000);
+		Thread.sleep(1000);
 	}
 
 	protected void releaseTurn() {

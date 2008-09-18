@@ -1,8 +1,7 @@
 package edu.java.concurrent.ch2;
 
-import java.lang.InterruptedException;
-
 import com.sun.corba.se.impl.orbutil.concurrent.Mutex;
+
 
 public class ListUsingMutex {
 
