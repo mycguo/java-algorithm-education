@@ -9,8 +9,16 @@
 			<xsl:sequence select="f:total-numbers(subsequence($input,2),$x)"/>
 		</xsl:if>
 	</xsl:function>
-
+	
+	<!-- tail recursion -->
+	<xsl:function name="f:reverse" as="xs:string*">
+		<xsl:param name="input" as="xs:string*"/>
+		<xsl:if test="exists($input)">
+			<xsl:sequence select="f:reverse(remove($input,1)),$input[1]"/>
+		</xsl:if>
+	</xsl:function>
 	<xsl:template match="/">
 		<total values="{f:total-numbers(numbers/n,xs:string(0))}"/>
+		<xsl:sequence select="f:reverse(numbers/n)"/>
 	</xsl:template>
 </xsl:stylesheet>
