@@ -2,9 +2,12 @@
 <classpath>
 	<classpathentry excluding="lib/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/fbf3_common"/>
 	<classpathentry kind="lib" path="src/lib/commons-beanutils-1.8.0.jar"/>
 	<classpathentry kind="lib" path="src/lib/commons-digester-1.8.jar"/>
 	<classpathentry kind="lib" path="src/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-s9api.jar" sourcepath="C:/applications/saxon9/src"/>
+	<classpathentry kind="lib" path="lib/saxon9-xpath.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9.jar" sourcepath="C:/applications/saxon9/src"/>
+	<classpathentry kind="lib" path="src/lib/oswego-concurrent.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
