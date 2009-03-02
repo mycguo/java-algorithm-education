@@ -10,7 +10,7 @@ public class SemaphoreOnLock {
 	private int permit;
 
 	public SemaphoreOnLock(int permit) {
-		//is this really necessary?
+		// is this really necessary?
 		lock.lock();
 		try {
 			this.permit = permit;
@@ -23,8 +23,9 @@ public class SemaphoreOnLock {
 	public void acquire() throws InterruptedException {
 		try {
 			lock.lock();
-			//notice here, should use while instead of if
-			//because of the possibilities of missed signal or walked up on different monitor
+			// notice here, should use while instead of if
+			// because of the possibilities of missed signal or walked up on
+			// different monitor
 			while (permit <= 0) {
 				count.await();
 				permit--;
@@ -38,10 +39,9 @@ public class SemaphoreOnLock {
 	public void release() {
 		lock.lock();
 		try {
-			if (permit > 0) {
-				permit++;
-				count.signal();
-			}
+
+			permit++;
+			count.signal();
 
 		} finally {
 			lock.unlock();
