@@ -6,6 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
+/**
+ * http://www.ibm.com/developerworks/library/j-annotate2.html
+ */
 public @interface GroupToDo {
 
 	enum Severity {
