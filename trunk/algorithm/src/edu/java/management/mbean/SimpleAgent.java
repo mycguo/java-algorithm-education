@@ -6,7 +6,9 @@ import javax.management.MBeanServer;
 import javax.management.ObjectName;
 
 import com.sun.jdmk.comm.HtmlAdaptorServer;
-
+/*
+ * http://java.sun.com/developer/technicalArticles/J2SE/jmx.html
+ */
 public class SimpleAgent {
    private MBeanServer mbs = null;
    private HtmlAdaptorServer adaptor;
