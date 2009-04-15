@@ -3,8 +3,6 @@ package edu.pattern.builder;
 import java.io.StringReader;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.sax.SAXTransformerFactory;
@@ -33,7 +31,8 @@ public class Director {
 	
 	public XMLReader getReader() throws ParserConfigurationException,
 			SAXException, TransformerConfigurationException, TransformerFactoryConfigurationError {
-		// for xml, the director should be the reader
+		
+		// This is the director
 		XMLReader reader = XMLReaderFactory.createXMLReader();
 		
 		//Do NOT use SAXParser, it is SAX1 legacy code
@@ -41,6 +40,7 @@ public class Director {
 		//SAXParser p = f.newSAXParser();
 		//p.setProperty("http://xml.org/sax/features/namespaces", true);
 		//XMLReader reader = p.getXMLReader();
+		
 		//this is the builder
 		TransformerHandler handler = ((SAXTransformerFactory) SAXTransformerFactory.newInstance()).newTransformerHandler();
 		
@@ -56,15 +56,6 @@ public class Director {
 	public void contruct() throws Throwable, SAXException, ParserConfigurationException {
 		//build it now
 		getReader().parse(new InputSource(new StringReader("<a><b><c></c></b></a>")));
-		
-		//get result
-		ContentHandler handler = getReader().getContentHandler();
-		
-		
-		
-		
-
-		
 		
 		
 	}
