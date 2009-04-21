@@ -1,6 +1,8 @@
 package edu.pattern.builder;
 
+import java.io.IOException;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
@@ -10,7 +12,6 @@ import javax.xml.transform.sax.TransformerHandler;
 import javax.xml.transform.stream.StreamResult;
 
 import org.junit.Test;
-import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -20,7 +21,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
  * 	Director: XMLReader, which controls how the parts to be build
  * 	InputSource: This is the parts to be built
  * 	ConcreteBuilder: ContentHandler, which actually builds the product
- * 	Product: The SAXResult
+ * 	Product: The SAXResult or StreamResult
  * @author CGuo
  *
  */
@@ -28,9 +29,9 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 public class Director {
 	
-	
-	public XMLReader getReader() throws ParserConfigurationException,
-			SAXException, TransformerConfigurationException, TransformerFactoryConfigurationError {
+	@Test
+	public void builder() throws ParserConfigurationException,
+			SAXException, TransformerConfigurationException, TransformerFactoryConfigurationError, IOException {
 		
 		// This is the director
 		XMLReader reader = XMLReaderFactory.createXMLReader();
@@ -45,20 +46,17 @@ public class Director {
 		TransformerHandler handler = ((SAXTransformerFactory) SAXTransformerFactory.newInstance()).newTransformerHandler();
 		
 		//this is the product
-		StreamResult result = new StreamResult(System.out);
+		StringWriter writer = new StringWriter();
+		StreamResult result = new StreamResult(writer);
 		handler.setResult(result);
 		reader.setContentHandler(handler);
-		return reader;
+		
+		reader.parse(new InputSource(new StringReader("<a><b><c></c></b></a>")));
+		
+		//get the result
+		System.out.println(writer.toString());
 	}
 	
 	
-	@Test
-	public void contruct() throws Throwable, SAXException, ParserConfigurationException {
-		//build it now
-		getReader().parse(new InputSource(new StringReader("<a><b><c></c></b></a>")));
-		
-		
-	}
-
 
 }
