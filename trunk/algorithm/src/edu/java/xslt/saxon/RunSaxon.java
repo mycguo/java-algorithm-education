@@ -15,7 +15,7 @@ public class RunSaxon {
 	public static void main(String[] args) {
 
 		String xmlSource = "edu/java/xslt/saxon/numbers.xml";
-		String[] xsltFiles = { "edu/java/xslt/saxon/head-tail-recursion.xslt" };
+		String[] xsltFiles = { "edu/java/xslt/saxon/tour.xslt" };
 
 		// Pipe using transformerHandler
 		SAXTransformerFactory factory = (SAXTransformerFactory) SAXTransformerFactory
