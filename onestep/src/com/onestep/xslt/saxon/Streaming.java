@@ -1,5 +1,6 @@
 package com.onestep.xslt.saxon;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
@@ -13,8 +14,14 @@ import javax.xml.transform.sax.TransformerHandler;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.helpers.XMLFilterImpl;
+import org.xml.sax.helpers.XMLReaderFactory;
 
-public class RunSaxon {
+import com.onestep.xslt.reader.DecoHandler;
+
+public class Streaming {
 	public static void main(String[] args) {
 
 		String xmlSource = "com/onestep/xslt/saxon/profile-report.xml";
@@ -28,24 +35,25 @@ public class RunSaxon {
 	private static void transform(String xmlSource, String[] xsltFiles) {
 		// Pipe using transformerHandler
 		SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", RunSaxon.class.getClassLoader());
-
-		Result result = new StreamResult(System.out);
+		File file = new File("file.txt");
+		System.out.println("Output File: " + file.getAbsolutePath());
+		Result result = new StreamResult((new File("file.txt")));
 
 		try {
-			InputStream stream = RunSaxon.class.getClassLoader().getResourceAsStream(xsltFiles[0]);
+			XMLReader reader = XMLReaderFactory.createXMLReader();
+			XMLFilterImpl filter = new XMLFilterImpl(reader);
+			filter.setContentHandler(new DecoHandler(new DefaultHandler()));
+			
+			
+			InputStream stream = Streaming.class.getClassLoader().getResourceAsStream(xsltFiles[0]);
 			Templates template = factory.newTemplates(new StreamSource(stream));
 			Transformer transfomer = template.newTransformer();
-			transfomer.setParameter("SV_BaseOutputFileName", "dummy");
 			if (xsltFiles.length == 1) {
-				stream = RunSaxon.class
-				.getClassLoader().getResourceAsStream(xmlSource);
+				stream = Streaming.class.getClassLoader().getResourceAsStream(xmlSource);
 				if (stream == null)
 					System.out.println("input source is null");
-				
 				transfomer.transform(new StreamSource(stream),
 						result);
-				
-				System.out.println("Succeed!");
 			} else {
 				// create first handler
 				TransformerHandler handler = factory

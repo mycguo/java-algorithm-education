@@ -30059,9 +30059,9 @@
 	<xsl:template match="/">
 		<xsl:for-each select="$altova:nodesAllSeparateDocuments">
 			<xsl:variable name="altova:nodeDocument" as="node()" select="."/>
-			<xsl:message> nodeDocument <xsl:copy-of select="$altova:nodeDocument/@altova:Url"/></xsl:message>
-			<xsl:result-document href="output.rtf">
-				<xsl:text>normal text</xsl:text>
+			<xsl:message>The output URL: <xsl:copy-of select="$altova:nodeDocument/@altova:Url"/></xsl:message>
+			<xsl:result-document href="{$altova:nodeDocument/@altova:Url}">
+				<xsl:text>{\rtf1\ansi\deff0</xsl:text>
 				<xsl:value-of select="altova:GenerateRtfFontTable()"/>
 				<xsl:value-of select="altova:GenerateRtfColorTable()"/>
 				<xsl:value-of select="altova:get-list-table($altova:nodeDocument)"/>
