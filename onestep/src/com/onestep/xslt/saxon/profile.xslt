@@ -13,7 +13,7 @@
 	<xsl:param name="language" select="'de'"/>
 	<xsl:variable name="XML" select="/"/>
 	<xsl:decimal-format name="format1" grouping-separator="." decimal-separator=","/>
-	<xsl:import-schema schema-location="profile-report.xsd"/>
+	<!--  <xsl:import-schema schema-location="profile-report.xsd"/> -->
 	<xsl:variable name="altova:bEmbedImages" as="xs:boolean" select="false()"/>
 	<xsl:variable name="altova:nPxPerIn" select="120"/>
 	<xsl:variable name="altova:DocumentMonolithBeforeToc">
@@ -30059,8 +30059,9 @@
 	<xsl:template match="/">
 		<xsl:for-each select="$altova:nodesAllSeparateDocuments">
 			<xsl:variable name="altova:nodeDocument" as="node()" select="."/>
-			<xsl:result-document href="{$altova:nodeDocument/@altova:Url}">
-				<xsl:text>{\rtf1\ansi\deff0</xsl:text>
+			<xsl:message> nodeDocument <xsl:copy-of select="$altova:nodeDocument/@altova:Url"/></xsl:message>
+			<xsl:result-document href="output.rtf">
+				<xsl:text>normal text</xsl:text>
 				<xsl:value-of select="altova:GenerateRtfFontTable()"/>
 				<xsl:value-of select="altova:GenerateRtfColorTable()"/>
 				<xsl:value-of select="altova:get-list-table($altova:nodeDocument)"/>

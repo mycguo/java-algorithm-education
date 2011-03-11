@@ -1,7 +1,9 @@
 package com.onestep.xslt.saxon;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
@@ -26,9 +28,10 @@ public class RunSaxon {
 
 	private static void transform(String xmlSource, String[] xsltFiles) {
 		// Pipe using transformerHandler
-		SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", Class.class.getClassLoader());
-
-		Result result = new StreamResult(System.out);
+		SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", RunSaxon.class.getClassLoader());
+		File file = new File("file.txt");
+		System.out.println("File: " + file.getAbsolutePath());
+		Result result = new StreamResult((new File("file.txt")));
 
 		try {
 			InputStream stream = RunSaxon.class.getClassLoader().getResourceAsStream(
