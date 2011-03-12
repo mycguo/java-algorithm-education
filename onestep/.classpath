@@ -16,5 +16,7 @@
 	<classpathentry kind="lib" path="lib/saxon9-xpath.jar"/>
 	<classpathentry kind="lib" path="lib/saxon9-xqj.jar"/>
 	<classpathentry kind="lib" path="lib/saxon9.jar"/>
+	<classpathentry kind="lib" path="lib/httpunit.jar"/>
+	<classpathentry kind="lib" path="lib/servlet.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
