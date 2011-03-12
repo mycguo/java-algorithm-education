@@ -31,12 +31,12 @@ public class StreamingServlet extends HttpServlet {
 
 		Templates template = null;
 
-		//String xmlSource = "com/onestep/xslt/saxon/profile-report.xml";
-		//String[] xsltFiles = { "com/onestep/xslt/saxon/profile.xslt" };
+		String xmlSource = "com/onestep/xslt/saxon/profile-report.xml";
+		String[] xsltFiles = { "com/onestep/xslt/saxon/profile.xslt" };
 		
 
-		String xmlSource = "com/onestep/xslt/saxon/indexe.xmle";
-        String[] xsltFiles = { "com/onestep/xslt/saxon/xf-ss_workbook.xslt" };
+		//String xmlSource = "com/onestep/xslt/saxon/indexe.xmle";
+       // String[] xsltFiles = { "com/onestep/xslt/saxon/xf-ss_workbook.xslt" };
 
 		SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", RunSaxon.class.getClassLoader());
 
@@ -54,7 +54,7 @@ public class StreamingServlet extends HttpServlet {
 
 			Transformer transformer = template.newTransformer();
 
-			transformer.setParameter("SV_BaseOutputFileName", "dummy");
+			//transformer.setParameter("SV_BaseOutputFileName", "dummy");
 
 			transformer.transform(new StreamSource(RunSaxon.class.getClassLoader().getResourceAsStream(xmlSource)), result);
 		} catch (Exception e) {
