@@ -30060,7 +30060,7 @@
 		<xsl:for-each select="$altova:nodesAllSeparateDocuments">
 			<xsl:variable name="altova:nodeDocument" as="node()" select="."/>
 			<xsl:message>The output URL: <xsl:copy-of select="$altova:nodeDocument/@altova:Url"/></xsl:message>
-			<xsl:result-document href="{$altova:nodeDocument/@altova:Url}">
+			<xsl:result-document>
 				<xsl:text>{\rtf1\ansi\deff0</xsl:text>
 				<xsl:value-of select="altova:GenerateRtfFontTable()"/>
 				<xsl:value-of select="altova:GenerateRtfColorTable()"/>

@@ -35,7 +35,7 @@ public class RunSaxon {
 			InputStream stream = RunSaxon.class.getClassLoader().getResourceAsStream(xsltFiles[0]);
 			Templates template = factory.newTemplates(new StreamSource(stream));
 			Transformer transfomer = template.newTransformer();
-			transfomer.setParameter("SV_BaseOutputFileName", "dummy");
+			//transfomer.setParameter("SV_BaseOutputFileName", "dummy");
 			if (xsltFiles.length == 1) {
 				stream = RunSaxon.class
 				.getClassLoader().getResourceAsStream(xmlSource);
