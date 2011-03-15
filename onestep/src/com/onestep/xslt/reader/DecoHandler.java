@@ -55,6 +55,7 @@ public class DecoHandler implements ContentHandler {
 	}
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
+		
 		handler.characters(ch, start, length);
 		
 	}
