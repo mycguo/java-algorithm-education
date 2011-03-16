@@ -186,7 +186,7 @@
 															<tgridcell>
 																<styles padding="0" text-align="left" width="7cm"/>
 																<children>
-																	<text fixtext="Angebot fÃ¼r  "/>
+																	<text fixtext="Angebot für  "/>
 																	<autocalc xpath="$XML/profile-report/non-calculation-data/report/customer-data/company"/>
 																</children>
 															</tgridcell>
@@ -449,7 +449,7 @@
 							<template subtype="element" match="profile-report">
 								<children>
 									<newline/>
-									<text fixtext="Angebot fÃ¼r ">
+									<text fixtext="Angebot für ">
 										<styles font="Tahoma" font-family="Tahoma" font-size="24pt" font-weight="bold"/>
 									</text>
 									<autocalc xpath="$XML/profile-report/non-calculation-data/report/customer-data/company">
@@ -577,7 +577,7 @@
 															<tgridcell>
 																<styles height="5mm"/>
 																<children>
-																	<text fixtext="BinzmÃ¼hlestrasse 130"/>
+																	<text fixtext="Binzmühlestrasse 130"/>
 																</children>
 															</tgridcell>
 															<tgridcell joinleft="1">
@@ -599,7 +599,7 @@
 															<tgridcell>
 																<styles height="5mm"/>
 																<children>
-																	<text fixtext="8050 ZÃ¼rich"/>
+																	<text fixtext="8050 Zürich"/>
 																</children>
 															</tgridcell>
 															<tgridcell joinleft="1">
@@ -786,7 +786,7 @@
 										</children>
 									</tgrid>
 									<newline/>
-									<text fixtext="Das in dieser Dokumentation enthaltene Material ist rechtmÃ¤ssiges Eigentum der Sunrise Communications AG und darf nicht ohne deren schriftliche Genehmigung kopiert, vervielfÃ¤ltigt oder publiziert werden.">
+									<text fixtext="Das in dieser Dokumentation enthaltene Material ist rechtmässiges Eigentum der Sunrise Communications AG und darf nicht ohne deren schriftliche Genehmigung kopiert, vervielfältigt oder publiziert werden.">
 										<styles font="Tahoma" font-family="Tahoma" font-size="8pt"/>
 									</text>
 									<newline/>
@@ -822,6 +822,7 @@
 											</reflevel>
 										</children>
 									</toc>
+									<newline/>
 									<toc name="toc">
 										<children>
 											<reflevel>
@@ -844,6 +845,7 @@
 											</reflevel>
 										</children>
 									</toc>
+									<newline/>
 									<toc name="toc">
 										<children>
 											<reflevel>
@@ -1038,21 +1040,21 @@
 																<children>
 																	<conditionbranch xpath="$language = &apos;de&apos;">
 																		<children>
-																			<text fixtext="1 Beschreibung der LÃ¶sung">
+																			<text fixtext="1 Beschreibung der Lösung">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;fr&apos;">
 																		<children>
-																			<text fixtext="(fr) Beschreibung der LÃ¶sung">
+																			<text fixtext="(fr) Beschreibung der Lösung">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;it&apos;">
 																		<children>
-																			<text fixtext="(it) Beschreibung der LÃ¶sung">
+																			<text fixtext="(it) Beschreibung der Lösung">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
@@ -5301,7 +5303,7 @@
 													</marker>
 													<text fixtext="Die Preise verstehen sich rein netto in Schweizer Franken (CHF), exklusive Mehrwertsteuer, sofern die Preise nicht inklusive Mehrwertsteuer ausgewiesen sind, sowie exklusive Verpackung, Transport und Transportversicherung. Die Rechnungsstellung erfolgt monatlich in Schweizer Franken (CHF)."/>
 													<newline/>
-													<text fixtext="Sunrise stellt die einzelnen Leistungen ab dem Zeitpunkt, ab dem die Leistung dem Kunden zur Nutzung zur VerfÃ¼gung steht (Inbetriebnahmedatum) in Rechnung. Mit der ersten Rechnung fÃ¼r wiederkehrende monatliche Preise werden die einmaligen Preise in Rechnung gestellt. "/>
+													<text fixtext="Sunrise stellt die einzelnen Leistungen ab dem Zeitpunkt, ab dem die Leistung dem Kunden zur Nutzung zur Verfügung steht (Inbetriebnahmedatum) in Rechnung. Mit der ersten Rechnung für wiederkehrende monatliche Preise werden die einmaligen Preise in Rechnung gestellt. "/>
 													<newline/>
 													<newline/>
 													<marker name="kond2">
@@ -5321,7 +5323,7 @@
 															</paragraph>
 														</children>
 													</marker>
-													<text fixtext="Dieses Angebot gilt mit Unterzeichnung durch den Kunden als fest zwischen den Parteien abgeschlossener Vertrag. Der Vertrag und die dazugehÃ¶rigen AnhÃ¤nge enthalten die fÃ¼r die Erbringung der Telekommunikationsdienstleistungen durch Sunrise vereinbarten Vertragsbestimmungen. "/>
+													<text fixtext="Dieses Angebot gilt mit Unterzeichnung durch den Kunden als fest zwischen den Parteien abgeschlossener Vertrag. Der Vertrag und die dazugehörigen Anhänge enthalten die für die Erbringung der Telekommunikationsdienstleistungen durch Sunrise vereinbarten Vertragsbestimmungen. "/>
 													<newline/>
 													<newline/>
 													<marker name="kond2">
@@ -5341,7 +5343,7 @@
 															</paragraph>
 														</children>
 													</marker>
-													<text fixtext="Die Fristen bis zur geplanten Inbetriebnahme sind in der Servicebeschreibung festgelegt (Standard-Lieferfristen), sofern kein besonderer Termin mit Sunrise vereinbart wird. Das Inbetriebnahmedatum versteht sich als Plandatum. In der Regel wird das Datum fÃ¼r die Inbetriebnahme (Plandatum) von Sunrise dem Kunden bestÃ¤tigt (â€žService Information fÃ¼r den Kundenâ€œ). Wird ein Plandatum nicht eingehalten, hat der Kunde Sunrise unter Beachtung einer angemessenen Frist schriftlich einen ErfÃ¼llungstermin anzusetzen. HÃ¤lt Sunrise den ErfÃ¼llungstermin nicht ein, befindet sich Sunrise in Verzug. Nach Ablauf einer weiteren schriftlich angesetzten und angemessenen Nachfrist ist der Kunde berechtigt, von der verspÃ¤teten Leistung  (nicht aber von den anderen Leistungen gemÃ¤ss Vertrag) schriftlich zurÃ¼ckzutreten, sofern Sunrise auch bis zum Ablauf dieser Nachfrist nicht erfÃ¼llt. Andere AnsprÃ¼che stehen dem Kunden bei Verzug nicht zu."/>
+													<text fixtext="Die Fristen bis zur geplanten Inbetriebnahme sind in der Servicebeschreibung festgelegt (Standard-Lieferfristen), sofern kein besonderer Termin mit Sunrise vereinbart wird. Das Inbetriebnahmedatum versteht sich als Plandatum. In der Regel wird das Datum für die Inbetriebnahme (Plandatum) von Sunrise dem Kunden bestätigt („Service Information für den Kunden“). Wird ein Plandatum nicht eingehalten, hat der Kunde Sunrise unter Beachtung einer angemessenen Frist schriftlich einen Erfüllungstermin anzusetzen. Hält Sunrise den Erfüllungstermin nicht ein, befindet sich Sunrise in Verzug. Nach Ablauf einer weiteren schriftlich angesetzten und angemessenen Nachfrist ist der Kunde berechtigt, von der verspäteten Leistung  (nicht aber von den anderen Leistungen gemäss Vertrag) schriftlich zurückzutreten, sofern Sunrise auch bis zum Ablauf dieser Nachfrist nicht erfüllt. Andere Ansprüche stehen dem Kunden bei Verzug nicht zu."/>
 													<newline/>
 													<newline/>
 													<marker name="kond2">
@@ -5353,12 +5355,12 @@
 																		<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
 																	</text>
 																	<num-seq format="1"/>
-																	<text fixtext=" VerfÃ¼gbarkeit der Anschlusstypen"/>
+																	<text fixtext=" Verfügbarkeit der Anschlusstypen"/>
 																</children>
 															</paragraph>
 														</children>
 													</marker>
-													<text fixtext="Sunrise hat die VerfÃ¼gbarkeit der Anschlusstypen im Zeitpunkt des Vertragsschlusses nicht geprÃ¼ft. Sunrise kann daher nicht zusichern, dass die Anschlusstypen wie in diesem Vertag vereinbart tatsÃ¤chlich an allen Standorten zur VerfÃ¼gung stehen. Steht ein vertraglich vereinbarter Anschlusstyp an bestimmten Standorten nicht zur VerfÃ¼gung, so teilt Sunrise dies dem Kunden mit und offeriert ihm fÃ¼r die betroffenen Standorte einen alternativen Anschlusstyp gemÃ¤ss Servicebeschreibung zu den fÃ¼r diesen alternativen Anschlusstyp gÃ¼ltigen Preisen. Nimmt der Kunde dieses Angebot an, so  gilt der Vertrag fÃ¼r diese Standorte mit den Leistungen des alternativen Anschlusstyps. Nimmt der Kunde das Angebot innert der darauf angegebenen Frist hingegen nicht an, so gilt der Vertrag fÃ¼r diese Standorte nicht; der Vertrag bleibt aber fÃ¼r alle anderen Leistungen und Standorte weiterhin in Kraft."/>
+													<text fixtext="Sunrise hat die Verfügbarkeit der Anschlusstypen im Zeitpunkt des Vertragsschlusses nicht geprüft. Sunrise kann daher nicht zusichern, dass die Anschlusstypen wie in diesem Vertag vereinbart tatsächlich an allen Standorten zur Verfügung stehen. Steht ein vertraglich vereinbarter Anschlusstyp an bestimmten Standorten nicht zur Verfügung, so teilt Sunrise dies dem Kunden mit und offeriert ihm für die betroffenen Standorte einen alternativen Anschlusstyp gemäss Servicebeschreibung zu den für diesen alternativen Anschlusstyp gültigen Preisen. Nimmt der Kunde dieses Angebot an, so  gilt der Vertrag für diese Standorte mit den Leistungen des alternativen Anschlusstyps. Nimmt der Kunde das Angebot innert der darauf angegebenen Frist hingegen nicht an, so gilt der Vertrag für diese Standorte nicht; der Vertrag bleibt aber für alle anderen Leistungen und Standorte weiterhin in Kraft."/>
 													<newline/>
 													<newline/>
 													<marker name="kond2">
@@ -5378,38 +5380,10 @@
 															</paragraph>
 														</children>
 													</marker>
-													<text fixtext="Der Vertrag wird fÃ¼r eine bestimmte  Vertragsdauer abgeschlossen. Die Vertragsdauer ist in Ziffer 2 vereinbart. Falls in Ziffer 2 verschiedene Varianten angeboten worden sind, gilt die in Ziffer 6 vereinbarte Vertragsdauer. "/>
+													<text fixtext="Der Vertrag wird für eine bestimmte  Vertragsdauer abgeschlossen. Die Vertragsdauer ist in Ziffer 2 vereinbart. Falls in Ziffer 2 verschiedene Varianten angeboten worden sind, gilt die in Ziffer 6 vereinbarte Vertragsdauer. "/>
 													<newline/>
 													<newline/>
-													<text fixtext="Diese fest bestimmte Vertragsdauer beginnt mit der Inbetriebnahme der letzten gemÃ¤ss Vertrag von Sunrise geschuldeten Leistung an zu laufen."/>
-													<newline/>
-													<newline/>
-													<marker name="kond2">
-														<children>
-															<paragraph paragraphtag="h2">
-																<styles font-size="14pt"/>
-																<children>
-																	<text fixtext="3.">
-																		<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
-																	</text>
-																	<num-seq format="1"/>
-																	<text fixtext=" "/>
-																	<text fixtext="KÃ¼ndigung ">
-																		<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
-																	</text>
-																</children>
-															</paragraph>
-														</children>
-													</marker>
-													<text fixtext="Nach Ablauf der jeweils anwendbaren, bestimmten Vertragsdauer gemÃ¤ss Ziffer 3.5 lÃ¤uft der Vertrag fÃ¼r die darunter fallenden Leistungen auf unbestimmte Zeit weiter. FÃ¼r diese Leistungen ist der Vertrag darauf unter Einhaltung einer KÃ¼ndigungsfrist von drei Monaten jederzeit per Ende eines Vertragsmonats, erstmals per Ablauf der fÃ¼r diese Leistungen geltenden fest bestimmten Vertragsdauer, kÃ¼ndbar. "/>
-													<newline/>
-													<text fixtext="Zudem sind die Parteien berechtigt, den Vertrag fÃ¼r einzelne Service-Einheiten gemÃ¤ss Ziffer 2 (Preise) unter Einhaltung einer KÃ¼ndigungsfrist von drei Monaten jederzeit per Ende eines Vertragsmonats, erstmals per Ablauf der auf Sie gemÃ¤ss Ziffer 3.5 anwendbaren fest bestimmten Vertragsdauer, zu kÃ¼ndigen."/>
-													<newline/>
-													<newline/>
-													<text fixtext="FÃ¼r Mobilfunktelefonie verlÃ¤ngert sich der Vertrag nach Ablauf der fest bestimmten Vertragsdauer jeweils stillschweigend um ein Jahr, sofern der Vertrag nicht auf das Ende der fest bestimmten Vertragsdauer gekÃ¼ndigt wird."/>
-													<newline/>
-													<newline/>
-													<text fixtext="Im Falle einer ausserterminlichen KÃ¼ndigung des Vertrages bzw. der Service-Einheit gemÃ¤ss Ziff. 10 Abs. 4 der Allgemeinen GeschÃ¤ftsbedingungen ist eine einmalige BearbeitungsgebÃ¼hr in der GesamthÃ¶he der monatlich anfallenden GebÃ¼hren fÃ¼r die Restlaufzeit zwischen ausserterminlicher Beendigung und Ablauf der bestimmten Vertragsdauer sowie allfÃ¤lliger noch nicht bezahlter einmaliger GebÃ¼hren geschuldet. FÃ¼r Sunrise business voice ist eine ausserterminliche KÃ¼ndigung gemÃ¤ss Allgemeinen GeschÃ¤ftsbedingungen nicht mÃ¶glich. Falls sich der Kunde fÃ¼r seine Telefon-, Fax- und Datenverbindungen wÃ¤hrend der GÃ¼ltigkeit des Vertrages fÃ¼r eine andere Anbieterin als Sunrise entscheidet, gilt der Vertrag fÃ¼r diese Leistungen (nicht aber fÃ¼r andere) auf diesen Zeitpunkt hin als beendet. Der Kunde hat Sunrise allfÃ¤llige ihr entstandene einmalige Kosten zu ersetzen und den Gesamtbetrag der wiederkehrenden festen monatlichen GebÃ¼hren sowie zusÃ¤tzlich der durchschnittlichen seit Vertragsbeginn angefallenen variablen monatlichen GebÃ¼hren fÃ¼r den Zeitraum bis zum nÃ¤chsten ordentlichen KÃ¼ndigungstermin zu bezahlen. Die Umwandlung in ein kleineres Dienstleistungspaket ist nur nach schriftlicher Absprache mÃ¶glich."/>
+													<text fixtext="Diese fest bestimmte Vertragsdauer beginnt mit der Inbetriebnahme der letzten gemäss Vertrag von Sunrise geschuldeten Leistung an zu laufen."/>
 													<newline/>
 													<newline/>
 													<marker name="kond2">
@@ -5422,14 +5396,42 @@
 																	</text>
 																	<num-seq format="1"/>
 																	<text fixtext=" "/>
-																	<text fixtext="Allgemeine GeschÃ¤ftsbedingungen">
+																	<text fixtext="Kündigung ">
 																		<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
 																	</text>
 																</children>
 															</paragraph>
 														</children>
 													</marker>
-													<text fixtext="Es gelten die allgemeinen GeschÃ¤ftsbedingungen der Sunrise Communications AG (AGB)."/>
+													<text fixtext="Nach Ablauf der jeweils anwendbaren, bestimmten Vertragsdauer gemäss Ziffer 3.5 läuft der Vertrag für die darunter fallenden Leistungen auf unbestimmte Zeit weiter. Für diese Leistungen ist der Vertrag darauf unter Einhaltung einer Kündigungsfrist von drei Monaten jederzeit per Ende eines Vertragsmonats, erstmals per Ablauf der für diese Leistungen geltenden fest bestimmten Vertragsdauer, kündbar. "/>
+													<newline/>
+													<text fixtext="Zudem sind die Parteien berechtigt, den Vertrag für einzelne Service-Einheiten gemäss Ziffer 2 (Preise) unter Einhaltung einer Kündigungsfrist von drei Monaten jederzeit per Ende eines Vertragsmonats, erstmals per Ablauf der auf Sie gemäss Ziffer 3.5 anwendbaren fest bestimmten Vertragsdauer, zu kündigen."/>
+													<newline/>
+													<newline/>
+													<text fixtext="Für Mobilfunktelefonie verlängert sich der Vertrag nach Ablauf der fest bestimmten Vertragsdauer jeweils stillschweigend um ein Jahr, sofern der Vertrag nicht auf das Ende der fest bestimmten Vertragsdauer gekündigt wird."/>
+													<newline/>
+													<newline/>
+													<text fixtext="Im Falle einer ausserterminlichen Kündigung des Vertrages bzw. der Service-Einheit gemäss Ziff. 10 Abs. 4 der Allgemeinen Geschäftsbedingungen ist eine einmalige Bearbeitungsgebühr in der Gesamthöhe der monatlich anfallenden Gebühren für die Restlaufzeit zwischen ausserterminlicher Beendigung und Ablauf der bestimmten Vertragsdauer sowie allfälliger noch nicht bezahlter einmaliger Gebühren geschuldet. Für Sunrise business voice ist eine ausserterminliche Kündigung gemäss Allgemeinen Geschäftsbedingungen nicht möglich. Falls sich der Kunde für seine Telefon-, Fax- und Datenverbindungen während der Gültigkeit des Vertrages für eine andere Anbieterin als Sunrise entscheidet, gilt der Vertrag für diese Leistungen (nicht aber für andere) auf diesen Zeitpunkt hin als beendet. Der Kunde hat Sunrise allfällige ihr entstandene einmalige Kosten zu ersetzen und den Gesamtbetrag der wiederkehrenden festen monatlichen Gebühren sowie zusätzlich der durchschnittlichen seit Vertragsbeginn angefallenen variablen monatlichen Gebühren für den Zeitraum bis zum nächsten ordentlichen Kündigungstermin zu bezahlen. Die Umwandlung in ein kleineres Dienstleistungspaket ist nur nach schriftlicher Absprache möglich."/>
+													<newline/>
+													<newline/>
+													<marker name="kond2">
+														<children>
+															<paragraph paragraphtag="h2">
+																<styles font-size="14pt"/>
+																<children>
+																	<text fixtext="3.">
+																		<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
+																	</text>
+																	<num-seq format="1"/>
+																	<text fixtext=" "/>
+																	<text fixtext="Allgemeine Geschäftsbedingungen">
+																		<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
+																	</text>
+																</children>
+															</paragraph>
+														</children>
+													</marker>
+													<text fixtext="Es gelten die allgemeinen Geschäftsbedingungen der Sunrise Communications AG (AGB)."/>
 												</children>
 											</level>
 											<newline/>
@@ -5445,28 +5447,28 @@
 																<children>
 																	<conditionbranch xpath="$language = &apos;de&apos;">
 																		<children>
-																			<text fixtext="4 AnhÃ¤nge">
+																			<text fixtext="4 Anhänge">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;fr&apos;">
 																		<children>
-																			<text fixtext="(fr) AnhÃ¤nge">
+																			<text fixtext="(fr) Anhänge">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;it&apos;">
 																		<children>
-																			<text fixtext="(it) AnhÃ¤nge">
+																			<text fixtext="(it) Anhänge">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;en&apos;">
 																		<children>
-																			<text fixtext="(en) AnhÃ¤nge">
+																			<text fixtext="(en) Anhänge">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
@@ -5481,22 +5483,22 @@
 												<children>
 													<conditionbranch xpath="$language = &apos;de&apos;">
 														<children>
-															<text fixtext="Folgende AnhÃ¤nge sind integrierender Bestandteil dieses Angebotes:"/>
+															<text fixtext="Folgende Anhänge sind integrierender Bestandteil dieses Angebotes:"/>
 														</children>
 													</conditionbranch>
 													<conditionbranch xpath="$language = &apos;fr&apos;">
 														<children>
-															<text fixtext="(fr) Folgende AnhÃ¤nge sind integrierender Bestandteil dieses Angebotes:"/>
+															<text fixtext="(fr) Folgende Anhänge sind integrierender Bestandteil dieses Angebotes:"/>
 														</children>
 													</conditionbranch>
 													<conditionbranch xpath="$language = &apos;it&apos;">
 														<children>
-															<text fixtext="(it) Folgende AnhÃ¤nge sind integrierender Bestandteil dieses Angebotes:"/>
+															<text fixtext="(it) Folgende Anhänge sind integrierender Bestandteil dieses Angebotes:"/>
 														</children>
 													</conditionbranch>
 													<conditionbranch xpath="$language = &apos;en&apos;">
 														<children>
-															<text fixtext="(en) Folgende AnhÃ¤nge sind integrierender Bestandteil dieses Angebotes:"/>
+															<text fixtext="(en) Folgende Anhänge sind integrierender Bestandteil dieses Angebotes:"/>
 														</children>
 													</conditionbranch>
 												</children>
@@ -6992,7 +6994,7 @@
 															<text fixtext="4."/>
 															<num-seq format="1"/>
 															<text fixtext=" "/>
-															<text fixtext="Weitere AnhÃ¤nge">
+															<text fixtext="Weitere Anhänge">
 																<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
 															</text>
 														</children>
@@ -7014,12 +7016,12 @@
 													</listrow>
 													<listrow>
 														<children>
-															<text fixtext="Bedingungen fÃ¼r den Gebrauch von Business account (SBA)"/>
+															<text fixtext="Bedingungen für den Gebrauch von Business account (SBA)"/>
 														</children>
 													</listrow>
 													<listrow>
 														<children>
-															<text fixtext="Allgemeine GeschÃ¤ftsbedingungen der Sunrise Communications AG (AGB)"/>
+															<text fixtext="Allgemeine Geschäftsbedingungen der Sunrise Communications AG (AGB)"/>
 														</children>
 													</listrow>
 												</children>
@@ -7040,7 +7042,7 @@
 												<children>
 													<listrow>
 														<children>
-															<text fixtext="Ziffer 6 des Angebots (â€žBestellungâ€œ)"/>
+															<text fixtext="Ziffer 6 des Angebots („Bestellung“)"/>
 														</children>
 													</listrow>
 													<listrow>
@@ -7050,7 +7052,7 @@
 													</listrow>
 													<listrow>
 														<children>
-															<text fixtext="Ziffer 1â€“4 des Angebots"/>
+															<text fixtext="Ziffer 1–4 des Angebots"/>
 														</children>
 													</listrow>
 													<listrow>
@@ -7065,7 +7067,7 @@
 													</listrow>
 													<listrow>
 														<children>
-															<text fixtext="Weitere produktrelevante AnhÃ¤nge"/>
+															<text fixtext="Weitere produktrelevante Anhänge"/>
 														</children>
 													</listrow>
 												</children>
@@ -7084,28 +7086,28 @@
 																<children>
 																	<conditionbranch xpath="$language = &apos;de&apos;">
 																		<children>
-																			<text fixtext="5 GÃ¼ltigkeit und Unterschriften des Angebotes">
+																			<text fixtext="5 Gültigkeit und Unterschriften des Angebotes">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;fr&apos;">
 																		<children>
-																			<text fixtext="(fr) GÃ¼ltigkeit und Unterschriften des Angebotes">
+																			<text fixtext="(fr) Gültigkeit und Unterschriften des Angebotes">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;it&apos;">
 																		<children>
-																			<text fixtext="(it) GÃ¼ltigkeit und Unterschriften des Angebotes">
+																			<text fixtext="(it) Gültigkeit und Unterschriften des Angebotes">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
 																	</conditionbranch>
 																	<conditionbranch xpath="$language = &apos;en&apos;">
 																		<children>
-																			<text fixtext="(en) GÃ¼ltigkeit und Unterschriften des Angebotes">
+																			<text fixtext="(en) Gültigkeit und Unterschriften des Angebotes">
 																				<styles font="Tahoma" font-family="Tahoma" font-size="16pt"/>
 																			</text>
 																		</children>
@@ -7116,10 +7118,10 @@
 													</paragraph>
 												</children>
 											</marker>
-											<text fixtext="Dieses Angebot ist 30 Tage ab Datum der Ausstellung gÃ¼ltig. Eine VerlÃ¤ngerung der GÃ¼ltigkeit bedarf der ausdrÃ¼cklichen Zustimmung von Business Sunrise."/>
+											<text fixtext="Dieses Angebot ist 30 Tage ab Datum der Ausstellung gültig. Eine Verlängerung der Gültigkeit bedarf der ausdrücklichen Zustimmung von Business Sunrise."/>
 											<newline/>
 											<newline/>
-											<text fixtext="ZÃ¼rich, "/>
+											<text fixtext="Zürich, "/>
 											<autocalc xpath="current-date()">
 												<format basic-type="xsd" string="DD. Month YYYY" datatype="date"/>
 											</autocalc>
@@ -7127,9 +7129,9 @@
 											<newline/>
 											<text fixtext="Sunrise Communications AG"/>
 											<newline/>
-											<text fixtext="BinzmÃ¼hlestrasse 130"/>
+											<text fixtext="Binzmühlestrasse 130"/>
 											<newline/>
-											<text fixtext="8050 ZÃ¼rich"/>
+											<text fixtext="8050 Zürich"/>
 											<newline/>
 											<newline/>
 											<newline/>
@@ -7242,10 +7244,10 @@
 													</paragraph>
 												</children>
 											</marker>
-											<text fixtext="Hiermit bestellen wir bei Sunrise Communications AG die im vorliegenden Angebot aufgefÃ¼hrten Leistungen inklusive der nachfolgend aufgefÃ¼hrten Optionen und zusÃ¤tzlichen Leistungen und anerkennen ausdrÃ¼cklich die Allgemeinen GeschÃ¤ftsbedingungen der Sunrise Communications (AGB) und die beigefÃ¼gten AnhÃ¤nge als integrierte Vertragsbestandteile. Wir bestÃ¤tigen, dass wir die AGB erhalten und gelesen haben."/>
+											<text fixtext="Hiermit bestellen wir bei Sunrise Communications AG die im vorliegenden Angebot aufgeführten Leistungen inklusive der nachfolgend aufgeführten Optionen und zusätzlichen Leistungen und anerkennen ausdrücklich die Allgemeinen Geschäftsbedingungen der Sunrise Communications (AGB) und die beigefügten Anhänge als integrierte Vertragsbestandteile. Wir bestätigen, dass wir die AGB erhalten und gelesen haben."/>
 											<newline/>
 											<newline/>
-											<text fixtext="Die GebÃ¼hren fÃ¼r Anschluss und EndgerÃ¤te gemÃ¤ss Kostenzusammenstellung (Kap. 2) werden monatlich in Rechnung gestellt. Das eingesetzte Material verbleibt dabei wÃ¤hrend der gesamten Vertragslaufzeit im Eigentum der Sunrise Communications AG. Die Aufwendungen fÃ¼r Inbetriebnahme, Projektierung, Schulung und Installation werden gemÃ¤ss den Zahlungskonditionen einmalig verrechnet."/>
+											<text fixtext="Die Gebühren für Anschluss und Endgeräte gemäss Kostenzusammenstellung (Kap. 2) werden monatlich in Rechnung gestellt. Das eingesetzte Material verbleibt dabei während der gesamten Vertragslaufzeit im Eigentum der Sunrise Communications AG. Die Aufwendungen für Inbetriebnahme, Projektierung, Schulung und Installation werden gemäss den Zahlungskonditionen einmalig verrechnet."/>
 											<newline/>
 											<newline/>
 											<marker name="bestell2" id="6">
@@ -7255,7 +7257,7 @@
 														<children>
 															<text fixtext="6."/>
 															<num-seq format="1"/>
-															<text fixtext=" Optionen und ErgÃ¤nzungen"/>
+															<text fixtext=" Optionen und Ergänzungen"/>
 														</children>
 													</paragraph>
 												</children>
@@ -7276,7 +7278,7 @@
 											<newline/>
 											<newline/>
 											<newline/>
-											<text fixtext="Korrekturen und Ã„nderungen werden nur nach schriftlicher BestÃ¤tigung durch Business Sunrise Vertragsbestandteil."/>
+											<text fixtext="Korrekturen und Änderungen werden nur nach schriftlicher Bestätigung durch Business Sunrise Vertragsbestandteil."/>
 											<newline/>
 											<newline/>
 											<newline/>
@@ -7315,7 +7317,7 @@
 																	<tgridcell>
 																		<styles line-height="4.5mm" text-align="left"/>
 																		<children>
-																			<text fixtext="Kundenadresse (gemÃ¤ss Handelsregister):">
+																			<text fixtext="Kundenadresse (gemäss Handelsregister):">
 																				<styles font-weight="bold"/>
 																			</text>
 																		</children>
@@ -7781,11 +7783,11 @@
 											<paragraph paragraphtag="h2">
 												<styles font="Tahoma" font-family="Tahoma" font-size="10pt"/>
 												<children>
-													<text fixtext="Unterschriften (gemÃ¤ss Handelsregister)"/>
+													<text fixtext="Unterschriften (gemäss Handelsregister)"/>
 												</children>
 											</paragraph>
 											<newline/>
-											<text fixtext="Mit Unterzeichnung dieses Angebots durch den Kunden innerhalb der oben genannten GÃ¼ltigkeitsdauer des Angebotes tritt der Vertrag zwischen den Parteien in Kraft."/>
+											<text fixtext="Mit Unterzeichnung dieses Angebots durch den Kunden innerhalb der oben genannten Gültigkeitsdauer des Angebotes tritt der Vertrag zwischen den Parteien in Kraft."/>
 											<newline/>
 											<newline/>
 											<newline/>
