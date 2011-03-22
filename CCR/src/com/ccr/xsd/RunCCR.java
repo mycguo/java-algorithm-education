@@ -1,5 +1,6 @@
 package com.ccr.xsd;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
@@ -29,7 +30,8 @@ public class RunCCR {
 		// Pipe using transformerHandler
 		SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", RunCCR.class.getClassLoader());
 		
-		Result result = new StreamResult(System.out);
+		File file = new File("JohnSmith.html");
+		Result result = new StreamResult(file);
 
 		try {
 			InputStream stream = RunCCR.class.getClassLoader().getResourceAsStream(xsltFiles[0]);
@@ -44,7 +46,7 @@ public class RunCCR {
 				transfomer.transform(new StreamSource(stream),
 						result);
 				
-				System.out.println("Succeed!");
+				System.out.println("Succeed in creating file: " + file.getAbsolutePath());
 			} else {
 				// create first handler
 				TransformerHandler handler = factory
