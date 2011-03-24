@@ -2,8 +2,6 @@ package com.onestep.xslt.saxon;
 
 import java.io.File;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -13,6 +11,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.XMLReaderFactory;
 
 import com.onestep.xslt.reader.CustomReader;
 
@@ -28,25 +27,27 @@ public class RunCustomReader {
 	}
 
 	private static void transform(String xmlSource, String[] xsltFiles) {
-		// Pipe using filter
-		SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", RunSaxon.class.getClassLoader());
+
 
 
 		try {
 			
-			SAXParserFactory saxFactory= SAXParserFactory.newInstance();
-			SAXParser p = saxFactory.newSAXParser();
-			XMLReader reader = p.getXMLReader();
-											
-			
-			Result filterResult = new StreamResult(new File("output.rtf"));
+			//Get the default reader
+			XMLReader reader = XMLReaderFactory.createXMLReader();
+														
 
+			//set source, result
 			SAXSource tranformSource = new SAXSource(new InputSource(xmlSource));
+			Result filterResult = new StreamResult(new File("output.rtf"));
 			
-			SAXSource xsltSource = new SAXSource(new CustomReader(reader), new InputSource(xsltFiles[0]));
-			
+			XMLReader realReader = new CustomReader(reader);
+			//read XSLT from customized reader
+			SAXSource xsltSource = new SAXSource(realReader, new InputSource(xsltFiles[0]));
+
+			//create SAXON factory and transfomer
+			SAXTransformerFactory factory = (SAXTransformerFactory) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", RunSaxon.class.getClassLoader());
 			Transformer t = factory.newTransformer(xsltSource);
-			
+			//do the job
 			t.transform(tranformSource, filterResult);
 
 
