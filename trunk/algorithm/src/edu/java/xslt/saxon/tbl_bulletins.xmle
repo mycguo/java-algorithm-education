@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>cbellemare</Author>
+  <LastAuthor>MBridgewater</LastAuthor>
+  <LastPrinted>2005-06-22T21:16:30Z</LastPrinted>
+  <Created>2004-11-23T17:19:12Z</Created>
+  <LastSaved>2010-09-02T17:30:32Z</LastSaved>
+  <Company>Global Net Division</Company>
+  <Version>11.9999</Version>
+ </DocumentProperties>
+ <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Destination dt:dt="string">GND</Destination>
+  <Group dt:dt="string">FCAI</Group>
+  <Purpose dt:dt="string">PartsSearch</Purpose>
+  <PrimaryKey dt:dt="string">end_date</PrimaryKey>
+ </CustomDocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <DownloadComponents/>
+  <LocationOfComponents HRef="/"/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9930</WindowHeight>
+  <WindowWidth>16500</WindowWidth>
+  <WindowTopX>-75</WindowTopX>
+  <WindowTopY>-180</WindowTopY>
+  <RefModeR1C1/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21" ss:Name="Hyperlink">
+   <Font x:Family="Swiss" ss:Color="#0000FF" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s22" ss:Name="ハイパーリンク">
+   <Font x:Family="Swiss" ss:Color="#0000FF" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Font x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s24">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss" ss:Size="8"/>
+  </Style>
+  <Style ss:ID="s26">
+   <Font x:Family="Swiss" ss:Size="8"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s27">
+   <Font x:Family="Swiss" ss:Size="8"/>
+  </Style>
+  <Style ss:ID="s28">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss"/>
+   <Interior ss:Color="#99CCFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s29">
+   <Font x:Family="Swiss"/>
+   <Interior ss:Color="#99CCFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s30">
+   <Font x:Family="Swiss"/>
+   <Interior ss:Color="#99CCFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s31">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s32">
+   <Font x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s33">
+   <Font x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s34">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s36" ss:Parent="s21">
+   <Interior/>
+  </Style>
+  <Style ss:ID="s38" ss:Parent="s21">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s39" ss:Parent="s21">
+   <Font x:Family="Swiss" ss:Color="#0000FF" ss:Underline="Single"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s42" ss:Parent="s22">
+   <Interior/>
+  </Style>
+  <Style ss:ID="s43">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font x:Family="Swiss"/>
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s44">
+   <Font x:Family="Swiss"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s45" ss:Parent="s21">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Names>
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=Sheet1!R1C2:R1C196"
+    ss:Hidden="1"/>
+   <NamedRange ss:Name="Print_Area" ss:RefersTo="=Sheet1!#REF!"/>
+   <NamedRange ss:Name="Print_Titles" ss:RefersTo="=Sheet1!#REF!"/>
+  </Names>
+  <Table ss:ExpandedColumnCount="11" ss:ExpandedRowCount="48" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s23">
+   <Column ss:StyleID="s24" ss:AutoFitWidth="0" ss:Width="30"/>
+   <Column ss:StyleID="s25" ss:AutoFitWidth="0" ss:Width="56.25"/>
+   <Column ss:StyleID="s24" ss:AutoFitWidth="0" ss:Width="63.75"/>
+   <Column ss:StyleID="s26" ss:AutoFitWidth="0" ss:Width="87"/>
+   <Column ss:StyleID="s27" ss:AutoFitWidth="0" ss:Width="329.25"/>
+   <Column ss:StyleID="s27" ss:AutoFitWidth="0" ss:Width="167.25"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s28"><Data ss:Type="String">home</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">start_date</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">end_date</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s29"><Data ss:Type="String">display_date</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">title</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">audience</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"><Data ss:Type="String">x</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2011-01-28T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2011-01-29T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jan 28-29</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20110120-change-management"><Data
+      ss:Type="String">GIG 4, Phase 2 Release Announcement</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:Index="2" ss:StyleID="s34"><Data ss:Type="DateTime">2011-01-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2011-01-28T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jan 7-28</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20110106-change-management"><Data
+      ss:Type="String">GIG4 Phase 2 Release schedule</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-10-08T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-10-08T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">October 8-9</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20101008-change-management"><Data
+      ss:Type="String">Release of Service Pack Three</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-09-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-09-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Septemper 3-4</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/updates/bulletins/20100901-change-management"><Data
+      ss:Type="String">Preparation of  GIG4 Phase 2 and the upgrade of the database server hosting FBF Forms</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-07-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-07-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">July 16-24</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20100716-change-management"><Data
+      ss:Type="String">Release of Service Pack Two (SP2)</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-07-09T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-07-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">July 9-10</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20100708-change-management"><Data
+      ss:Type="String">Release of Service Pack One</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-06-17T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-06-18T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">June 17-18</Data></Cell>
+    <Cell ss:StyleID="s38" ss:HRef="asset://gnd/updates/bulletins/20100611-change-management"><Data
+      ss:Type="String">Your New GIG4 Site is Going Live!&#10;&#10;</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-05-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-05-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">May 10</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20100510-change-management"><Data
+      ss:Type="String">Your New GIG4 Site is Ready for Updating!</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-03-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-03-12T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">March 11-12</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20100311-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF) </Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-02-05T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-02-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Feb 5</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20100205-FBF-service-interruption"><Data
+      ss:Type="String">FBF service interruption notice</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-02-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-02-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Feb 4</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/updates/bulletins/20100204-change-management"><Data
+      ss:Type="String">Release Predit, a Content Editing Tool</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-01-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-01-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jan 11</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20100112-change-management"><Data
+      ss:Type="String">Resumption of All FBF Services at 6:30 PM 20100111 (PT)</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-01-08T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2010-01-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jan 8-10</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20100106-change-management"><Data
+      ss:Type="String">FBF Infrastructure Move</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-12-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-12-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dec 11</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20091211-change-management"><Data
+      ss:Type="String"> Authentic 2010 Upgrade</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-12-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-12-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dec 10</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20091210-Sunnyvale-outage"><Data
+      ss:Type="String">FBF Users: Outage Notification for today - Dec.10th, Thurs 6:00 PM to 6:30 PM </Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-12-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-12-04T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dec 4</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20091204-Sunnyvale-outage"><Data
+      ss:Type="String">Sunnyvale datacenter: 15 minute outage planned</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-11-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-11-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">November 6-7</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20091030-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF) </Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-10-23T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-10-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">October 23-24</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20091023-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF) </Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-10-02T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-10-03T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">October 2-3</Data></Cell>
+    <Cell ss:StyleID="s38" ss:HRef="asset://gnd/updates/bulletins/20091002-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF)</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-09-25T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-09-26T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">September 25-26</Data></Cell>
+    <Cell ss:StyleID="s38" ss:HRef="asset://gnd/updates/bulletins/20090918-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF)</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-07-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-07-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">July 6</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20090706-Temporary-Outage"><Data
+      ss:Type="String">Temporary Outage of FBF Services</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-06-19T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-06-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">June 19-20</Data></Cell>
+    <Cell ss:StyleID="s38" ss:HRef="asset://gnd/updates/bulletins/20090619-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF)</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-03-12T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-03-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">March 12-13</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20090310-change-management"><Data
+      ss:Type="String">Change Management Notification for the Fujitsu Branding Framework (FBF)</Data></Cell>
+    <Cell><Data ss:Type="String">FBF consolidated website owners and operators</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-02-14T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-02-15T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Feb 14-15</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/updates/bulletins/20090211-maintenance"><Data
+      ss:Type="String">Temporary FBF Service Interruptions</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-02-12T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2009-02-13T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Feb 12-13</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/updates/bulletins/20090209-maintenance"><Data
+      ss:Type="String">FBF Notification of System Maintenance: February 13th (JP) Patch release </Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-09-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-10-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Sep 24</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/updates/bulletins/20070924-webtrends-faq"><Data
+      ss:Type="String">WebTrends FAQ now available!</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">All FBF Users</Data></Cell>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-06-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-06-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jun 16</Data></Cell>
+    <Cell ss:StyleID="s22" ss:HRef="asset://gnd/updates/bulletins/20070616-gateway"><Data
+      ss:Type="String">Maintenance of the FAI Internet Gateway</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">All FBF Users</Data></Cell>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-06-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-06-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jun 7</Data></Cell>
+    <Cell ss:StyleID="s42" ss:HRef="asset://gnd/updates/bulletins/20070607-FJWAN"><Data
+      ss:Type="String">FJWAN Maintenance</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">All FBF Users</Data></Cell>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s33"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-02-26T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-02-26T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Feb 26</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20070223-01r360-p1"><Data
+      ss:Type="String">R3.60-P1 Code Release</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-02-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-02-09T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Feb 6-9</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20070205-01"><Data
+      ss:Type="String">R3.60 Code Deployment Activities</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-01-09T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2007-01-15T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jan 9-15</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20070108-uat-activities"><Data
+      ss:Type="String">R3.60 UAT Testing Activities</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-12-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-12-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dec 16</Data></Cell>
+    <Cell ss:StyleID="s39" ss:HRef="asset://gnd/updates/bulletins/20061216-FJWAN"><Data
+      ss:Type="String">FBF Access impacted by FJWAN Maint.</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-12-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-12-22T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Dec 11-22</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20061211-qaactivities"><Data
+      ss:Type="String">R3.60 QA Test Cycles </Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-17T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-24T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Oct 23</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20061019-r3.59-p1-deploy"><Data
+      ss:Type="String">R3.59 P1 Code Deployment</Data></Cell>
+    <Cell><Data ss:Type="String">US, Japan</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-17T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Oct 19</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20061018-r3.59-p1-go"><Data
+      ss:Type="String">R3.59 P1 Go-NoGO Meeting</Data></Cell>
+    <Cell><Data ss:Type="String">GND-CBO</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Oct 17-20</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20061011-r3.59-deploy"><Data
+      ss:Type="String">R3.59 Code Deployment</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"><Data ss:Type="String"> </Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-10T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Oct 17/18 (JP)</Data></Cell>
+    <Cell ss:StyleID="s36" ss:HRef="asset://gnd/updates/bulletins/20061010-r3.59-go"><Data
+      ss:Type="String">R3.59 GO-NoGO Meeting</Data></Cell>
+    <Cell><Data ss:Type="String">GND-CBO</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s43"><Data ss:Type="DateTime">2006-10-05T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-10-05T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">Oct 5</Data></Cell>
+    <Cell ss:StyleID="s45" ss:HRef="asset://gnd/updates/bulletins/20061005"><Data
+      ss:Type="String">Welcome to the new GND site!</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s43"><Data ss:Type="DateTime">2006-09-06T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-09-08T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">Sep 6-8</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/support/20060907-01"><Data
+      ss:Type="String">Usability Testing</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">–</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s43"><Data ss:Type="DateTime">2006-08-23T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-08-23T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">Aug 23</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/support/20060823-01"><Data
+      ss:Type="String">August EB Meeting</Data></Cell>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">US Webmasters</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-08-16T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-09-15T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Aug 16 - Sep 15</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/support/20060731-01"><Data
+      ss:Type="String">WebTrends Evaluation - US Beta</Data></Cell>
+    <Cell><Data ss:Type="String">–</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-08-07T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-08-11T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Aug 7-11</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/support/20060807-01"><Data
+      ss:Type="String">SysAdmin Documentation Sessions</Data></Cell>
+    <Cell><Data ss:Type="String">–</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s33">
+    <Cell ss:StyleID="s31"/>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-07-14T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s34"><Data ss:Type="DateTime">2006-07-20T00:00:00.000</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">Jul 14-20</Data></Cell>
+    <Cell ss:StyleID="s21" ss:HRef="asset://gnd/support/20060714-01"><Data
+      ss:Type="String">UAT - R3.58</Data></Cell>
+    <Cell><Data ss:Type="String">All FBF Users</Data></Cell>
+   </Row>
+   <Row ss:Index="48">
+    <Cell ss:Index="5" ss:StyleID="s33"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:Orientation="Landscape" x:CenterHorizontal="1"/>
+    <Header x:Margin="0.51200000000000001"/>
+    <Footer x:Margin="0.51200000000000001"/>
+    <PageMargins x:Bottom="0.25" x:Left="0" x:Right="0" x:Top="0.5"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <Scale>85</Scale>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+    <Gridlines/>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>1</ActiveRow>
+     <ActiveCol>4</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <Sorting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Sort>series</Sort>
+  </Sorting>
+ </Worksheet>
+</Workbook>
