@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java/impl/tag"/>
+	<classpathentry excluding="parser/|lowlevel/|node/" kind="src" path="src/java/tests"/>
+	<classpathentry kind="src" path="src/java/samples"/>
+	<classpathentry kind="src" path="src/java/intf"/>
+	<classpathentry kind="src" path="src/java/impl/factory"/>
+	<classpathentry kind="src" path="src/java/impl/small"/>
+	<classpathentry kind="src" path="src/java/x2/pullparser"/>
+	<classpathentry kind="src" path="src/java/impl/node"/>
+	<classpathentry kind="src" path="src/java/drivers/jaxp11"/>
+	<classpathentry kind="src" path="src/java/drivers/sax2"/>
+	<classpathentry kind="src" path="src/java/impl/pullparser"/>
+	<classpathentry kind="src" path="src/java/apis/sax2"/>
+	<classpathentry kind="src" path="src/java/x2/factory"/>
+	<classpathentry kind="src" path="src/java/impl/format"/>
+	<classpathentry kind="src" path="src/java/apis/jaxp11"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/midpapi/midpapi.jar"/>
+	<classpathentry kind="lib" path="lib/xerces2_patched/xercesImpl_2_0_1_event_position_patch.jar"/>
+	<classpathentry kind="lib" path="/algorithm/lib/junit-4.3.1.jar" sourcepath="C:/applications/junit4.3.1/junit4.3.1/junit-4.3.1-src.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
