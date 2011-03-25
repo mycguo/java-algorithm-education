@@ -2,12 +2,23 @@
 <classpath>
 	<classpathentry excluding="lib/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="src/lib/commons-beanutils-1.8.0.jar"/>
-	<classpathentry kind="lib" path="src/lib/commons-digester-1.8.jar"/>
-	<classpathentry kind="lib" path="src/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/saxon9-s9api.jar" sourcepath="C:/applications/saxon9/src"/>
 	<classpathentry kind="lib" path="lib/saxon9-xpath.jar"/>
 	<classpathentry kind="lib" path="lib/saxon9.jar" sourcepath="C:/applications/saxon9/src"/>
-	<classpathentry kind="lib" path="src/lib/oswego-concurrent.jar"/>
+	<classpathentry kind="lib" path="lib/jbossall-client.jar"/>
+	<classpathentry kind="lib" path="lib/jmxri.jar"/>
+	<classpathentry kind="lib" path="lib/jmxtools.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/PullParser-2.1.10.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-dom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-dom4j.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-jdom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-sql.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-xom.jar"/>
+	<classpathentry kind="lib" path="lib/saxon9-xqj.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/oswego-concurrent.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
