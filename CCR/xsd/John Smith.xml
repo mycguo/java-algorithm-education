@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="ccr.xsl"?>
-<ccr:ContinuityOfCareRecord xmlns:ccr="urn:astm-org:CCR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR CCR.xsd">
+<ccr:ContinuityOfCareRecord xmlns:ccr="urn:astm-org:CCR" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:astm-org:CCR http://ccdccrviewer.com/schema/ccr.xsd">
 	<ccr:CCRDocumentObjectID>5773790327201162130</ccr:CCRDocumentObjectID>
 	<ccr:Language>
 		<ccr:Text>US English</ccr:Text>
@@ -54,7 +54,7 @@
 					<ccr:Text>Diabetes Mellitus, Type 2 (disorder)</ccr:Text>
 					<ccr:Code>
 						<ccr:Value>250.02</ccr:Value>
-						<ccr:CodingSystem>ICD-9 CM</ccr:CodingSystem>
+						<ccr:CodingSystem>ICD9-CM</ccr:CodingSystem>
 						<ccr:Version>2004</ccr:Version>
 					</ccr:Code>
 				</ccr:Description>
@@ -85,7 +85,7 @@
 					<ccr:Text>Hyperlipidemia (disorder)</ccr:Text>
 					<ccr:Code>
 						<ccr:Value>272.4</ccr:Value>
-						<ccr:CodingSystem>ICD-9 CM</ccr:CodingSystem>
+						<ccr:CodingSystem>ICD9-CM</ccr:CodingSystem>
 						<ccr:Version>2004</ccr:Version>
 					</ccr:Code>
 				</ccr:Description>
@@ -116,7 +116,7 @@
 					<ccr:Text>Coronary Artery Disease (disorder)</ccr:Text>
 					<ccr:Code>
 						<ccr:Value>414.01</ccr:Value>
-						<ccr:CodingSystem>ICD-9 CM</ccr:CodingSystem>
+						<ccr:CodingSystem>ICD9-CM</ccr:CodingSystem>
 						<ccr:Version>2004</ccr:Version>
 					</ccr:Code>
 				</ccr:Description>
@@ -147,7 +147,7 @@
 					<ccr:Text>Hypertension, Essential (disorder)</ccr:Text>
 					<ccr:Code>
 						<ccr:Value>401.9</ccr:Value>
-						<ccr:CodingSystem>ICD-9 CM</ccr:CodingSystem>
+						<ccr:CodingSystem>ICD9-CM</ccr:CodingSystem>
 						<ccr:Version>2004</ccr:Version>
 					</ccr:Code>
 				</ccr:Description>
@@ -180,7 +180,7 @@
 					<ccr:Text>Drug Allergy (disorder)</ccr:Text>
 					<ccr:Code>
 						<ccr:Value>293597001</ccr:Value>
-						<ccr:CodingSystem>ICD-9CM</ccr:CodingSystem>
+						<ccr:CodingSystem>ICD9-CM</ccr:CodingSystem>
 						<ccr:Version>2004</ccr:Version>
 					</ccr:Code>
 				</ccr:Description>
@@ -239,7 +239,7 @@
 					<ccr:Text>Drug Allergy (disorder)</ccr:Text>
 					<ccr:Code>
 						<ccr:Value>294506009</ccr:Value>
-						<ccr:CodingSystem>ICD-9CM</ccr:CodingSystem>
+						<ccr:CodingSystem>ICD9-CM</ccr:CodingSystem>
 						<ccr:Version>2004</ccr:Version>
 					</ccr:Code>
 				</ccr:Description>
