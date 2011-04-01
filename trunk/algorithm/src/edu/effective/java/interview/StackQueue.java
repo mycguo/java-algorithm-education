@@ -1,5 +1,9 @@
 package edu.effective.java.interview;
-
+/**
+ * http://geek-o-pedia.blogspot.com/2008/03/recently-i-encountered-trivial-but.html
+ * @author cg
+ *
+ */
 public class StackQueue {
 
     ArrayStack inStack = new ArrayStack();
