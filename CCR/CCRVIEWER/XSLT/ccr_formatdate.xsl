@@ -244,6 +244,7 @@ this XSLT back to the community.
                                   <th>Type</th>
                                   <th>Date</th>
                                   <th>Code</th>
+                                  <th>Agent</th>
                                   <th>Description</th>
                                   <th>Reaction</th>
                                   <th>Source</th>
@@ -265,6 +266,9 @@ this XSLT back to the community.
                                     <td>
                                       <xsl:apply-templates select="a:Description/a:Code"/>
                                     </td>
+                                    <td>
+                                    	<xsl:value-of select="a:Agent/a:Products/a:Product/a:Product/a:ProductName/a:Text"/>
+                                    </td>                                    
                                     <td>
                                       <strong class="clinical">
                                         <xsl:value-of select="a:Description/a:Text"/>
