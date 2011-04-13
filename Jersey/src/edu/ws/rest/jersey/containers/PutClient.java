@@ -38,7 +38,7 @@ public class PutClient {
 		      wr.close ();
 
 		      //Get Response	
-		      InputStream is = httpCon.getInputStream();
+		      InputStream is = httpCon.getInputStream(); //this line is must for it to work, why?
 		      BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 		      String line;
 		      StringBuffer response = new StringBuffer(); 
