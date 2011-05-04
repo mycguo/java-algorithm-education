@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Transaction xmlns="http://www.exchangefortravel.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exchangefortravel.org ../../xft_Transaction.xsd" xsi:type="TransactionResponseType" Version="1.1" TimeStamp="2011-04-29T16:30:54" Target="Test" Status="Warning">
+    <Control>
+        <Requester Channel="Internet">
+            <Code Owner="KUONI" Value="00003"/>
+            <Agency>
+                <Code Owner="Requester" Value="AdpGsi Nanterre"/><![CDATA[AdpGsi Nanterre]]>
+                <NameText><![CDATA[AdpGsi]]>
+                </NameText>
+                <Identification Name="Iata" Value="00002"/>
+            </Agency>
+            <Agent Name="KKW"/>
+        </Requester>
+    </Control>
+    <Action Purpose="Get" Code="QuotedAvailability">
+        <Status Severity="Warning">
+            <Code Owner="ADP" Name="WarningCode" Value="61">
+                <Description><![CDATA[ Attention, hebergement alternatif]]>
+                </Description>
+            </Code>
+        </Status>
+    </Action>
+    <Trip>
+        <Price Role="Total" Target="Total" Value="5601.00" Type="Retail" Currency="EUR">
+            <Prices>
+                <Price Role="Base" Value="5525.00" Quantity="1" Target="Unit"><![CDATA[CROISIERE VISTAMAR   11NTS]]>
+                    <Amounts>
+                        <Amount Value="5525.00" Target="Total"/>
+                        <Amount Value="5525.00" Quantity="1" Target="Unit"/>
+                    </Amounts>
+                </Price>
+                <Price Role="Supplement" Value="11.00" Quantity="1" Target="Unit"><![CDATA[SURCHARGE CARBURANT                       (C)]]>
+                    <Amounts>
+                        <Amount Value="11.00" Target="Total"/>
+                        <Amount Value="11.00" Quantity="1" Target="Unit"/>
+                    </Amounts>
+                </Price>
+                <Price Role="Supplement" Value="65.00" Quantity="1" Target="Unit"><![CDATA[TAXES SURCHARGES AERIENNES ET TAXE SOLIDARITE]]>
+                    <Amounts>
+                        <Amount Value="65.00" Target="Total"/>
+                        <Amount Value="65.00" Quantity="1" Target="Unit"/>
+                    </Amounts>
+                </Price>
+            </Prices>
+        </Price>
+        <Segment xsi:type="SegmentProductType" Status="Available"><![CDATA[VISTAMAR - FJORDS ET SPITZBERG]]>
+            <Code Role="Product" Value="CR128"/>
+            <Segments>
+                <Segments What="Details" Trigger="IsPresent">
+                    <Segment xsi:type="SegmentAirType" Apply="Included" Status="Available" Direction="Outbound" Role="Journey" Category="Charter">
+                        <Begin Day="Sat" Value="2011-07-02T00:00:00"/>
+                        <End Day="Sat" Value="2011-07-02T00:00:00" Moment="SameDay"/>
+                        <From xsi:type="AirportType" Code="CDG"/>
+                        <To xsi:type="AirportType" Code="TOS"/>
+                        <Seat Quantity="1"/>
+                    </Segment>
+                    <Segment xsi:type="SegmentStayType" Apply="Included" Status="Available">
+                        <Begin Day="Sat" Value="2011-07-02"/>
+                        <Duration Value="11" Unit="Night"/>
+                        <In><![CDATA[VISTAMAR - FJORDS ET SPITZBERG]]>
+                        </In>
+                        <At xsi:type="HotelType"><![CDATA[M/S VISTAMAR]]>
+                            <Code Value="M/S VISTAMAR"/>
+                            <Room Quantity="1"><![CDATA[CABINE 230]]>
+                                <Code Value="CABINE 230"/>
+                            </Room>
+                        </At>
+                        <MealPlan Code="FullBoard">
+                            <Code Value="FB"/>
+                        </MealPlan><![CDATA[M/S VISTAMAR CABINE 230 11Nts FB]]>
+                    </Segment>
+                    <Segment xsi:type="SegmentAirType" Apply="Included" Status="Available" Direction="Inbound" Role="Journey" Category="Charter">
+                        <Begin Day="Wed" Value="2011-07-13T00:00:00"/>
+                        <End Day="Wed" Value="2011-07-13T00:00:00" Moment="SameDay"/>
+                        <From xsi:type="AirportType" Code="BGO"/>
+                        <To xsi:type="AirportType" Code="CDG"/>
+                        <Seat Quantity="1"/>
+                    </Segment>
+                </Segments>
+                <Segments What="AddOns">
+                    <Segment xsi:type="SegmentInsuranceType" Apply="Optional" Status="Available">
+                        <Price Value="224.04" Currency="EUR" Target="Unit">
+                            <Rule>
+                                <Quantity For="Each" Unit="Person"/>
+                            </Rule>
+                        </Price>
+                        <Vendor Name="ELVIA"><![CDATA[ELVIA]]>
+                        </Vendor>
+                    </Segment>
+                </Segments>
+            </Segments>
+        </Segment>
+    </Trip>
+    <Bookings Trigger="CanReturn">
+        <Booking Status="Option"/>
+        <Booking Status="Confirm"/>
+    </Bookings>
+</Transaction>

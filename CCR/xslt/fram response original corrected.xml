@@ -1,0 +1,1575 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Transaction xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.av2s.com/xft" xsi:schemaLocation="http://www.av2s.com/xft file:/B:/certification-xft/xsd/xft.1.1.8/xft_transaction.xsd" xsi:type="TransactionResponseType" Version="1.1" TimeStamp="2011-04-30T14:04:56" Status="Success">
+<Control>
+<Requester Channel="LPB2B">
+<Agency>
+<Code Value="1102"/>
+<NameText><![CDATA[IGAB2B]]></NameText>
+</Agency>
+<Agent Name="86009 "/>
+</Requester>
+</Control>
+<Action Purpose="Get" Code="QuotedAvailability">
+<Status Severity="Success">
+</Status>
+</Action>
+<Trip>
+<Price Target="Total" Value="299660" Role="Total" xsi:type="PriceQuotationType">
+<Prices Role="Detail">
+<Price>
+<![CDATA[FORFAIT]]><Amounts>
+<Amount Value="282900" Target="Total"/>
+<Amount Quantity="3" Value="94300" Target="Unit"/>
+</Amounts>
+</Price>
+<Price Role="Surcharge">
+<![CDATA[SURCHARGE CARBURANT]]><Amounts>
+<Amount Value="9900" Target="Total"/>
+<Amount Quantity="3" Value="3300" Target="Unit"/>
+</Amounts>
+</Price>
+<Price Role="Tax">
+<![CDATA[TAXES ET REDEVANCES]]><Amounts>
+<Amount Value="16800" Target="Total"/>
+<Amount Quantity="3" Value="5600" Target="Unit"/>
+</Amounts>
+</Price>
+<Price Percentage=" 20">
+<![CDATA[REDUC 3Ãˆ PERSONNE]]><Amounts>
+<Amount Value="-9940" Target="Total"/>
+<Amount Quantity="1" Value="-9940" Target="Unit"/>
+</Amounts>
+</Price>
+</Prices>
+<Commission Percentage="12.0"/></Price>
+<Segment xsi:type="SegmentProductType" Status="Available">
+<Code Value="DUNESDOR" Role="Product"/>
+<Segments>
+<Segments What="Details">
+<Segment xsi:type="SegmentTransportationType" Status="Available" Apply="Mandatory" Index="1">
+<![CDATA[Transport]]>
+<Segments What="List">
+<Segment xsi:type="SegmentAirType" Apply="Included" Role="Journey">
+<![CDATA[Vol spÃ©cial AIR MEDITERRANEE horaires non confirmÃ©s]]>
+<Code Value="B"/>
+<Segments What="Details">
+<Segment xsi:type="SegmentAirType" Apply="Included" Role="Sector" Category="Charter" Direction="Outbound">
+<![CDATA[Aller]]>
+<Description Role="Comment"><![CDATA[Horaires non confirmÃ©s]]></Description>
+<Begin Value="2011-07-28T00:00:00"/>
+<End Value="2011-07-28T00:00:00"/>
+<From xsi:type="AirportType">
+<![CDATA[PARIS ORLY SUD]]><Code Value="ORYS"/>
+</From>
+<To xsi:type="AirportType">
+<![CDATA[AGADIR AL MASSIRA]]><Code Value="AGA"/>
+</To>
+
+
+<Carrier>
+<![CDATA[AIR MEDITERRANEE]]><Code Value="BIE"/></Carrier>
+<Flight Number="PAGA"><OperatedBy Code="BIE"/></Flight>
+
+</Segment>
+<Segment xsi:type="SegmentAirType" Apply="Included" Role="Sector" Category="Charter" Direction="Inbound">
+<![CDATA[Retour]]>
+<Description Role="Comment"><![CDATA[Horaires non confirmÃ©s]]></Description>
+<Begin Value="2011-08-04T00:00:00"/>
+<End Value="2011-08-04T00:00:00"/>
+<From xsi:type="AirportType">
+<![CDATA[AGADIR AL MASSIRA]]><Code Value="AGA"/>
+</From>
+<To xsi:type="AirportType">
+<![CDATA[PARIS ORLY SUD]]><Code Value="ORYS"/>
+</To>
+
+
+<Carrier>
+<![CDATA[AIR MEDITERRANEE]]><Code Value="BIE"/></Carrier>
+<Flight Number="AGAP"><OperatedBy Code="BIE"/></Flight>
+
+</Segment>
+</Segments>
+<Travellers>
+<Traveller Ref="T1"/>
+<Traveller Ref="T2"/>
+<Traveller Ref="T3"/>
+</Travellers>
+
+
+</Segment>
+</Segments>
+
+</Segment>
+<Segment xsi:type="SegmentStayType" Status="Available" Apply="Mandatory" Index="2">
+<![CDATA[Framissima Les Dunes d&apos;Or****]]>
+<Code Value="DUNESDOR"/>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-04"/>
+
+<At xsi:type="HotelType"><Rooms What="List">
+<Room Status="Available" Quantity="000" Max="9">
+<![CDATA[Chambre standard avec    bain pour 2 personnes]]><Code Value="2BA"/>
+<Occupancies>
+<Occupancy Min="2" Max="2" Unit="Person"/>
+<Occupancy Min="0" Max="2" Unit="Adult"/>
+<Occupancy Min="0" Max="2" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="9">
+<![CDATA[Chambre vue mer avec bain pour 2 personnes]]><Code Value="2BM"/>
+<Occupancies>
+<Occupancy Min="2" Max="2" Unit="Person"/>
+<Occupancy Min="0" Max="2" Unit="Adult"/>
+<Occupancy Min="0" Max="2" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="9">
+<![CDATA[Chambre standard avec    bain pour 1 personne]]><Code Value="2BAX1"/>
+<Occupancies>
+<Occupancy Min="1" Max="1" Unit="Person"/>
+<Occupancy Min="0" Max="1" Unit="Adult"/>
+<Occupancy Min="0" Max="1" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="4">
+<![CDATA[Chambre vue mer avec bain pour 1 personne]]><Code Value="2BMX1"/>
+<Occupancies>
+<Occupancy Min="1" Max="1" Unit="Person"/>
+<Occupancy Min="0" Max="1" Unit="Adult"/>
+<Occupancy Min="0" Max="1" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Apply="Included" Status="Available" Max="9">
+<![CDATA[Chambre standard avec    bain pour 3 personnes]]><Code Value="2BAX3"/>
+<Description Role="Comment"><![CDATA[ pas de bÃ©bÃ©]]></Description>
+<Travellers>
+<Traveller Ref="T1"/>
+<Traveller Ref="T2"/>
+<Traveller Ref="T3"/>
+</Travellers>
+<Occupancies>
+<Occupancy Min="3" Max="3" Unit="Person"/>
+<Occupancy Min="0" Max="3" Unit="Adult"/>
+<Occupancy Min="0" Max="3" Unit="Child"/>
+<Occupancy Min="0" Max="0" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="9">
+<![CDATA[Chambre vue mer bain, 3  personnes rez de chaussÃ©e]]><Code Value="2BMX3"/>
+<Description Role="Comment"><![CDATA[ pas de bÃ©bÃ©]]></Description>
+<Occupancies>
+<Occupancy Min="3" Max="3" Unit="Person"/>
+<Occupancy Min="0" Max="3" Unit="Adult"/>
+<Occupancy Min="0" Max="3" Unit="Child"/>
+<Occupancy Min="0" Max="0" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="2">
+<![CDATA[Chambre standard bain Ã   partager dame, garantie]]><Code Value="2BAPF"/>
+<Occupancies>
+<Occupancy Min="1" Max="1" Unit="Person"/>
+<Occupancy Min="0" Max="1" Unit="Adult"/>
+<Occupancy Min="0" Max="1" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="2">
+<![CDATA[Chambre standard bain Ã   partager homme, garantie]]><Code Value="2BAPH"/>
+<Occupancies>
+<Occupancy Min="1" Max="1" Unit="Person"/>
+<Occupancy Min="0" Max="1" Unit="Adult"/>
+<Occupancy Min="0" Max="1" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="1">
+<![CDATA[Suite avec bain pour 2   personnes]]><Code Value="2GS"/>
+<Occupancies>
+<Occupancy Min="2" Max="2" Unit="Person"/>
+<Occupancy Min="0" Max="2" Unit="Adult"/>
+<Occupancy Min="0" Max="2" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="2">
+<![CDATA[chambre standard pour    handicapÃ© Ã  usage double]]><Code Value="2HA"/>
+<Occupancies>
+<Occupancy Min="2" Max="2" Unit="Person"/>
+<Occupancy Min="0" Max="2" Unit="Adult"/>
+<Occupancy Min="0" Max="2" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="2">
+<![CDATA[chambre standard pour    handicapÃ© Ã  usage single]]><Code Value="2HAX1"/>
+<Occupancies>
+<Occupancy Min="1" Max="1" Unit="Person"/>
+<Occupancy Min="0" Max="1" Unit="Adult"/>
+<Occupancy Min="0" Max="1" Unit="Child"/>
+<Occupancy Min="0" Max="1" Unit="Infant"/>
+</Occupancies>
+</Room>
+<Room Status="Available" Quantity="000" Max="2">
+<![CDATA[chambre standard pour    handicapÃ© Ã  usage triple]]><Code Value="2HAX3"/>
+<Description Role="Comment"><![CDATA[ pas de bÃ©bÃ©]]></Description>
+<Occupancies>
+<Occupancy Min="3" Max="3" Unit="Person"/>
+<Occupancy Min="0" Max="3" Unit="Adult"/>
+<Occupancy Min="0" Max="3" Unit="Child"/>
+<Occupancy Min="0" Max="0" Unit="Infant"/>
+</Occupancies>
+</Room>
+</Rooms>
+</At>
+<MealPlan Default="true" Apply="Included">
+<![CDATA[TOUT COMPRIS]]><Code Value="TC"/>
+</MealPlan>
+</Segment>
+</Segments>
+<Segments What="AddOns">
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available" Apply="Optional" Index="3">
+<![CDATA[Prestations ComplÃ©mentaires]]>
+<Segments Combination="Or" What="List">
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[GOLF STAGE DECOUVERT]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_0"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="10600">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[GOLF STAGE INITIATIO]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_1"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="29000">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[GOLF STAGE PERFECTIO]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_2"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="29000">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[BABY CLUB DUNES D'OR]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_3"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="20000">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU BIEN ETRE 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_4"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="14200">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU BIEN ETRE 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_5"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="19500">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU BIEN ETRE 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_6"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="24800">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU BIEN ETRE 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_7"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="29500">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU BIEN ETRE 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_8"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="34300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU DETENTE 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_9"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="14200">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU DETENTE 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_10"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="19500">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU DETENTE 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_11"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="24800">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU DETENTE 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_12"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="29500">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU DETENTE 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_13"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="34300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU J LEGERES 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_14"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="17700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU J LEGERES 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_15"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="23600">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU J LEGERES 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_16"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="31300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU J LEGERES 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_17"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="38400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU J LEGERES 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_18"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="41400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU MINCEUR 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_19"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="17700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU MINCEUR 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_20"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="23600">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU MINCEUR 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_21"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="31300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU MINCEUR 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_22"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="38400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU MINCEUR 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_23"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="41400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU CURE DETENTE]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_24"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="7700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-30"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU CURE ORIENTALE]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_25"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="7700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-30"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU CURE TONIQUE]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_26"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="7700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-30"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU A-STRESS 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_27"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="14200">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU A-STRESS 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_28"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="19500">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU A-STRESS 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_29"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="24800">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU A-STRESS 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_30"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="29500">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU A-STRESS 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_31"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="34300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU JEU MAMAN 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_32"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="17700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU JEU MAMAN 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_33"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="23600">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU JEU MAMAN 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_34"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="31300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU JEU MAMAN 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_35"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="38400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU JEU MAMAN 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_36"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="41400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU SPE DOS 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_37"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="17700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU PRENATALE 2J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_38"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="17700">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-07-31"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU SPE DOS 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_39"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="23600">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU PRENATALE 3J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_40"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="23600">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-01"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU SPE DOS 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_41"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="31300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU PRENATALE 4J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_42"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="31300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU SPE DOS 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_43"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="38400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU PRENATALE 5J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_44"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="38400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-03"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU SPE DOS 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_45"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="41400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[DU PRENATALE 6J]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_46"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="41400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[REMISE FORME 4J TIKI]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_47"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="34300">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-02"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[SPECIFIQUE 6J TIKI]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_48"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="58400">
+</Price>
+<Begin Value="2011-07-29"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentMiscellaneousType" Status="Available">
+<![CDATA[PASS VIP]]>
+<Codes>
+<Code Name="AddOn" Value="P_0_49"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PP" Value="5300">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-28"/>
+</Segment>
+</Segments>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available" Apply="Optional" Index="4">
+<![CDATA[Locations de vÃ©hicules]]>
+<Segments Combination="Or" What="List">
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT A - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_0"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="12000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-31"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT A - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_1"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="16000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-01"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT A - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_2"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="20000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-02"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT A - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_3"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="24000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-03"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT B - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_4"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="13500">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-31"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT B - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_5"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="18000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-01"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT B - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_6"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="22500">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-02"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT B - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_7"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="27000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-03"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT C - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_8"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="15900">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-31"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT C - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_9"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="21200">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-01"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT C - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_10"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="26500">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-02"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT C - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_11"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="31800">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-03"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT D - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_12"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="18600">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-31"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT D - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_13"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="24800">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-01"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT D - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_14"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="31000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-02"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT D - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_15"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="37200">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-03"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT E - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_16"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="21300">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-31"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT E - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_17"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="28400">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-01"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT E - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_18"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="35500">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-02"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT E - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_19"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="42600">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-03"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT F - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_20"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="30000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-07-31"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT F - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_21"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="40000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-01"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT F - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_22"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="50000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-02"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+<Segment xsi:type="SegmentVehicleType" Status="Available">
+<![CDATA[CAT F - 5 PERS. MAX]]>
+<Codes>
+<Code Name="Vehicle" Value="V_0_23"/>
+<Code Value="DUNESDOR" Role="Product"/>
+</Codes>
+<Price Ref="PU" Value="60000">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-03"/>
+
+<Vehicle Occupancy="5">
+<Pickups What="List">
+<Pickup Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</Pickup>
+<Pickup Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</Pickup>
+</Pickups>
+<DropOffs>
+<DropOff Is="Airport">
+<![CDATA[AÃ©roport]]><Code Value="A"/>
+</DropOff>
+<DropOff Is="Hotel">
+<![CDATA[HÃ´tel]]><Code Value="H"/>
+</DropOff>
+</DropOffs>
+</Vehicle>
+</Segment>
+</Segments>
+
+</Segment>
+<Segment xsi:type="SegmentInsuranceType" Status="Available" Apply="Optional" Index="5">
+<![CDATA[Assurances]]>
+<Segments Combination="Xor" What="List">
+<Segment xsi:type="SegmentInsuranceType" Status="Available">
+<![CDATA[FRAM ASSUR 1]]>
+<Code Value="A_0_0"/>
+<Description><URL><![CDATA[http://www.fram.fr/pdf/framassur_2007_2008.pdf]]></URL></Description>
+<Price Ref="PP">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-04"/>
+</Segment>
+<Segment xsi:type="SegmentInsuranceType" Status="Available">
+<![CDATA[FRAM ASSUR FAMILLE 1]]>
+<Code Value="A_0_1"/>
+<Description><URL><![CDATA[http://www.fram.fr/pdf/framassur_2007_2008.pdf]]></URL></Description>
+<Price Ref="PP">
+</Price>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-04"/>
+</Segment>
+</Segments>
+</Segment>
+</Segments>
+<Segments What="Defaults">
+<Prices>
+<Price Default="true" Target="Unit" Type="Retail" Currency="EUR" Decimals="2">
+</Price>
+<Price ID="PP" Target="Unit" Type="Retail" Currency="EUR" Decimals="2">
+<Rule>
+<Quantity For="Each" Unit="Person"/>
+</Rule>
+</Price>
+<Price ID="PU" Target="Unit" Type="Retail" Currency="EUR" Decimals="2">
+<Rule>
+<Quantity For="Each" Unit="Unit"/>
+</Rule>
+</Price>
+</Prices>
+</Segments>
+</Segments>
+<Begin Value="2011-07-28"/>
+<End Value="2011-08-04"/>
+<Duration Value="7" Unit="Night"/>
+</Segment>
+<Travellers>
+<Traveller ID="T1" Type="Adult"/>
+<Traveller ID="T2" Type="Adult"/>
+<Traveller ID="T3" Type="Adult" BirthDate="1996-05-11"/>
+</Travellers>
+<From xsi:type="CityType" Code="PAR"/>
+</Trip>
+<Bookings Trigger="CanReturn">
+<Booking Status="Option">
+<Option Value="2011-05-03"/>
+</Booking>
+<Booking Status="Confirm">
+</Booking>
+</Bookings>
+</Transaction>
