@@ -38,6 +38,12 @@
 				             </xsl:for-each>
             			</Product>
            			</Trip>
+		            <Prices Total="299660">
+		                <Price Quantity="1" UnitAmount="5525" TotalAmount="552500"><![CDATA[CROISIERE VISTAMAR   11NTS]]>
+		                </Price>
+		                <Price Quantity="1" UnitAmount="1100" TotalAmount="1100"><![CDATA[SURCHARGE CARBURANT                       (C)]]></Price>
+		                <Price Quantity="1" UnitAmount="6500" TotalAmount="6500"><![CDATA[TAXES SURCHARGES AERIENNES ET TAXE SOLIDARITE]]></Price>
+		 			</Prices>           			
            		</Offer>
            	</Offers>	
  		
