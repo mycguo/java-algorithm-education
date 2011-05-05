@@ -1,0 +1,2454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Galileo Employee (Galileo) -->
+<!-- edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by David Faveur (Galileo International) -->
+<xs:schema targetNamespace="http://www.av2s.com/xft" xmlns="http://www.av2s.com/xft" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ota="http://www.opentravel.org/ota" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="http://www.opentravel.org/ota" schemaLocation="OTA_CommonTypes.xsd"/>
+	<xs:import namespace="http://www.opentravel.org/ota" schemaLocation="OTA_SimpleTypes.xsd"/>
+	<xs:import namespace="http://www.av2s.com/xft" schemaLocation="xft_SimpleTypes.xsd"/>
+	<xs:complexType name="AccomodationType">
+		<xs:annotation>
+			<xs:documentation>To describe Hotels, Lodgings, </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Accomodation specific data such as features, sub descriptions and prices.
+Data specific to precise types will be defined for each type (such as property names for hotels, ...</xs:documentation>
+					</xs:annotation>
+					<xs:sequence>
+						<xs:annotation>
+							<xs:documentation>Description of Accomodation, Rooms and Amenities
+For alternative rooms, The Accomodations element can be used, but the Rooms element is preferred.</xs:documentation>
+						</xs:annotation>
+						<xs:element ref="Accomodations" minOccurs="0"/>
+						<xs:group ref="RoomGroup" minOccurs="0"/>
+						<xs:element ref="Amenities" minOccurs="0"/>
+					</xs:sequence>
+					<xs:group ref="MealPlanGroup" minOccurs="0"/>
+					<xs:sequence>
+						<xs:annotation>
+							<xs:documentation>Money related data : Guarantee, Prices</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Price" type="PriceType" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>In case of multiple prices, it correspond to prices for different seasons, person types, amenities, ...</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Guarantee" type="ota:PaymentDetailType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>xxxDetail and add more data such as FOP, keep data and cancellation policy</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ActionType">
+		<xs:annotation>
+			<xs:documentation>In case of multiple instances, actions can be ordered using the Index attribute</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Parameters" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="CollectionType">
+							<xs:sequence>
+								<xs:element name="Parameter" type="CustomField" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Scope" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="Name" type="ActionScopeItemType"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Host, Lines and status data. Status can only be present in response transactions</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="Hosts" minOccurs="0"/>
+				<xs:element name="Statuses" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Errors, Warnings, ...
+Possibly from multiple hosts.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Status" type="StatusInformationType" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>One status per host per error / warning. A unique host can generate several status.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Success" type="xs:boolean" use="optional">
+							<xs:annotation>
+								<xs:documentation>A global identifer to be set by the host (if unique) or the switch (if many hosts) define whether the action has been a success or not.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Lines" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>In a request to specify or limit the number of lines and which lines to retrieve.
+In a response to inform on the number of returned lines</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="Line" type="LineCountType" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>One record per host.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Count" type="xs:positiveInteger" use="optional">
+							<xs:annotation>
+								<xs:documentation>Contains the sum of all line record counts lines.count=sum(line.count)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Content" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>To define the level of details for the responses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Subsequent actions</xs:documentation>
+				</xs:annotation>
+				<xs:element name="Ifs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>must develop on if and conditions</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="If" type="IfType" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Action" type="ActionType" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>The actions in case of success</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:sequence>
+		<xs:attributeGroup ref="LinksAndReferencesGroup"/>
+		<xs:attribute name="Purpose" type="ActionPurposeCodeType" use="optional" default="Get"/>
+		<xs:attribute name="Code" type="ActionCodeType" use="optional" default="QuotedAvailability"/>
+		<xs:attributeGroup ref="PositionGroup"/>
+	</xs:complexType>
+	<xs:complexType name="ActiveType">
+		<xs:annotation>
+			<xs:documentation>Defines whether  the associated element is active or not
+The dates can be used to restict the scope of the state. Each date can be used independently or together. 
+The dates are included, if used.To specify whether the associated element is active or not, with possible date restrictions</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="DateTimeWindowType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AddressType">
+		<xs:annotation>
+			<xs:documentation>Complete address used for delivery, customer reference, ...
+Currently OTA address used in most places. xxxNeed to replace</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:element name="Building" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Building name, door code, Floor, other text information (dog present, ...)</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="EntityType">
+									<xs:attribute name="Floor" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>A number, a name (Da Vinci Floor, Ground floor, ...)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Door" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>A door number, a door name (for a conference room for instance)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="DoorCode" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>A code to punch for restricted access</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Street" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:simpleContent>
+								<xs:extension base="xs:string">
+									<xs:attribute name="Number" type="xs:positiveInteger" use="optional"/>
+									<xs:attribute name="StreetType" use="optional">
+										<xs:annotation>
+											<xs:documentation>List can be amended if required, but what is the use</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:NMTOKEN">
+												<xs:enumeration value="Alley"/>
+												<xs:enumeration value="Boulevard"/>
+												<xs:enumeration value="Street"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:extension>
+							</xs:simpleContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="City" minOccurs="0"/>
+					<xs:element name="County" type="LocationType" minOccurs="0"/>
+					<xs:element name="State" type="LocationType" minOccurs="0"/>
+					<xs:element ref="Country" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AirportType">
+		<xs:complexContent>
+			<xs:extension base="CityType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Terminal
+City in direct association
+Other cities should be listed in the Locations section instead</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Terminal" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>A departure or arrival ternminal. For terminal descriptions, use the Locations Element instead</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="LocationType">
+									<xs:attribute name="Counter" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>A counter name to get a ticket or to meet</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="City" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Gateway" type="xs:boolean" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AmountType">
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:attributeGroup ref="PriceGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AtomType" abstract="true" mixed="true">
+		<xs:annotation>
+			<xs:documentation>The basic type for qualified data</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="LinksAndReferencesGroup">
+			<xs:annotation>
+				<xs:documentation>this group is used to create hierarchical and non hierarchical links within a given xml file</xs:documentation>
+			</xs:annotation>
+		</xs:attributeGroup>
+		<xs:attributeGroup ref="NamesGroup"/>
+		<xs:attributeGroup ref="PositionGroup">
+			<xs:annotation>
+				<xs:documentation>Used to group and position within a list</xs:documentation>
+			</xs:annotation>
+		</xs:attributeGroup>
+		<xs:attributeGroup ref="MatchGroup"/>
+	</xs:complexType>
+	<xs:complexType name="BedType">
+		<xs:annotation>
+			<xs:documentation>Bed description, both for the bed and the assocation with persons (if associated with a room)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FeatureType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The specific features of the bed, such as water bed, baldaquin, ...</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Feature" type="EntityType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>xxxXFT Feature codes could be defined. Feature Type is not used because of no price involved</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Occupancy" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The actual association to the travellers or indication on what the room / bed / ... can support</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="OccupancyType"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Code" type="BedCodeType" use="required">
+					<xs:annotation>
+						<xs:documentation>Cot,Double, ExtraBed, QueenSize, KingSize, Single</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BookingActionType">
+		<xs:annotation>
+			<xs:documentation>Change into access and do it more generic. Probably on atom or entity.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="When" type="xs:dateTime" use="required"/>
+		<xs:attribute name="Who" type="xs:string" use="optional"/>
+		<xs:attribute name="Purpose" type="ActionPurposeCodeType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="BookingType">
+		<xs:annotation>
+			<xs:documentation>All the information related to a booking</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="TravelEntityType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Payments, Documents, Quotations, sub bookings, system data</xs:documentation>
+					</xs:annotation>
+					<xs:sequence minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Payment and customer related data</xs:documentation>
+						</xs:annotation>
+						<xs:choice>
+							<xs:annotation>
+								<xs:documentation>Customers : A booking requires a customer. If more than one, use customers. </xs:documentation>
+							</xs:annotation>
+							<xs:element name="Customer" type="TravellerType">
+								<xs:annotation>
+									<xs:documentation>A booking requires a customer. If more than one, use customers.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Customers">
+								<xs:annotation>
+									<xs:documentation>The list of customers</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Customer" type="TravellerType" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Either different persons from the Travellers or a reference.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+						<xs:element name="Balance" type="PriceType" minOccurs="0"/>
+						<xs:element name="Payments" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence minOccurs="0">
+									<xs:element name="Payment" type="PaymentType" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Actual payments, deposits, dues, credits, funds, ...</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:sequence minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>-->Documents, Quotations, slave bookings
+If present, always in collections even if unique item only, because if present, usually more than 1 item is present</xs:documentation>
+						</xs:annotation>
+						<xs:element ref="Documents" minOccurs="0"/>
+						<xs:element ref="Quotations" minOccurs="0"/>
+						<xs:element ref="Bookings" minOccurs="0"/>
+					</xs:sequence>
+					<xs:sequence minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>System data
+--> option
+--> Access data</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Option" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Only in case status = option
+xxxchange to have status in a separate tag?</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="DurationQualifiedType"/>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="Accesses" minOccurs="0"/>
+					</xs:sequence>
+				</xs:sequence>
+				<xs:attributeGroup ref="StatusGroup"/>
+				<xs:attribute name="Language" type="xs:language" use="optional"/>
+				<xs:attribute name="Currency" type="CurrencyCodeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CarType">
+		<xs:annotation>
+			<xs:documentation>Car descriptions, booking requests and confirmations</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Additional car specific information, such as maker, passengers, equipments.
+xxxMissing info would be year, power, ...</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Equipments" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Either requested or booked or possible</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence minOccurs="0">
+								<xs:element name="Equipment" type="FeatureType" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>CD, Rack, ...</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Maker" type="EntityType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The maker for the vehicle (name, code or reference + any additional information</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Travellers" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The maximum number of passengers, the driver and possibly the list of passengers (for coaches, ...)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Doors" type="xs:positiveInteger" use="optional">
+					<xs:annotation>
+						<xs:documentation>The number of doors for the vehicle (2,3,4,5)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Occupancy" type="xs:positiveInteger" use="optional"/>
+				<xs:attributeGroup ref="StatusGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CityType" mixed="true">
+		<xs:annotation>
+			<xs:documentation>City definition, either through a code only or the whole description</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent mixed="true">
+			<xs:extension base="LocationType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Elements in direct association. All location description could be described using the Locations object</xs:documentation>
+					</xs:annotation>
+					<xs:element ref="Country" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Airports information</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Airport" type="AirportType">
+							<xs:annotation>
+								<xs:documentation>If airport is unique</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Airports">
+							<xs:annotation>
+								<xs:documentation>Airport in direct association </xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CollectionLocationType">
+										<xs:sequence>
+											<xs:element name="Airport" type="AirportType" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Stations information (trains, cars, ...</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Station" type="StationType"/>
+						<xs:element name="Stations">
+							<xs:annotation>
+								<xs:documentation>Train, Car stations, ...</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CollectionLocationType">
+										<xs:sequence>
+											<xs:element name="Station" type="StationType" maxOccurs="unbounded"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="Code" type="AlphaUpper3" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CodeType">
+		<xs:annotation>
+			<xs:documentation>The code Type is used in different cases such as to express composite codes, codes associated to additional information for decoding, transcoding, descriptions, ... 
+In all cases, for codes which are not generic nor XFT compliant, a CodeType should be used.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:attribute name="Owner" type="CodeOwnerType" use="optional" default="Recipient">
+					<xs:annotation>
+						<xs:documentation>ISO, IATA, MARMARA, KUONI, ...</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Value" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CollectionLocationType">
+		<xs:annotation>
+			<xs:documentation>Same as collectionType, but with additional data for the Locations</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CollectionType">
+				<xs:attributeGroup ref="LocationQualifierGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CollectionType">
+		<xs:complexContent>
+			<xs:extension base="AtomType">
+				<xs:attributeGroup ref="CombinationGroup"/>
+				<xs:attributeGroup ref="DataPresenceGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ContinentType">
+		<xs:annotation>
+			<xs:documentation>Continent object to hold text/structured data</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="LocationType">
+				<xs:attribute name="Code" type="ContinentCodeType" use="optional">
+					<xs:annotation>
+						<xs:documentation>The list of Continents Codes : 
+AF = Africa
+AN = Antartica
+AS =  Asia
+EU = Europe 
+NA = North America
+OC = Oceania
+SA = South America</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CountryType" mixed="false">
+		<xs:annotation>
+			<xs:documentation>Country definition,either a code only or the whole definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="LocationType">
+				<xs:attribute name="Code" type="AlphaUpper2" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CustomField">
+		<xs:annotation>
+			<xs:documentation>If customer field is provided by a requester, it should be present in the response as well, untouched.
+If the value of a custom field is composite, the data should not be directly below the custom field, but using the collection instead</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CodeType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateTimeLongType">
+		<xs:annotation>
+			<xs:documentation>Rich date format with Day or part of day information</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Day" type="DayOfWeekType" use="optional">
+			<xs:annotation>
+				<xs:documentation>The XFT code for the day of the week</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Moment" type="DayMomentType" use="optional">
+			<xs:annotation>
+				<xs:documentation>The XFT code for describing a moment of the day :
+AM, PM, Morning, Noon, Afternoon, Evening, Night
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="MatchGroup"/>
+		<xs:attribute name="Value" type="DateTimeType" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="DateTimeQualifiedType" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="DateTimeLongType">
+				<xs:choice minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Only relevant in searches to provide flexibility</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Between" type="DateTimeWindowType">
+						<xs:annotation>
+							<xs:documentation>Flexibility providing date for range boundary. Initial date is not relevant in that case.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:choice>
+						<xs:element name="In" minOccurs="0" maxOccurs="3">
+							<xs:annotation>
+								<xs:documentation>Flexibility providing ranges in the shape of Month. Initial date is not relevant in that case. 
+(Combination = or)</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="Month" type="MonthType" use="required"/>
+								<xs:attribute name="Year" type="xs:string" use="optional"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="PlusOrMinus" type="DurationWindowType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Flexibility in terms of intervals around the original date (required in that case).</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DateTimeWindowType">
+		<xs:annotation>
+			<xs:documentation>[DateBegin - DateEnd] date window</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="DateTimeWindowGroup"/>
+	</xs:complexType>
+	<xs:complexType name="DocumentType">
+		<xs:complexContent>
+			<xs:extension base="EntityType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DurationQualifiedType">
+		<xs:sequence minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Only relevant in searches to provide flexibility</xs:documentation>
+			</xs:annotation>
+			<xs:element name="PlusOrMinus" type="DurationWindowType"/>
+		</xs:sequence>
+		<xs:attribute name="Exact" type="xs:boolean" use="optional"/>
+		<xs:attribute name="Unit" type="DurationUnitType" use="optional"/>
+		<xs:attribute name="Value" type="DateDurationType" use="required"/>
+		<xs:attribute name="CountingFrom" type="DateDurationStartType" use="optional"/>
+		<xs:attribute name="Ref" type="xs:IDREF" use="optional">
+			<xs:annotation>
+				<xs:documentation>Used only in conjunction with CountingFrom in case a reference is relevant.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DurationWindowType">
+		<xs:attribute name="After" type="DateDurationType" use="optional"/>
+		<xs:attribute name="Before" type="DateDurationType" use="optional"/>
+		<xs:attribute name="Exact" type="xs:boolean" use="optional"/>
+		<xs:attribute name="Unit" type="DurationUnitType" use="optional"/>
+		<xs:attribute name="Extremity" type="ExtremityCodeType" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="EntityType">
+		<xs:annotation>
+			<xs:documentation>Entity complements an Atom with date related limits, codes and custom fields and descriptions (text, and multimedia</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AtomType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Basic structured and free text information </xs:documentation>
+					</xs:annotation>
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Validity in time for the entity</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Active">
+							<xs:annotation>
+								<xs:documentation>To limit the scope in time (collection = Or)</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:restriction base="ActiveType"/>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Season" type="SeasonType">
+							<xs:annotation>
+								<xs:documentation>same as active but naming the season for reuse or using references.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+					<xs:element name="Code" type="CodeType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>To express composite codes, codes associated to additional information for decoding, transcoding, descriptions, specific promotion or discount ID codes, ...</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="CustomFields" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Fields which would be specific per host, customer, vendor...</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Description" type="ParagraphType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>To provide multi lingual text or multi media content. Paragraphs can be named and text can be structured.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FeatureType">
+		<xs:annotation>
+			<xs:documentation>To describe Hotel, Room, Car, Aircraft, Cruise ... amenities, such as Swimming pool, Golf, Minibar, ... 
+It can also describe beach features, city features, ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Price iformation, if any
+o add price information for an amenity.
+Collection is required if price needs qualification (according to dates, ages, ...)</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="PriceGroup"/>
+				</xs:sequence>
+				<xs:attribute name="PriceIs" type="FeaturePriceType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FlightType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>Equipment, Cabin, Meal information</xs:documentation>
+			</xs:annotation>
+			<xs:element name="OperatedBy" type="VendorType" minOccurs="0"/>
+			<xs:element name="Equipment" type="EntityType" minOccurs="0" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>A max of 2 in case of a technical stop : equipments could be different</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Seats" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>xxxKeep that one for charter desccriptions?</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Seat" type="SeatType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>xxxAdd upperdeck, sens de la marche, smoking, ...</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Meal" type="MealType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Meals available on board</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Number" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="EquipmentChange" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If each equipment is described using the Equipment Element, this indicator is not required in case of a change. However, if no specific description exists, this is the sole indicator</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="FOP_CreditCardType">
+		<xs:sequence>
+			<xs:element name="Holder" type="TravellerType" minOccurs="0"/>
+			<xs:element name="Issuer" type="EntityType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="LinksAndReferencesGroup"/>
+		<xs:attribute name="Role" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Credit"/>
+					<xs:enumeration value="Debit"/>
+					<xs:enumeration value="Lodge"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Code" type="ota:PaymentCardCodeType" use="required"/>
+		<xs:attribute name="Number" type="ota:NumericStringLength1to16" use="required"/>
+		<xs:attribute name="Key" type="ota:NumericStringLength1to8" use="optional"/>
+		<xs:attribute name="Expiration" type="xs:date" use="required"/>
+		<xs:attribute name="Issue" type="xs:date" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="HostType">
+		<xs:annotation>
+			<xs:documentation>xxxdescribe</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:element name="IP" type="IP_Type" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Multiple values in case of address translation. Collection does not correspond to combination but to different values of the same thing or alternative addresses.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Code" type="HostCodeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HotelType">
+		<xs:complexContent>
+			<xs:extension base="AccomodationType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Accomodation identification (Property description, Brand, Rating, ...)</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Property" minOccurs="0">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="EntityType">
+									<xs:sequence>
+										<xs:element name="Address" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>xxxAdd reference to OTA address definition</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Chain" type="EntityType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Brand" type="EntityType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Rating" type="RatingType" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IfType">
+		<xs:annotation>
+			<xs:documentation>xxxused in actions and rules (in the future)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:element name="Condition">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Then">
+									<xs:complexType>
+										<xs:choice>
+											<xs:element name="Action" type="ActionType"/>
+											<xs:element name="If" type="IfType"/>
+										</xs:choice>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Else" minOccurs="0">
+									<xs:complexType>
+										<xs:choice>
+											<xs:element name="Action" type="ActionType"/>
+											<xs:element name="If" type="IfType"/>
+										</xs:choice>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="IP_Type">
+		<xs:attribute name="Address" type="xs:string" use="required"/>
+		<xs:attribute name="Port" type="xs:positiveInteger" use="optional"/>
+		<xs:attribute name="Mask" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="LineCountType">
+		<xs:attribute name="HostRef" type="xs:IDREF" use="optional"/>
+		<xs:attribute name="All" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>In a request : 	All = true means that all lines should be returned even if high.
+In a response :  	All = true means all lines were returned. (same as Total = Count)
+ </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Count" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Request 		: The number of lines to return.
+Response 	: The number of returned lines.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="First" type="xs:positiveInteger" use="optional"/>
+		<xs:attribute name="Last" type="xs:positiveInteger" use="optional"/>
+		<xs:attribute name="MoveTo" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Bottom"/>
+					<xs:enumeration value="Next"/>
+					<xs:enumeration value="Previous"/>
+					<xs:enumeration value="Top"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Total" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Only relevant in a response :
+the total number of lines that can be returned associated with the request</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LocationType" abstract="false">
+		<xs:annotation>
+			<xs:documentation>Location description (codes, names and text or structured details</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Address, if relevant, Continent information
+Geodesic points
+Lists of locations assocaited to this location</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Address" type="AddressType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>An adress in case of a precise location (airport address, station address, hotel address, ...</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Locations" minOccurs="0"/>
+					<xs:element name="Continent" type="ContinentType" minOccurs="0"/>
+					<xs:element name="Point" type="PointType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Geodesic reference. Altitude is not required for positioning, but can be used in searches</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Is" type="LocationNatureCodeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ParagraphType">
+		<xs:annotation>
+			<xs:documentation>A paragraph can contain text and structured information such as codes but other host/system dependent fields stored in the custom fields.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="TextType">
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>A paragraph can contain a multitude of embedded paragraphs directly or via URLs and other medias in whatever order</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Paragraph" type="ParagraphType">
+						<xs:annotation>
+							<xs:documentation>Sub Text data</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Media" type="MediaType">
+						<xs:annotation>
+							<xs:documentation>Pictures, videos, sounds, ...</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="URL" type="URLType">
+						<xs:annotation>
+							<xs:documentation>Links to external references</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MealPlanType">
+		<xs:annotation>
+			<xs:documentation>Unless otherwise specified, the xft codes for meal plans are used.
+To use other owners, either specify the owner or use sub codes.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FeatureType">
+				<xs:attribute name="Code" type="MealPlanCodeType" use="optional">
+					<xs:annotation>
+						<xs:documentation>The xft Meal Plan codes
+AL	= ALL INCLUSIVE
+AP 	= AMERICAN PLAN
+BK 	= BREAKFAST INCLUDED
+BP 	= BERMUDA PLAN
+CB 	= CARIBBEAN PLAN
+CP 	= CONTINENTAL PLAN
+EP 	= EUROPEAN PLAN
+FB 	= FULL BOARD
+FP 	= FAMILY PLAN
+HB 	= HALF BOARD
+MA 	= MODIFIED AMERICAN PLAN 
+</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="AccordingTo" type="MealPlanRefCodeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MealType">
+		<xs:annotation>
+			<xs:documentation>Meal Codes for transportations</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="FeatureType">
+				<xs:sequence minOccurs="0">
+					<xs:element name="SpecialMeal" type="FeatureType" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="Code" type="MealCodeType" use="optional"/>
+				<xs:attributeGroup ref="QuantityGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MediaType" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:element name="URL" type="URLType">
+						<xs:annotation>
+							<xs:documentation>Links to external references</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Role" type="MediaRoleCodeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MinMaxType">
+		<xs:annotation>
+			<xs:documentation>to describe min and max values may need more complex if must validate dates, stirngs, ...</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Topic" type="RuleTopicType" use="required"/>
+		<xs:attributeGroup ref="MinMaxGroup"/>
+		<xs:attribute name="Unit" type="UnitType" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="OccupancyType">
+		<xs:annotation>
+			<xs:documentation>to describe the number of persons (of different types) for a given room / house, ...</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0">
+			<xs:element name="Age" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Age is required in certain cases only</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attributeGroup ref="MinMaxGroup"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="Travellers" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Unit" type="PersonType" use="optional" default="Person"/>
+		<xs:attributeGroup ref="MinMaxGroup"/>
+		<xs:attribute name="Quantity" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>The actual number of persons of the type PersonIs in the room</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Default" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>By default, this is the number of persons for which the room has been designed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PaymentType">
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:element name="FOP" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Mulitple information is only possible in case of information (deposit possible using ...). For multiple payments, use several Payments.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="ota:PaymentFormType">
+									<xs:choice>
+										<xs:element name="CreditCard" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Used for guarantees or inforamtion. Not to provide actual payment by Credit card.
+xxxreview the ota integration or replace</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="Code" type="ota:PaymentCardCodeType" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Amount" type="AmountType" minOccurs="0"/>
+					<xs:element name="Within" type="DurationQualifiedType" minOccurs="0"/>
+					<xs:element name="Payer" type="TravellerType" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Direction" use="optional" default="Debit">
+					<xs:simpleType>
+						<xs:restriction base="xs:NMTOKEN">
+							<xs:enumeration value="Credit"/>
+							<xs:enumeration value="Debit"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="Role" type="PaymentRoleType" use="required"/>
+				<xs:attribute name="Date" type="DateTimeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PointType" mixed="false">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">geodesic coordinates</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="latitude" type="xs:string" use="required"/>
+		<xs:attribute name="NS" use="optional">
+			<xs:annotation>
+				<xs:documentation>North or South
+</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="N"/>
+					<xs:enumeration value="S"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="longitude" type="xs:string" use="required"/>
+		<xs:attribute name="EW" use="optional">
+			<xs:annotation>
+				<xs:documentation>East or West</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="E"/>
+					<xs:enumeration value="W"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Altitude" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="PriceType">
+		<xs:annotation>
+			<xs:documentation>Basic Price information is here. 
+Additional data or application rules can still be provided using the sub elements.
+Text and codes can also be added to prices (Tax codes, rebate codes, ...)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Details for a given price or complete description</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Amount" type="AmountType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Adjustments" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Adjustment" type="AmountType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Margin" type="AmountType" minOccurs="0"/>
+					<xs:element name="Commission" type="AmountType" minOccurs="0"/>
+					<xs:element name="Taxes" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence minOccurs="0">
+								<xs:element name="Tax" type="AmountType" maxOccurs="unbounded"/>
+							</xs:sequence>
+							<xs:attribute name="Included" type="xs:boolean" use="required"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="VAT" type="AmountType" minOccurs="0"/>
+					<xs:element name="Rule" type="RuleType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>To define the conditions under which the price is applicable</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Prices" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="PriceGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ProductType">
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Collection of products  constituting the product</xs:documentation>
+					</xs:annotation>
+					<xs:element ref="Products" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Type" type="xs:string" use="optional"/>
+				<xs:attribute name="Supplier" type="xs:string" use="optional"/>
+				<xs:attribute name="StandAlone" type="xs:boolean" use="optional"/>
+				<xs:attribute name="Mandatory" type="xs:boolean" use="optional"/>
+				<xs:attribute name="Class" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>temporary perhaps for backward compatibility</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Category" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>temporary perhaps for backward compatibility</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="QuotationType">
+		<xs:complexContent>
+			<xs:extension base="SegmentType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RatingType">
+		<xs:annotation>
+			<xs:documentation>xxxChange into ENtity to add date and possible specific codes</xs:documentation>
+		</xs:annotation>
+		<xs:sequence minOccurs="0">
+			<xs:element name="Description" type="ParagraphType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="Local" type="xs:boolean" use="optional"/>
+		<xs:attribute name="Value" type="xs:string" use="optional"/>
+		<xs:attribute name="DeliveredBy" type="xs:string" use="optional"/>
+		<xs:attribute name="Unit" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="RoomLocationType">
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:attribute name="Code" type="RoomLocationCodeType" use="optional"/>
+				<xs:attribute name="Floor" type="xs:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RoomType">
+		<xs:annotation>
+			<xs:documentation>Room descriptions both text and structures</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="AccomodationType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Occupancy, Beds, Situation or views 
+</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="OccupancyGroup" minOccurs="0"/>
+					<xs:group ref="BedGroup" minOccurs="0"/>
+					<xs:element name="Situation" type="RoomLocationType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The location for the room (such as 2nd floor, close to the swimming pool, ...)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="View" type="RoomViewType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>There can be multiple views for the same room, such as lake and montain view. </xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Code" type="RoomCodeType" use="optional">
+					<xs:annotation>
+						<xs:documentation>Single,Twin,Double,Triple,Quad</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Quantity" type="xs:nonNegativeInteger" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RoomViewType">
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:attribute name="Code" type="RoomViewCodeType" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RequesterType">
+		<xs:annotation>
+			<xs:documentation>Minimum qualification is through the code.
+If code is not a pseudo, name should be used to qualify the code : 
+name="IP", code = "%IP address%"
+name="X25" code="%X25 address%"
+List is not exhaustive.
+For transcoding, use sub codes.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:element name="Agency" type="EntityType" minOccurs="0"/>
+					<xs:element name="Agent" type="EntityType" minOccurs="0"/>
+					<xs:element name="CoBrand" type="EntityType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>If request is made on behalf of somebody, this field should be present</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Channel" use="optional">
+					<xs:simpleType>
+						<xs:restriction base="xs:NMTOKEN">
+							<xs:enumeration value="Internet"/>
+							<xs:enumeration value="Telephone"/>
+							<xs:enumeration value="OpenLink"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="Country" type="xs:string" use="optional"/>
+				<xs:attribute name="Code" type="xs:string" use="required"/>
+				<xs:attributeGroup ref="IdentificationGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RuleType">
+		<xs:annotation>
+			<xs:documentation>to define the price if required. If obvious or defined at another level, not mandatory</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Qualifiers.
+Segments are usually used if prices are not within segments already except to define dependences</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Quantity" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>xxxchange into entity</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="RuleQuantityType">
+									<xs:sequence minOccurs="0">
+										<xs:element name="With" type="MinMaxType" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="MinMax" type="MinMaxType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>xxxchangetoentity or more generic</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:group ref="ReferenceGroup"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RuleQuantityType">
+		<xs:annotation>
+			<xs:documentation>for : the way to calculate. it can be for each unit, for every xx unit or for all (only once)
+value : the actual quantity to take (1, 2, ...). Value may not present if for each
+unit : the acutal unit to use : passenger, adult, room, ...
+from : the first element to take into account first, last, 3rd...
+to : the last element to take into account (if 5 and 10 in party, the 5 remaiing one are not used for price)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="For" type="CalculationModeType" use="optional"/>
+		<xs:attribute name="Value" type="xs:positiveInteger" use="optional"/>
+		<xs:attribute name="Unit" type="UnitType" use="required"/>
+		<xs:attribute name="From" type="xs:nonNegativeInteger" use="optional"/>
+		<xs:attribute name="To" type="xs:nonNegativeInteger" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="SeasonType">
+		<xs:annotation>
+			<xs:documentation>To name a collection of periods</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SeatType">
+		<xs:annotation>
+			<xs:documentation>Name = the actual seat number
+Code = The transportation Class code</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The possible meals served at a specific seat or seat class, to override information provided on the segment or carrier.</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Meal" type="MealType" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="SeatGroup"/>
+				<xs:attribute name="Position" type="SeatPositionType" use="optional">
+					<xs:annotation>
+						<xs:documentation>xxxChange location and put in group or differentiate per transportation
+</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentAirType">
+		<xs:complexContent>
+			<xs:extension base="SegmentTransportationType">
+				<xs:sequence>
+					<xs:element name="Vendor" minOccurs="0" maxOccurs="0"/>
+					<xs:element name="Carrier" type="VendorType" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Flight data will differ for resstrictions and for actual flights</xs:documentation>
+						</xs:annotation>
+						<xs:element ref="Flights">
+							<xs:annotation>
+								<xs:documentation>Used only to describe flight number restrictions</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Flight" type="FlightType">
+							<xs:annotation>
+								<xs:documentation>Flight information.
+For a given flight only</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="AirCategoryGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentCarType">
+		<xs:annotation>
+			<xs:documentation>Car rental segment</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence>
+					<xs:element name="Pickup" type="StationType"/>
+					<xs:element name="DropOff" type="StationType" minOccurs="0"/>
+					<xs:choice minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Car information : 
+Either a specific car in a request or a booking or a collection (alternative choices, multiple cars, list of cars in a response, ...)</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Cars">
+							<xs:annotation>
+								<xs:documentation>In case a list of cars is provided</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CollectionType">
+										<xs:choice maxOccurs="unbounded">
+											<xs:element name="Car">
+												<xs:annotation>
+													<xs:documentation>Car description</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:complexContent>
+														<xs:extension base="CarType"/>
+													</xs:complexContent>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="Cars">
+												<xs:annotation>
+													<xs:documentation>In case cars of several models are grouped together</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:complexContent>
+														<xs:extension base="CollectionType">
+															<xs:choice maxOccurs="unbounded">
+																<xs:element name="Car" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:complexContent>
+																			<xs:extension base="CarType"/>
+																		</xs:complexContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:choice>
+														</xs:extension>
+													</xs:complexContent>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Car">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CarType"/>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:element name="Flight" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>In connection with the pickup information</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Insurance" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>xxxQuestion : Either here or as insurance segments in the segment section.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentExcursionType">
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Location information</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="LocationRangeGroup" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentInsuranceType">
+		<xs:complexContent>
+			<xs:extension base="SegmentType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentProductType">
+		<xs:annotation>
+			<xs:documentation>A product, a package, a tour, ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence>
+					<xs:element ref="Products" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentStayType">
+		<xs:annotation>
+			<xs:documentation>To describe a stay in a journey, where possibly a hotel can be provided.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Stay specifc information, such as location, hotel, ...</xs:documentation>
+					</xs:annotation>
+					<xs:element ref="In" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation> Stay location
+To express alternates, use this element for the preferred departure and the Locations sub element for alternates</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="At" type="AccomodationType" minOccurs="0" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>A hotel, a lodging, a castle, a resort, ...
+To express alternates, use this element for the preferred departure and the Locations sub element for alternates.
+In requests AND is possible. In responses, AND combination would be done via segments.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="Rooms" minOccurs="0"/>
+					<xs:group ref="MealPlanGroup"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentSurfaceType">
+		<xs:annotation>
+			<xs:documentation>To describe a piece of a journey where no specific service is given but to create a coherent itinerary. This is also used to describe stops.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SegmentStayType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentTransportationType">
+		<xs:annotation>
+			<xs:documentation>To describe a transportation in a journey</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence>
+					<xs:sequence minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Location Information</xs:documentation>
+						</xs:annotation>
+						<xs:element ref="From" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>multiple values only in requests (combination = or)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="To" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>multiple values only in requests (combination = or)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Stops" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>For a stop to be considered as a stop, the time spent must be significant</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CollectionType">
+										<xs:sequence>
+											<xs:annotation>
+												<xs:documentation>Stop data
+xxxNeed to create a complex type to use both in stops and via</xs:documentation>
+											</xs:annotation>
+											<xs:element name="Stop" type="StopType" minOccurs="0" maxOccurs="unbounded">
+												<xs:annotation>
+													<xs:documentation>A list of stops, different strops outbound and inbound, ...
+xxxCheck if need to have vias again here
+Stops can also be expressed using different segments</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Vias" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Vias are used for transits by opposed to stops.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CollectionType">
+										<xs:sequence>
+											<xs:annotation>
+												<xs:documentation>Via data</xs:documentation>
+											</xs:annotation>
+											<xs:element name="Via" minOccurs="0" maxOccurs="unbounded">
+												<xs:annotation>
+													<xs:documentation>A list of via, direct only, different vias outbound and inbound, ...
+xxxCheck if need to have vias again here</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:complexContent>
+														<xs:extension base="LocationType">
+															<xs:sequence>
+																<xs:annotation>
+																	<xs:documentation>Price information</xs:documentation>
+																</xs:annotation>
+																<xs:group ref="PriceGroup"/>
+															</xs:sequence>
+															<xs:attributeGroup ref="QuantityGroup">
+																<xs:annotation>
+																	<xs:documentation>To specify number of vias, direct only, ...</xs:documentation>
+																</xs:annotation>
+															</xs:attributeGroup>
+															<xs:attribute name="Direction" type="DirectionType" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Only Outbound and Inbound have meaning here
+</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:extension>
+													</xs:complexContent>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:element name="Seats" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Seat for a given segment</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Seat" type="SeatType" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>xxxAdd upperdeck, sens de la marche, smoking, ...</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Meals" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Meals served on board the transportation (either decription or request)</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="CollectionType">
+									<xs:sequence minOccurs="0">
+										<xs:element name="Meal" type="MealType" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attributeGroup ref="QuantityGroup"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="TransportationRoleGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SegmentType" abstract="true">
+		<xs:annotation>
+			<xs:documentation>For trip description : 
+A segment can be car, travel or stay, unique or composite (for vias, multiple rooms in a hotel, ...)
+In searches, Segment can be  used to describe alternative searches (such as departure from PAR or LHR, stay in single or doubles, ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="TravelEntityType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Common segment description such as length in time, vendor, prices and segments in case of composite segment or possible alternative</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="DateTimeRangeGroup" minOccurs="0"/>
+					<xs:element name="Vendor" type="VendorType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The vendor for the segment if not specifed somewhere else</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:group ref="PriceGroup"/>
+					<xs:element name="Rule" type="RuleType" minOccurs="0"/>
+					<xs:element name="Comment" type="ParagraphType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Segment related comment. Usually for internal use, but could be also directed toward the end user, depending on the role. Description are usually for end users</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="StatusGroup"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StationType">
+		<xs:complexContent>
+			<xs:extension base="LocationType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Telephones</xs:documentation>
+					</xs:annotation>
+					<xs:element name="Telephones" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Telephone" type="ota:TelephoneType" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Code" type="ota:UpperCaseAlphaNumericLength3to5" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StationCarType">
+		<xs:complexContent>
+			<xs:extension base="StationType">
+				<xs:sequence>
+					<xs:element name="Open" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>xxx Opening hours to describe. Not done  yet</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Vendor" type="AlphaUpper2" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StatusInformationType">
+		<xs:annotation>
+			<xs:documentation>Status information for the Transactions. Can be either Warning, Error or information. Text and codes can be attached both xft compliant or host dependent.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:attribute name="HostRef" type="xs:IDREF" use="optional"/>
+				<xs:attribute name="Severity" type="SeverityType" use="required">
+					<xs:annotation>
+						<xs:documentation>Information : Host returns text information that may be of importance or just to display (promo text, information about a fair, ... Information is always associated to success
+
+Warning : Host returns data but there may be restrictions or not exactly corresponding to the request (alternative city, alternative date, no data found, ...)
+
+Error : Host (final or intermediate) could not process the data for a technical or functional reason (line down, invalid dates, cities, product codes, ...) </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="When" type="xs:dateTime" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StopType">
+		<xs:complexContent>
+			<xs:extension base="LocationType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Price information</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="PriceGroup"/>
+					<xs:group ref="DateTimeRangeGroup"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="QuantityGroup">
+					<xs:annotation>
+						<xs:documentation>To specify number of vias, direct only, ...</xs:documentation>
+					</xs:annotation>
+				</xs:attributeGroup>
+				<xs:attribute name="Direction" type="DirectionType" use="optional">
+					<xs:annotation>
+						<xs:documentation>Only Outbound and Inbound have meaning here
+</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TextType" mixed="true">
+		<xs:complexContent mixed="true">
+			<xs:extension base="EntityType">
+				<xs:attribute name="Language" type="xs:language" use="optional"/>
+				<xs:attribute name="Role" type="TextRoleType" use="optional"/>
+				<xs:attribute name="Scope" use="optional">
+					<xs:simpleType>
+						<xs:restriction base="xs:NMTOKEN">
+							<xs:enumeration value="Restricted"/>
+							<xs:enumeration value="Public"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TicketType">
+		<xs:complexContent>
+			<xs:extension base="EntityType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TravelDocumentType">
+		<xs:annotation>
+			<xs:documentation>Tickets, Vouchers</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="TravelEntityType"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TravelEntityType">
+		<xs:annotation>
+			<xs:documentation>Basic entity + Travellers and segments</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence>
+					<xs:annotation>
+						<xs:documentation>Segments and Travellers, list or references</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="ReferenceGroup" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TravellerType">
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:sequence minOccurs="0">
+					<xs:element name="Traveller" type="TravellerType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Detail" type="ota:CustomerType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The Traveller details, coming from the OTA structure. For names, DOB, Address, telephone, ...</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="Type" type="PersonType" use="optional" default="Adult"/>
+				<xs:attribute name="Quantity" type="xs:nonNegativeInteger" use="optional"/>
+				<xs:attribute name="Age" type="xs:nonNegativeInteger" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TripType">
+		<xs:complexContent>
+			<xs:extension base="SegmentType">
+				<xs:sequence minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Location and trip/quotation  information</xs:documentation>
+					</xs:annotation>
+					<xs:group ref="LocationRangeGroup" minOccurs="0"/>
+					<xs:sequence minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Alternative trips : 
+In certain cases, a choice of trips is available. In that case, the alternative trips can be expressed here.</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Trips" minOccurs="0">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="CollectionType">
+										<xs:choice minOccurs="0" maxOccurs="unbounded">
+											<xs:element name="Trip" type="TripType"/>
+											<xs:element name="Trips">
+												<xs:complexType>
+													<xs:choice minOccurs="0" maxOccurs="unbounded">
+														<xs:element name="Trip" type="TripType"/>
+													</xs:choice>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:element ref="Quotations" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="URLType">
+		<xs:annotation>
+			<xs:documentation>The URL with possibly its type associated with possible transforms, schemas, ...</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Link" type="xs:anyURI">
+				<xs:annotation>
+					<xs:documentation>This is the actual URL</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="URL" type="URLType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>An URL giving additional information on the URL under definition</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="LinksAndReferencesGroup"/>
+		<xs:attribute name="Type">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="HTML"/>
+					<xs:enumeration value="XML"/>
+					<xs:enumeration value="XSD"/>
+					<xs:enumeration value="XSL"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="VendorType">
+		<xs:annotation>
+			<xs:documentation>To define vendors</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityType">
+				<xs:attribute name="Code" type="AlphaUpper2To3" use="optional">
+					<xs:annotation>
+						<xs:documentation>A IATA code for a vendor (AF, ZS, ...)
+If the code is specific, use the Code element instead</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="Alliance" type="xs:boolean" use="optional">
+					<xs:annotation>
+						<xs:documentation>xxCheck if OK.
+true : 	Code is an Alliance code
+false : 	a single vendor code
+omitted : 	false</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>-------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="Accomodations">
+		<xs:annotation>
+			<xs:documentation>For descriptions alternatives,  for accomodations, ...
+For alternatives locations, use different segments</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="Accomodation" type="AccomodationType" minOccurs="0"/>
+						<xs:element ref="Accomodations" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>For descriptions alternatives,  for accomodations, ...
+For alternatives locations, use different segments</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Amenities">
+		<xs:annotation>
+			<xs:documentation>Collection of amenities, as a list or groups of lists. </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Amenity" type="FeatureType">
+					<xs:annotation>
+						<xs:documentation>Swimming pool, frisge, minibar, ...</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Amenities"/>
+			</xs:choice>
+			<xs:attributeGroup ref="CombinationGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Begin" type="DateTimeQualifiedType">
+		<xs:annotation>
+			<xs:documentation>Time related data : the Beginning of the segment. 
+Geo data are using From, To fields</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="City" type="CityType"/>
+	<xs:element name="Country" type="CountryType">
+		<xs:annotation>
+			<xs:documentation>Country in direct association</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="CustomFields">
+		<xs:annotation>
+			<xs:documentation>Fields which would be specific per host, customer, vendor...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="CustomField" type="CustomField">
+							<xs:annotation>
+								<xs:documentation>Information specific to either a host or a requester.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="CustomFields">
+							<xs:annotation>
+								<xs:documentation>Fields which would be specific per host, customer, vendor...</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="End" type="DateTimeQualifiedType">
+		<xs:annotation>
+			<xs:documentation>Time related data : the End of the segment
+Geo data are using From, To fields</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="From" type="LocationType">
+		<xs:annotation>
+			<xs:documentation> Departure location
+To express alternates, use this element for the preferred departure and the Locations sub element for alternates</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="In" type="LocationType">
+		<xs:annotation>
+			<xs:documentation>Stay location.
+To express alternates, use this element for the preferred departure and the Locations sub element for alternates</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Duration" type="DurationQualifiedType">
+		<xs:annotation>
+			<xs:documentation>Time related data</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Flights">
+		<xs:annotation>
+			<xs:documentation>Used for flight restrictions using lists, intervals, ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="Flight">
+							<xs:annotation>
+								<xs:documentation>Used in case of restrictions</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="FlightType">
+										<xs:attributeGroup ref="MinMaxGroup">
+											<xs:annotation>
+												<xs:documentation>Used in case of ranges only</xs:documentation>
+											</xs:annotation>
+										</xs:attributeGroup>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="Flights"/>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hosts">
+		<xs:annotation>
+			<xs:documentation>The target hosts, if one only, this element is optional except to pass host specific information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Host" type="HostType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Locations">
+		<xs:annotation>
+			<xs:documentation>Collection of locations for lists, alternatives, sub elements ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionLocationType">
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:sequence>
+							<xs:element name="Location" type="LocationType"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element ref="Locations"/>
+						</xs:sequence>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MealPlan" type="MealPlanType">
+		<xs:annotation>
+			<xs:documentation>If unique, either the only possible meal plan or the one selected by the traveller or the offer</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Paragraph" type="ParagraphType">
+		<xs:annotation>
+			<xs:documentation>The basic text element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Prices">
+		<xs:annotation>
+			<xs:documentation>Collection of prices to qualify a price</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:sequence>
+					<xs:element name="Price" type="PriceType"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element ref="Prices"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:attributeGroup ref="CombinationGroup"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Products">
+		<xs:annotation>
+			<xs:documentation>Collection of products defining a product</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice>
+						<xs:sequence>
+							<xs:element ref="Products"/>
+						</xs:sequence>
+						<xs:sequence>
+							<xs:element name="Product" type="ProductType" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:choice>
+					<xs:attribute name="Qualifier" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Rooms">
+		<xs:annotation>
+			<xs:documentation>To Request/filter specific room types, occupancies, ...
+For responses, At is known so this elements should not be used.
+Either the descriptions of the rooms or different requested rooms or the room included in a room
+In rules, to filter</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:element name="Room" type="RoomType"/>
+						<xs:element ref="Rooms"/>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Quotations">
+		<xs:annotation>
+			<xs:documentation>Quotations associated to the booking. Some may be real invoices, or credit notes.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Either a list of quotations or combinations</xs:documentation>
+				</xs:annotation>
+				<xs:element name="Quotation" type="SegmentType"/>
+				<xs:element ref="Quotations"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Segments">
+		<xs:annotation>
+			<xs:documentation>Contains either alternatives or the collection of segments describing a trip.
+Segments can also contain collection of segments for complex searches or trips.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="Segment" type="SegmentType">
+							<xs:annotation>
+								<xs:documentation>For trip description : 
+A segment can be car, travel or stay, unique or composite (for vias, multiple rooms in a hotel, ...)
+In searches, Segment can be  used to describe alternative searches (such as departure from PAR or LHR, stay in single or doubles, ...</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="Segments"/>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Travellers">
+		<xs:annotation>
+			<xs:documentation>By Default, Combination = And
+To provide partial or complete information on travellers or to reference to travellers list</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:sequence minOccurs="0">
+						<xs:element name="Traveller" type="TravellerType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="QuantityGroup"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="To" type="LocationType">
+		<xs:annotation>
+			<xs:documentation>Destination Location (main destination for a whole trip)
+To express alternates, use this element for the preferred departure and the Locations sub element for alternates</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>================================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:group name="BedGroup">
+		<xs:annotation>
+			<xs:documentation>Lists use Bed ony. Alternatives or complex requests use the collection.</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:annotation>
+				<xs:documentation>0 does not mean that a room may not have beds, but that a room object can be used without describing the beds</xs:documentation>
+			</xs:annotation>
+			<xs:element ref="Bed" minOccurs="0"/>
+			<xs:element ref="Beds" minOccurs="0"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="DateTimeRangeGroup">
+		<xs:annotation>
+			<xs:documentation>Qualified via Begin, End and Duration</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:annotation>
+				<xs:documentation>Single or multiple begin dates</xs:documentation>
+			</xs:annotation>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Single begin date :
+
+Standard use for a precise date or to define uncertainty around a date.</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="Begin" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>End and duration, whaever order</xs:documentation>
+					</xs:annotation>
+					<xs:sequence minOccurs="0">
+						<xs:element ref="End" minOccurs="0"/>
+						<xs:element name="Duration" type="DurationQualifiedType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:sequence minOccurs="0">
+						<xs:element name="Duration" type="DurationQualifiedType" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="End" minOccurs="0"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>Multiple begin dates : 
+
+either alternative dates for departure in a request or a list of departure dates in a response, 
+In that case, only duration can be used.</xs:documentation>
+				</xs:annotation>
+				<xs:element ref="Begin" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Duration" type="DurationQualifiedType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="LocationRangeGroup">
+		<xs:sequence>
+			<xs:element ref="From" minOccurs="0"/>
+			<xs:element ref="To" minOccurs="0"/>
+			<xs:element ref="In" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="MealPlanGroup">
+		<xs:annotation>
+			<xs:documentation>If MealPlan and MealPlans are present at the same time, it could be that the unique one is in the product, or the preferred and there are lists of alternatives.
+Mealplans can be grouped because of prices being identical, or application rules, ...</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="MealPlan" minOccurs="0"/>
+			<xs:element ref="MealPlans" minOccurs="0"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="OccupancyGroup">
+		<xs:annotation>
+			<xs:documentation>Lists uses Occupancy only. Collection should be used for complex requests or descriptions such as alternatives</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:annotation>
+				<xs:documentation>0 does not mean that a room cannot hold people, but that a room object can be used without describing the occupancy or that the occupancy is described somewhere else (beds, hotel, ...)</xs:documentation>
+			</xs:annotation>
+			<xs:element ref="Occupancy" minOccurs="0"/>
+			<xs:element ref="Occupancies" minOccurs="0"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="PriceGroup">
+		<xs:annotation>
+			<xs:documentation>Price information</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0">
+			<xs:annotation>
+				<xs:documentation>Either a price or a collection</xs:documentation>
+			</xs:annotation>
+			<xs:element name="Price" type="PriceType"/>
+			<xs:element ref="Prices"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="RoomGroup">
+		<xs:annotation>
+			<xs:documentation>For a room or multiple rooms</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Room" type="RoomType">
+				<xs:annotation>
+					<xs:documentation>In case of a unique room to be requested or returned or described</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="Rooms"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="SourceGroup">
+		<xs:sequence>
+			<xs:element name="Hosts">
+				<xs:complexType/>
+			</xs:element>
+			<xs:element name="Vendor"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ReferenceGroup">
+		<xs:annotation>
+			<xs:documentation>A reference or lists to the travellers and segments
+Segments and travellers can be grouped for differnet reasons (details, alternates, differnet prices, parties, ...) </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="Segments" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="Travellers" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="MealPlans">
+		<xs:annotation>
+			<xs:documentation>To express lists, alternatives, ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:element ref="MealPlan"/>
+						<xs:element ref="MealPlans"/>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Bed">
+		<xs:annotation>
+			<xs:documentation>0 does not mean that a room may not have beds, but that a room object can be used without describing the beds.
+xxxDescribe use for extra bed.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="BedType">
+					<xs:attributeGroup ref="QuantityGroup"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Beds">
+		<xs:annotation>
+			<xs:documentation>Collection is used to request multiple beds or alternative bed settings, or to associate multiple beds in the same room (case of twin rooms, extra beds, ...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Bed" minOccurs="0"/>
+				<xs:element ref="Beds" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Occupancy">
+		<xs:annotation>
+			<xs:documentation>The actual association to the travellers or indication on what the room / bed / ... can support</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="OccupancyType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Occupancies">
+		<xs:annotation>
+			<xs:documentation>Used for complex descriptions or requests such as a room for 2 persons or three persons or 2 persons and 2 children...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Occupancy" minOccurs="0"/>
+				<xs:element ref="Occupancies" minOccurs="0"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Bookings">
+		<xs:annotation>
+			<xs:documentation>In case the parent booking is a master booking (group booking, charter seats, ...)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="CollectionType">
+					<xs:choice maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Either a list of bbookings or combinations</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Booking" type="BookingType"/>
+						<xs:element ref="Bookings"/>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Accesses">
+		<xs:annotation>
+			<xs:documentation>List of actions, possibly grouped (by type, ID, ...)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Access" type="BookingActionType">
+					<xs:annotation>
+						<xs:documentation>The action on the booking (created by, last modified by, ...</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Accesses"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Documents">
+		<xs:annotation>
+			<xs:documentation>Documents can be listed or lists can be grouped (by type, issue date, ...)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Document" type="DocumentType">
+					<xs:annotation>
+						<xs:documentation>Voucher, Invoice, Itin, Ticket, Mail, ...</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Documents"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

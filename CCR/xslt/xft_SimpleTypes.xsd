@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Faveur Working Late (Advantest Europe RD) -->
+<!-- edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by David Faveur (Galileo International) -->
+<xs:schema targetNamespace="http://www.av2s.com/xft" xmlns:ota="http://www.opentravel.org/ota" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.av2s.com/xft" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="http://www.opentravel.org/ota" schemaLocation="OTA_CommonTypes.xsd"/>
+	<xs:import namespace="http://www.opentravel.org/ota" schemaLocation="OTA_SimpleTypes.xsd"/>
+	<xs:annotation>
+		<xs:documentation>-------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:attributeGroup name="AirCategoryGroup">
+		<xs:annotation>
+			<xs:documentation>Category of air transports and scheduled information</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Category" type="AirCategoryCodeType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Even a segment publidhed as air may not be air.
+This is to provide information (in responses) or filtering capacity (in requests)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Scheduled" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Certain departures are not scheduled (departure time is not necessarily known long in advance). This indicator allows information or filtering capacity (in requests).
+Scheduled = true (exact departure time known) is different from Category = Scheduled (published time tables by opposition to charters)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Guarantee" type="TransportationGuaranteeCodeType" use="optional">
+			<xs:annotation>
+				<xs:documentation>xxxKeep in air or put in Transportation</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="CombinationGroup">
+		<xs:annotation>
+			<xs:documentation>xxxdelete and group with Match?</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Combination" type="CombinationType" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="DataPresenceGroup">
+		<xs:annotation>
+			<xs:documentation>Request 		: Used to define the level of details expected for returned information
+Response 	: To express the level of returned information (xxxdescribe)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="CanReturn" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>==>In a request : 
+true : 	please return data if you can
+false	even if you have the data, please do not return (Exclude on an Entity would do the same thing)
+
+==>In a response
+true : 	Can return in this response or following a subsequent request
+false:	Cannot return that type of data.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="What" use="optional">
+			<xs:annotation>
+				<xs:documentation>Alternatives : 	Alternatives to the result exist
+Combination :	The assocated collection is a combination of values, combined with the operated situated in the Combination attribute or the defafult operator for the component.
+List :		The collection corresponds to a list of different elements
+Details:		More details can be / are returned
+Range:		The collection contains 2 elements corresponding to a range of values. How to handle the extremities is specified in the elements</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Alternatives"/>
+					<xs:enumeration value="Combination"/>
+					<xs:enumeration value="List"/>
+					<xs:enumeration value="Details"/>
+					<xs:enumeration value="Range"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Trigger" use="optional">
+			<xs:annotation>
+				<xs:documentation>xxxremove or change?
+Present:	Data is present (response only)
+Required:	Data must be present (request only, but already handled somewhere else)
+Small:	Only return if small.xxxWhat is small?</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Present"/>
+					<xs:enumeration value="Required"/>
+					<xs:enumeration value="Small"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="StatusRole" type="SeverityType" use="optional">
+			<xs:annotation>
+				<xs:documentation>xxxMove somewhere else
+This is to define the role of the data and the reason of its presence.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="DateTimeExactGroup">
+		<xs:annotation>
+			<xs:documentation>xxxdelete?</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Exact" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="DateTimeWindowGroup">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Date Range = [begin-end] : both limits are included in the range. either begin or end can be used alone, therefore restricting only one end of the range</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Begin" type="DateTimeType" use="optional">
+			<xs:annotation>
+				<xs:documentation>The lower limit corresponds to the earliest date or time</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="End" type="DateTimeType" use="optional"/>
+		<xs:attributeGroup ref="MatchGroup"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="IdentificationGroup">
+		<xs:annotation>
+			<xs:documentation>Identification for connections, database access, sign ons</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Uid" type="xs:string" use="optional"/>
+		<xs:attribute name="Pwd" type="xs:string" use="optional"/>
+		<xs:attribute name="Profile" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="LinksAndReferencesGroup">
+		<xs:annotation>
+			<xs:documentation>this group is used to create hierarchical and non hierarchical links within a given xml file</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ID" type="xs:ID" use="optional">
+			<xs:annotation>
+				<xs:documentation>A unique ID within an XML file. That ID can exist outside the xml file or not.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Ref" type="xs:IDREF" use="optional">
+			<xs:annotation>
+				<xs:documentation>A reference to a valid ID within an XML file. External links are not supported.
+Usually the referenced object is of the same type or the type is obvious within the context.
+If several references are required, other attributed with Ref suffix will be present.
+xxxcould investigate xLinks</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Parent" type="xs:IDREF" use="optional">
+			<xs:annotation>
+				<xs:documentation>A reference to a parent object in case of hierarchical trees. This is used to create complex tree like hierarchies</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="LocationQualifierGroup">
+		<xs:attribute name="Where" type="LocationQualifierType" use="optional"/>
+		<xs:attribute name="Is" type="LocationNatureCodeType" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="MatchGroup">
+		<xs:annotation>
+			<xs:documentation>To express whether data matches request or not.
+
+match can only be present if request must not be exact.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Exclude" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>==>In a request : 
+	
+true : 	The associated data should be excluded from the response (could be dates, destinations, hotels, room types, ...)
+	
+false : 	the associated data should be used to create the response.
+	
+omitted: 	false
+
+==>In a response : 
+	
+true : 	The associated information corresponds to data that should not be used (flight number restrictions, black out dates, ...)
+	
+false : 	The associated data can be used.	
+	
+omitted : 	false</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Match" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>==>In a request : 
+	
+true : 		response will have to match input parameters exactly. Otherwise it should not be present.
+	
+false : 		response does not have to match input parameters. They are only indications. They can however be complemented by limits.
+	
+not present : 	Accuracy is left at the disposal of the hosts.
+
+==>
+
+In a response :
+	
+true : 		response matches input parameters exactly.
+	
+false : 		response does not match input parameters. 
+Not present :	 no information is provided by host</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Preferred" type="xs:boolean" use="optional" default="false">
+			<xs:annotation>
+				<xs:documentation>==>In a request : 
+true : 	the component is the request has the preference of the requester
+false: 	the component is the request has not the preference of the requester
+Me.Preferred has no meaning if Me.Exclude=true</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="MinMaxGroup">
+		<xs:attribute name="Min" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Minimum number of  units associated with the quantity</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Max" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Maximum number of units .
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Extremity" type="ExtremityCodeType" use="optional" default="Both">
+			<xs:annotation>
+				<xs:documentation>None : 	]Min,Max[
+Left :	]Min,Max]
+Right :	[Min,Max[
+Both:	[Min,Max]
+Default or omitted = Both
+xxxcould be in a simple type ExtremityType</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="NamesGroup">
+		<xs:annotation>
+			<xs:documentation>Code and Name
+Code is not actually part of the group because of validation lists using Single types.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Name" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="PositionGroup">
+		<xs:annotation>
+			<xs:documentation>Used to group and position within a list</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Group" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>This is non validated free text.
+==>Composite Data : 
+Used in conjunction with Indexes to create composite Ids.
+==>Naming groups of data :
+Used to name groups of individual data such as to group the differnt memebers of a family, different sub-trips within a trip,...
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Index" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>==>Composite Data : 
+to order the data with the group. In that case, Group should be used to actual define the group, except if all the items are used to define the  group.
+
+
+==>A list of items : 
+Index is used to order them. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="PriceGroup">
+		<xs:attribute name="Percentage" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="PercentageType">
+					<xs:fractionDigits value="2"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Formula" type="xs:string" use="optional"/>
+		<xs:attribute name="XPath" type="xs:string" use="optional"/>
+		<xs:attribute name="Quantity" type="xs:integer" use="optional"/>
+		<xs:attribute name="Value" type="MoneyType" use="optional"/>
+		<xs:attribute name="Currency" type="CurrencyCodeType" use="optional"/>
+		<xs:attribute name="Role" type="PriceRoleType" use="optional"/>
+		<xs:attribute name="Target" type="PriceTargetType" use="optional"/>
+		<xs:attribute name="Type" type="PriceTypeType" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ProductGroup">
+		<xs:attribute name="StandAlone" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="QuantityGroup">
+		<xs:annotation>
+			<xs:documentation>xxxuse in the elements
+Groups all attributes qualifying quantities (values, min, max, ...)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Quantity" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Request: 		the requested quantity
+Response: 	the actual quantity associated with the component 
+This value can be used in complement with the other attributes to provided additional  information (min, max, preference, ...)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Default" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>If specified, this value corresponds to the default/optimum number of units
+(default number of passengers in a car, default occupancy in a room, ...)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="MinMaxGroup"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="SeatGroup">
+		<xs:annotation>
+			<xs:documentation>Cabin, transportation classes and availability (status and quantity)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Cabin" type="CabinCodeType" use="optional" default="Economy">
+			<xs:annotation>
+				<xs:documentation>The cabin class by opposition to the transportation class entered as the Seat Code
+Currently 5 levels :
+Business, BusinessFirst, Economy, EcoFullFare, Frist</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Code" type="ota:AlphaLength1" use="optional">
+			<xs:annotation>
+				<xs:documentation>The actual transportation code</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Deck" use="optional">
+			<xs:annotation>
+				<xs:documentation>Currently either Upper or Lower. Should be upgraded to accomodate decks in cruise, ferries but may not be the case because deck not assocaited with seats.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Lower"/>
+					<xs:enumeration value="Upper"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Facing" use="optional" default="Front">
+			<xs:annotation>
+				<xs:documentation>The direction the seat is facing either Front, Rear or Across
+</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="Across"/>
+					<xs:enumeration value="Front"/>
+					<xs:enumeration value="Rear"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Smoking" type="xs:boolean" use="optional" default="false"/>
+		<xs:attributeGroup ref="StatusGroup"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="StatusGroup">
+		<xs:annotation>
+			<xs:documentation>The Status is represented by a code.
+
+The associated Quantity corresponds to the number of available items. 0 = item not available. The way to process a booking in that case would depend on the status (Request / Waitlist / Closed)</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="QuantityGroup"/>
+		<xs:attribute name="Status" type="StatusCodeType" use="optional">
+			<xs:annotation>
+				<xs:documentation>A = Available
+
+C = Confirm / Confirmed
+
+N = Not applicable / no action
+
+O = Option
+R = Request
+
+U = Unable to confirm
+
+W = Waitlist
+
+X = Closed
+
+If there is a quantity, Status can be omitted.
+
+	If Quantity is positive Status = A
+	
+If Quantity is negative or null Status = X</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="TransportationRoleGroup">
+		<xs:annotation>
+			<xs:documentation>To qualify the role of the transportation, such as Feeder Outbound</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Direction" type="DirectionType" use="optional"/>
+		<xs:attribute name="Role" type="TransportationRoleType" use="optional"/>
+	</xs:attributeGroup>
+	<xs:annotation>
+		<xs:documentation>-------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="ActionPurposeCodeType">
+		<xs:annotation>
+			<xs:documentation>Create (a customer, a booking, ...)
+Delete (a booking, a product, a traveller, ...)
+Get (retrieve information on a specific record)
+Replace (Something with Something (a Segment by another, a Telephone with another))
+Update (something)
+The difference between Replace and Update is that for Update element to update is not given</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Create"/>
+			<xs:enumeration value="Delete"/>
+			<xs:enumeration value="Exit"/>
+			<xs:enumeration value="Get"/>
+			<xs:enumeration value="Replace"/>
+			<xs:enumeration value="Update"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActionCodeType">
+		<xs:annotation>
+			<xs:documentation>Alternate, GetAvailability,GetQuotedAvailability, Describe, List, Manage, Quote</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="AddOn"/>
+			<xs:enumeration value="Alternate"/>
+			<xs:enumeration value="Availability"/>
+			<xs:enumeration value="Booking"/>
+			<xs:enumeration value="Description"/>
+			<xs:enumeration value="QuotedAvailability"/>
+			<xs:enumeration value="List"/>
+			<xs:enumeration value="Quote"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActionScopeItemType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Booking"/>
+			<xs:enumeration value="Product"/>
+			<xs:enumeration value="Segment"/>
+			<xs:enumeration value="Trip"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActionScopeType">
+		<xs:annotation>
+			<xs:documentation>Either a code for a scope or a reference to an existing entity</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="ActionScopeItemType xs:IDREF"/>
+	</xs:simpleType>
+	<xs:simpleType name="AirCategoryCodeType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Charter"/>
+			<xs:enumeration value="Coach"/>
+			<xs:enumeration value="Ferry"/>
+			<xs:enumeration value="Rail"/>
+			<xs:enumeration value="Scheduled"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaUpper2">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaUpper2To3">
+		<xs:annotation>
+			<xs:documentation>AF, ZS, ...</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{2,3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaUpper3">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StatusCodeType">
+		<xs:annotation>
+			<xs:documentation>A = Available
+C = Confirm / Confirmed
+N = Not applicable / no action
+O = Option
+R = Request
+U = Unable to confirm
+W = Waitlist
+X = Closed</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="O"/>
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="W"/>
+			<xs:enumeration value="X"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StatusTransactionCodeType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="FAIL"/>
+			<xs:enumeration value="SUCCESS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BedCodeType">
+		<xs:annotation>
+			<xs:documentation>Cot,Double, ExtraBed, QueenSize, KingSize, Single</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Cot"/>
+			<xs:enumeration value="Double"/>
+			<xs:enumeration value="ExtraBed"/>
+			<xs:enumeration value="KingSize"/>
+			<xs:enumeration value="QueenSize"/>
+			<xs:enumeration value="Single"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CabinCodeType">
+		<xs:annotation>
+			<xs:documentation>Business
+BusinessFirst
+Economy (with restriction)
+EcoFullFare
+First
+
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Business"/>
+			<xs:enumeration value="BusinessFirst"/>
+			<xs:enumeration value="EcoFullFare"/>
+			<xs:enumeration value="Economy"/>
+			<xs:enumeration value="First"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CalculationModeType">
+		<xs:annotation>
+			<xs:documentation>for each, for every, for all...</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="All"/>
+			<xs:enumeration value="Each"/>
+			<xs:enumeration value="Every"/>
+			<xs:enumeration value="First"/>
+			<xs:enumeration value="Last"/>
+			<xs:enumeration value="The"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CarEquipmentCodeType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="CD"/>
+			<xs:enumeration value="Chain"/>
+			<xs:enumeration value="DVD"/>
+			<xs:enumeration value="Games"/>
+			<xs:enumeration value="Rack"/>
+			<xs:enumeration value="Tape"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodeOwnerGenericType">
+		<xs:annotation>
+			<xs:documentation>XFT, ISO, IATA, Recipient, Requester, ...</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="CETO">
+				<xs:annotation>
+					<xs:documentation>All Codes that have been defined by the CETO.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="IATA"/>
+			<xs:enumeration value="ISO"/>
+			<xs:enumeration value="Recipient"/>
+			<xs:enumeration value="Requester"/>
+			<xs:enumeration value="OTA"/>
+			<xs:enumeration value="XFT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodeOwnerType">
+		<xs:annotation>
+			<xs:documentation> Generic owner and Hosts</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="HostCodeType CodeOwnerGenericType"/>
+	</xs:simpleType>
+	<xs:simpleType name="CombinationType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="And"/>
+			<xs:enumeration value="Or"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContinentCodeType">
+		<xs:annotation>
+			<xs:documentation>The list of Continents Codes : 
+AF = Africa
+AN = Antartica
+AS =  Asia
+EU = Europe 
+NA = North America
+OC = Oceania
+SA = South America</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="AF"/>
+			<xs:enumeration value="AN"/>
+			<xs:enumeration value="AS"/>
+			<xs:enumeration value="EU"/>
+			<xs:enumeration value="NA"/>
+			<xs:enumeration value="OC"/>
+			<xs:enumeration value="SA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CurrencyCodeType">
+		<xs:annotation>
+			<xs:documentation>For currency codes. List is not provided for validation. THis is more open.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="ota:AlphaLength3"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateDurationStartType">
+		<xs:annotation>
+			<xs:documentation>the event from which to count a duration to get a date
+
+
+AfterBooking= 	The date of the booking is the starting point. This is usually used for an option or to receive a payment
+
+
+AfterBegin	= 	The date of the beginning of the associated entity. It could be used to define the number of nights a room is kept in case of no show... In that case if payment if not directly within entity, a reference can be used to clarify the reference.
+
+
+AfterEnd=		The date of the end of the associated entity. It could be used for stops.
+AfterTrip= 		The date of the end of the trip. It is often used to describe the maximum period for complaints.
+
+
+BeforeBegin= 	The date of the beginning of the associated entity. It could be the arrival date at a hotel, the beginning of the trip... This is often used for cancellation policy. In that case if payment if not directly within entity, a reference can be used to clarify the reference.
+
+
+BeforeTrip= 	The date of the beginning of the whole trip. It is usually used to pay the full payment or for cancellation or rebates.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="AfterBooking"/>
+			<xs:enumeration value="AfterBegin"/>
+			<xs:enumeration value="AfterEnd"/>
+			<xs:enumeration value="AfterTrip"/>
+			<xs:enumeration value="BeforeBegin"/>
+			<xs:enumeration value="BeforeTrip"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DateDurationType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">a value that can accomodate a real xs:duration or a positive number. For the number to have a meaning, it is usually associated with an element of type durationType</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:positiveInteger xs:duration"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateTimeType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">xs:DateTime overloading: xft:DateTimeType can contain either a date or time or a DateTime.
+All three conform to the ISO standards.</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="xs:date xs:time xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="DayOfWeekType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"> A three letter abbreviation for the days of the week </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Mon"/>
+			<xs:enumeration value="Tue"/>
+			<xs:enumeration value="Wed"/>
+			<xs:enumeration value="Thu"/>
+			<xs:enumeration value="Fri"/>
+			<xs:enumeration value="Sat"/>
+			<xs:enumeration value="Sun"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DayMomentType">
+		<xs:annotation>
+			<xs:documentation>AM, PM, Morning, Noon, Afternoon, Evening, Night</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="AM"/>
+			<xs:enumeration value="PM"/>
+			<xs:enumeration value="Morning"/>
+			<xs:enumeration value="Noon"/>
+			<xs:enumeration value="Afternoon"/>
+			<xs:enumeration value="Evening"/>
+			<xs:enumeration value="Night"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DirectionType">
+		<xs:annotation>
+			<xs:documentation>Transportation direction : either Outbound, Inbound or Circular, OneWay or Return.
+OneWay and Return are not used on the same level in the xml :
+A return flight could have sub levels describing the outbound and inbound legs for instance.
+If all segments are described on the same level, IDs and reference would allow the tree to be generated.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Circular"/>
+			<xs:enumeration value="Inbound"/>
+			<xs:enumeration value="OneWay"/>
+			<xs:enumeration value="Outbound"/>
+			<xs:enumeration value="Return"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DurationUnitType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Day"/>
+			<xs:enumeration value="Hour"/>
+			<xs:enumeration value="Minute"/>
+			<xs:enumeration value="Night"/>
+			<xs:enumeration value="Week"/>
+			<xs:enumeration value="Weekend"/>
+			<xs:enumeration value="Month"/>
+			<xs:enumeration value="Unit"/>
+			<xs:enumeration value="Year"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExtremityCodeType">
+		<xs:annotation>
+			<xs:documentation>None : 	]Min,Max[
+Left :	]Min,Max]
+Right :	[Min,Max[
+Both:	[Min,Max]
+Default or omitted = Both
+xxxcould be in a simple type ExtremityType</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Both"/>
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="Right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FeaturePriceType">
+		<xs:annotation>
+			<xs:documentation>Chargeable = Price is not included in the global/component price
+Free = no charge is induced by the feature
+Included = price already included in the global/component price</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Chargeable"/>
+			<xs:enumeration value="Free"/>
+			<xs:enumeration value="Included"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GenericUnitType">
+		<xs:annotation>
+			<xs:documentation>Stay = for the duration of the stay or to count stays (for a loaylty program for instance)
+Visit = for an excursion for instance
+Unit = to count rooms, cars, ...
+Party = to count groups of persons, but not just individuals
+Person = all types of persons, not taking into account ages, or types (Youth, ....)
+Unknown = in case a unit is mandatory, but not known.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Stay"/>
+			<xs:enumeration value="Visit"/>
+			<xs:enumeration value="Unit"/>
+			<xs:enumeration value="Party"/>
+			<xs:enumeration value="Person"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HostCodeType">
+		<xs:annotation>
+			<xs:documentation>The list of XFT host codes
+If XFT is used, the the local database / cache is used.
+xxxexpand on cache</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="KUONI"/>
+			<xs:enumeration value="MARMARA"/>
+			<xs:enumeration value="XFT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocationNatureCodeType">
+		<xs:annotation>
+			<xs:documentation>XFT Codes
+Just for decription. This does not allow validation of objects. Use instead specific objects, when defined (such as for airports or cities)
+xxxList to be amended
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Area"/>
+			<xs:enumeration value="Airport"/>
+			<xs:enumeration value="Beach"/>
+			<xs:enumeration value="CarStation"/>
+			<xs:enumeration value="City"/>
+			<xs:enumeration value="Country"/>
+			<xs:enumeration value="Harbour"/>
+			<xs:enumeration value="Hotel"/>
+			<xs:enumeration value="Monument"/>
+			<xs:enumeration value="Museum"/>
+			<xs:enumeration value="Region"/>
+			<xs:enumeration value="Terminal"/>
+			<xs:enumeration value="Theater"/>
+			<xs:enumeration value="TrainStation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocationQualifierType">
+		<xs:annotation>
+			<xs:documentation>To define how a location is linked to its parent with more details than the one provided by the collection standard information :
+
+In	: the cities in a country, the theaters in a district, ...
+Borders	: the countries bordering a country, the hotels bordering a river, ...
+Has	: the museums in a given city, ...
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="In"/>
+			<xs:enumeration value="Borders"/>
+			<xs:enumeration value="Has"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MoneyType">
+		<xs:annotation>
+			<xs:documentation>A decimal with two digits, positive or negative</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MonthNamesType">
+		<xs:annotation>
+			<xs:documentation>List of standard abbréviations for months</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Jan"/>
+			<xs:enumeration value="Feb"/>
+			<xs:enumeration value="Mar"/>
+			<xs:enumeration value="Apr"/>
+			<xs:enumeration value="May"/>
+			<xs:enumeration value="Jun"/>
+			<xs:enumeration value="Jul"/>
+			<xs:enumeration value="Aug"/>
+			<xs:enumeration value="Sep"/>
+			<xs:enumeration value="Oct"/>
+			<xs:enumeration value="Nov"/>
+			<xs:enumeration value="Dec"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MonthNumbersType">
+		<xs:annotation>
+			<xs:documentation>List of standard month numbers, represented as strings. As a result, 1 and 01 (for instance) are valid</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="12"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MonthType">
+		<xs:annotation>
+			<xs:documentation>A month either using a number or a name.</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="MonthNumbersType MonthNamesType"/>
+	</xs:simpleType>
+	<xs:simpleType name="MealCodeType">
+		<xs:annotation>
+			<xs:documentation>Meal codes are used in transportations by opposition to MealPlans</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Breakfast"/>
+			<xs:enumeration value="Brunch"/>
+			<xs:enumeration value="ColdMeal"/>
+			<xs:enumeration value="ContinentalBreakfast"/>
+			<xs:enumeration value="Dinner"/>
+			<xs:enumeration value="FoodForPurchase"/>
+			<xs:enumeration value="HotMeal"/>
+			<xs:enumeration value="Lunch"/>
+			<xs:enumeration value="Meal"/>
+			<xs:enumeration value="NoFood"/>
+			<xs:enumeration value="Refreshment"/>
+			<xs:enumeration value="Snack"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MealPlanCodeType">
+		<xs:annotation>
+			<xs:documentation>The xft Meal Plan codes :
+AL	= ALL INCLUSIVE
+AP 	= AMERICAN PLAN
+BK 	= BREAKFAST INCLUDED
+BP 	= BERMUDA PLAN
+CB 	= CARIBBEAN PLAN
+CP 	= CONTINENTAL PLAN
+EP 	= EUROPEAN PLAN
+FB 	= FULL BOARD
+FP 	= FAMILY PLAN
+HB 	= HALF BOARD
+MA 	= MODIFIED AMERICAN PLAN 
+</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="AL"/>
+			<xs:enumeration value="AP"/>
+			<xs:enumeration value="BK"/>
+			<xs:enumeration value="CB"/>
+			<xs:enumeration value="CP"/>
+			<xs:enumeration value="EP"/>
+			<xs:enumeration value="FB"/>
+			<xs:enumeration value="FP"/>
+			<xs:enumeration value="HB"/>
+			<xs:enumeration value="MA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MealPlanRefCodeType">
+		<xs:annotation>
+			<xs:documentation>Brochure 	: description is on the brochure
+OnSite	: description will be found on site only and may differ according to time of the year. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Brochure"/>
+			<xs:enumeration value="OnSite"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MediaRoleCodeType">
+		<xs:annotation>
+			<xs:documentation>xxxLookup for correct roles</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="IMG"/>
+			<xs:enumeration value="ICON"/>
+			<xs:enumeration value="FILM"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PaymentRoleType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Deposit"/>
+			<xs:enumeration value="Due"/>
+			<xs:enumeration value="Guarantee"/>
+			<xs:enumeration value="Paid"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PercentageType">
+		<xs:annotation>
+			<xs:documentation>limit range of decimal between -100 and +100 with 2 decimal places</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-100.00"/>
+			<xs:maxInclusive value="100.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PersonType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Adult"/>
+			<xs:enumeration value="Child"/>
+			<xs:enumeration value="Infant"/>
+			<xs:enumeration value="Person"/>
+			<xs:enumeration value="Senior"/>
+			<xs:enumeration value="Youth"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceRoleType">
+		<xs:annotation>
+			<xs:documentation>All_Included 	: The price includes everything xxxmove to meal plan?
+Base 		: The price for the base period. Additional weeks / days would be described as supplements.
+Detail 		: Can be used to detail prices contained in another price. Detail prices should not be added to a total.
+Information	: Information price is provided for information only, not for cotation. It is the case to describe prices for different types of persons, add ons, ...
+Max		: Maximum price. Used mainly in requests in a range or to give an upper limit for prices calculated via a percentage.
+Min		: Minimum price. Used mainly in requests in a range or to give a lower limit for prices calculated via a percentage.
+Partial		: The give price must be complemented by other prices to become valid.
+Supplement	: To provide additional prices on top of a partial or base price.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="All_Included"/>
+			<xs:enumeration value="Base"/>
+			<xs:enumeration value="Detail"/>
+			<xs:enumeration value="Information"/>
+			<xs:enumeration value="Max"/>
+			<xs:enumeration value="Min"/>
+			<xs:enumeration value="Partial"/>
+			<xs:enumeration value="Rebate"/>
+			<xs:enumeration value="Supplement"/>
+			<xs:enumeration value="Total"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceTargetType">
+		<xs:annotation>
+			<xs:documentation>Total 	: Price is a total
+Unit 	: Price is per unit and a quantity must be used to get a total price</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Total"/>
+			<xs:enumeration value="Unit"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriceTypeType">
+		<xs:annotation>
+			<xs:documentation>Net : / Gross : ...xxxedfine </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Gross"/>
+			<xs:enumeration value="Net"/>
+			<xs:enumeration value="Retail"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoomCodeType">
+		<xs:annotation>
+			<xs:documentation>Single,Twin,Double,Triple,Quad</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Single"/>
+			<xs:enumeration value="Twin"/>
+			<xs:enumeration value="Double"/>
+			<xs:enumeration value="Triple"/>
+			<xs:enumeration value="Quad"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoomLocationCodeType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="NoListYet"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoomViewCodeType">
+		<xs:annotation>
+			<xs:documentation>xxxAppend</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Lake"/>
+			<xs:enumeration value="Sea"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RuleTopicType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Age"/>
+			<xs:enumeration value="Quantity"/>
+			<xs:enumeration value="Stay"/>
+			<xs:enumeration value="Width"/>
+			<xs:enumeration value="Weight"/>
+			<xs:enumeration value="Height"/>
+			<xs:enumeration value="Length"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SeatPositionType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Aisle"/>
+			<xs:enumeration value="Window"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SeverityType">
+		<xs:annotation>
+			<xs:documentation>Information : Host returns text information that may be of importance or just to display (promo text, information about a fair, ... Information is always associated to success
+
+Warning : Host returns data but there may be restrictions or not exactly corresponding to the request (alternative city, alternative date, no data found, ...)
+
+Error : Host (final or intermediate) could not process the data for a technical or functional reason (line down, invalid dates, cities, product codes, ...) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Error"/>
+			<xs:enumeration value="Information"/>
+			<xs:enumeration value="Success"/>
+			<xs:enumeration value="Warning"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SignOnRoleType">
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Accounting"/>
+			<xs:enumeration value="CallCenter"/>
+			<xs:enumeration value="Consultant"/>
+			<xs:enumeration value="Helpdesk"/>
+			<xs:enumeration value="Supervisor"/>
+			<xs:enumeration value="Ticketing"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string3">
+		<xs:annotation>
+			<xs:documentation>
+				<overview>for all types of 3 digit codes</overview>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="string16">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string16">
+		<xs:restriction base="string32">
+			<xs:maxLength value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string32">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="32"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string64">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="64"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TextRoleType">
+		<xs:annotation>
+			<xs:documentation>The role of text elements : 
+Body 	=
+Title 	= 
+Legend 	= ...</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Body"/>
+			<xs:enumeration value="Introduction"/>
+			<xs:enumeration value="Note"/>
+			<xs:enumeration value="Title"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TransportationGuaranteeCodeType">
+		<xs:annotation>
+			<xs:documentation>Transportation can support several levels of Guarantee :
+	C, G, S</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="G"/>
+			<xs:enumeration value="S"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TransportationRoleType">
+		<xs:annotation>
+			<xs:documentation>Transportation can be 
+	Complete	= The segment covers the whole trip (either a unique segment or the different bits are not relevant or described
+	Feeder	= A feeder only
+	Longhaul	= The longhaul only
+	Trailer	= The trailer only
+	Transfer	= A transfer after or before a transportation segment
+	Unknown	= Unknown or not relevant
+
+This attribute can be used in conjunction with the DirectionType</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:NMTOKEN">
+			<xs:enumeration value="Complete"/>
+			<xs:enumeration value="Feeder"/>
+			<xs:enumeration value="Longhaul"/>
+			<xs:enumeration value="Trailer"/>
+			<xs:enumeration value="Transfer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UnitType">
+		<xs:annotation>
+			<xs:documentation>All the types</xs:documentation>
+		</xs:annotation>
+		<xs:union memberTypes="GenericUnitType PersonType DurationUnitType"/>
+	</xs:simpleType>
+</xs:schema>
