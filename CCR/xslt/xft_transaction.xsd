@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Faveur Working Late (Advantest Europe RD) -->
+<!-- edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by David Faveur (Galileo International) -->
+<xs:schema targetNamespace="http://www.av2s.com/xft" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.av2s.com/xft" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.av2s.com/xft" schemaLocation="xft_ComplexTypes.xsd"/>
+	<xs:complexType name="TransactionType" abstract="true">
+		<xs:all>
+			<xs:element name="Control">
+				<xs:annotation>
+					<xs:documentation>Transaction control : who sends the transaction, where, .... Who must get the response</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice>
+							<xs:element name="Requester" type="RequesterType"/>
+							<xs:element name="Session"/>
+						</xs:choice>
+						<xs:element name="ReplyTo" type="EntityType" minOccurs="0"/>
+						<xs:element name="CCs" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="CC" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="Hosts" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Actions" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>What should be done (Availability, Quote, Book, Add, Delete, ...) and the result (status, lines)</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:choice maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>The list of actions or conditions to apply</xs:documentation>
+						</xs:annotation>
+						<xs:element name="Action" type="ActionType"/>
+						<xs:element name="If" type="IfType"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Trip" type="TripType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The actual trip under process.
+All the data contained in that part correspond to non booked data. Booked data would be present in the Bookings section</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Booking" type="BookingType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Either information on how the booking should be made (one record per passenger or all in one,...) existing booking to complement or booking data returned after a booking action.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="Travellers" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>By Default, Combination = And</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="Version" type="xs:string" use="required"/>
+		<xs:attribute name="Topic" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>xxxRemove</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Target" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Prod"/>
+					<xs:enumeration value="Test"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="TimeStamp" type="xs:dateTime" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="TransactionRequestType">
+		<xs:complexContent>
+			<xs:extension base="TransactionType">
+				<xs:sequence>
+					<xs:element name="ResponseStyle" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Sort" type="CodeType" minOccurs="0" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>xxxDescribe more precisely such as codes for the order (Segment, Price, dates, Direct, ...)</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="Currency" minOccurs="0" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>This corresponds to a whish. The host may not be in a position tp return multiple currencies or even the requested one.</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="Index" type="xs:positiveInteger" use="optional"/>
+										<xs:attribute name="Code" type="CurrencyCodeType" use="required"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="Language" minOccurs="0" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>This corresponds to a whish. The host may not be in a position tp return multiple langagues or even the requested one.</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="Index" type="xs:positiveInteger" use="optional"/>
+										<xs:attribute name="Code" type="xs:language" use="required"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="IncludeRequest" type="xs:boolean" use="optional" default="false">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">True : The request is copied in the response. This can be usefull if the response is not directed to the caller or is copied to other destiantions.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+							<xs:attribute name="Version" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">The Version for the Response if different from the current default one.</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TransactionResponseType">
+		<xs:complexContent>
+			<xs:extension base="TransactionType">
+				<xs:attribute name="Sucess" type="xs:boolean" use="required">
+					<xs:annotation>
+						<xs:documentation>A transaction is a success does not necessarily mean all actions have been a success.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Test">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Paragraph" minOccurs="0"/>
+				<xs:element name="DateQualified" type="DateTimeQualifiedType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="Vendor" type="VendorType" minOccurs="0"/>
+				<xs:element name="Segment" type="SegmentType" minOccurs="0"/>
+				<xs:element name="Transaction" type="TransactionType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Transaction" type="TransactionType"/>
+</xs:schema>
