@@ -13,30 +13,31 @@
            			<Trip>
             			<Product>
             				<xsl:attribute name="Code"><xsl:value-of select="t:Transaction/t:Trip/t:Segment/t:Code/@Value"/></xsl:attribute>
+            			</Product>
             				<!-- process each segements -->
-            				<xsl:for-each select="t:Transaction/t:Trip/t:Segment/t:Segments/t:Segments">
+            				<xsl:for-each select="t:Transaction/t:Trip/t:Segment/t:Segments/t:Segments/t:Segment">
             				    <Departure>
 				                    <Date>
-				                    	<xsl:attribute name="Value"><xsl:value-of select="t:Segment/t:Begin/@Value"/></xsl:attribute>
+				                    	<xsl:attribute name="Value"><xsl:value-of select="t:Begin/@Value"/></xsl:attribute>
 				                    </Date>	
 				                    <City>
-				                    	<xsl:attribute name="Code"><xsl:value-of select="t:Segment/t:City/@Code"/></xsl:attribute>
+				                    	<xsl:attribute name="Code"><xsl:value-of select="t:City/@Code"/></xsl:attribute>
 				                    </City>
 				                </Departure>
 				                <Duration Value="11" Unit="Night">
-				                	<xsl:attribute name="Value"><xsl:value-of select="t:Segment/t:Duration/@Value"/></xsl:attribute>
-				                	<xsl:attribute name="Unit"><xsl:value-of select="t:Segment/t:Duration/@Unit"/></xsl:attribute>
+				                	<xsl:attribute name="Value"><xsl:value-of select="t:Duration/@Value"/></xsl:attribute>
+				                	<xsl:attribute name="Unit"><xsl:value-of select="t:Duration/@Unit"/></xsl:attribute>
 				                </Duration>
 				                <Passangers>
 				                    <Passanger type="Adult" Quantity="1"/>                    
 				                </Passangers>
 				               
 				                <Rooms>
-				                	<xsl:copy-of select="t:Segment/t:At/t:Room"/>
+				                	<xsl:copy-of select="t:At/t:Room"/>
 				                </Rooms>
-				                <MealPlan><xsl:value-of select="t:Segment/t:MealPlan/@Code"/></MealPlan>
+				                <MealPlan><xsl:value-of select="t:MealPlan/@Code"/></MealPlan>
 				             </xsl:for-each>
-            			</Product>
+            			
            			</Trip>
 		            <Prices Total="299660">
 		                <Price Quantity="1" UnitAmount="5525" TotalAmount="552500"><![CDATA[CROISIERE VISTAMAR   11NTS]]>
