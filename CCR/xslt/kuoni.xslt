@@ -39,11 +39,19 @@
 				             </xsl:for-each>
             			
            			</Trip>
-		            <Prices Total="299660">
-		                <Price Quantity="1" UnitAmount="5525" TotalAmount="552500"><![CDATA[CROISIERE VISTAMAR   11NTS]]>
-		                </Price>
-		                <Price Quantity="1" UnitAmount="1100" TotalAmount="1100"><![CDATA[SURCHARGE CARBURANT                       (C)]]></Price>
-		                <Price Quantity="1" UnitAmount="6500" TotalAmount="6500"><![CDATA[TAXES SURCHARGES AERIENNES ET TAXE SOLIDARITE]]></Price>
+		            <Prices>
+		            	<xsl:attribute name="Total" select="t:Transaction/t:Trip/t:Price/@Value"/>
+		            	<xsl:for-each select="t:Transaction/t:Trip/t:Price/t:Prices/t:Price">
+		            		<Price>
+		            			<xsl:attribute name="Quantity"><xsl:value-of select="@Quantity"/></xsl:attribute>
+		            			<xsl:attribute name="UnitAmount"><xsl:value-of select="t:Amounts/t:Amount[@Target='Unit']/@Value"/></xsl:attribute>
+		            			<xsl:attribute name="TotalAmount"><xsl:value-of select="t:Amounts/t:Amount[@Target='Total']/@Value"/></xsl:attribute>
+		            			<xsl:variable name="content">
+		            				<xsl:value-of select="."/>
+		            			</xsl:variable>
+		            			<xsl:value-of select="normalize-space($content)"/>
+		            		</Price>
+		            	</xsl:for-each>
 		 			</Prices>           			
            		</Offer>
            	</Offers>	
