@@ -1,0 +1,7 @@
+
+1. Deploy
+2. Go to http://jease.cloudfoundry.com/cms/setup to create user id/password.
+3. Login to http://jease.cloudfoundry.com/cms
+4. Create any asset with an id, for example index
+5. Access it at http://jease.cloudfoundry.com/index
+
