@@ -166,8 +166,7 @@ public class ProxyHandlerProxy implements ContentHandler {
      */
     public void startElement(String namespaceURI, String localName,
                         String qName, Attributes atts) throws SAXException {
-    	System.out.println("[" + namespaceURI + "]["+ localName + "][" + qName + "]["+ atts);
-        target.startElement(namespaceURI, localName, qName, atts);
+         target.startElement(namespaceURI, localName, qName, atts);
     }
 
 
