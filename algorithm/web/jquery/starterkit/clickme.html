@@ -1,0 +1,21 @@
+<html>                                                                  
+ <head>                                                                  
+ <script type="text/javascript" src="../jquery-1.6.2.js"></script>          
+ <script type="text/javascript">   
+ 
+ 	var createFunction = function(i) {
+	    return function() { alert(i); };
+	};
+	
+	$(document).ready(function() {
+		for (var i=0; i<5; i++) {
+		    $('<p>click me</p>').appendTo('body').click(createFunction(i));
+		}   
+	});
+ </script>                                                               
+ </head>                                                                 
+ <body>                                                                  
+	<!-- http://jqfundamentals.com/#chapter-2 -->
+                               
+ </body>                                                                 
+ </html>
