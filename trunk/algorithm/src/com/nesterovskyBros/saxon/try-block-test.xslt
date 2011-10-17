@@ -4,6 +4,8 @@
 
   $Id: tuple-test.xslt 3341 2008-06-08 08:12:58Z vladimirn $
   
+  http://www.saxonica.com/documentation9.1/extensibility/functions/staticmethods.html
+  
   To Run:
 
 	Must Set additional classpath to refer to the project in Run Configuration
