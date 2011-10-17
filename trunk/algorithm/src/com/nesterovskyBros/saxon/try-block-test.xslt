@@ -3,6 +3,15 @@
   This stylesheet how to use t:try-block template.
 
   $Id: tuple-test.xslt 3341 2008-06-08 08:12:58Z vladimirn $
+  
+  To Run:
+
+	Must Set additional classpath to refer to the project in Run Configuration
+	Optionally, set the two parameters below to see debug log
+	  
+  14:11:02,684 INFO  [main] JAXPSAXProcessorInvoker  - Setting attribute 'http://saxon.sf.net/feature/trace-external-functions' to value true
+  14:11:02,684 INFO  [main] JAXPSAXProcessorInvoker  - Setting attribute 'http://saxon.sf.net/feature/allow-external-functions' to value true
+
  -->
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
