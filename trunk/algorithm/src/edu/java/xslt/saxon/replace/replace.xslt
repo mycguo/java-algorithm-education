@@ -3,7 +3,14 @@
  <xsl:output omit-xml-declaration="yes" indent="yes"/>
  <xsl:strip-space elements="*"/>
 
- <my:params xml:space="preserve">
+
+
+
+ <xsl:template match="text()" name="multiReplace">
+  <xsl:param name="pText" select="."/>
+
+  
+   <xsl:param name="params">
   <pattern>
    <old>&#xA;</old>
    <new><br /></new>
@@ -20,15 +27,13 @@
    <old>brown</old>
    <new>white</new>
   </pattern>
- </my:params>
-
+ </xsl:param>
+  <xsl:param name="pPatterns" select="$params"/>
  <xsl:variable name="vPats"
-      select="document('')/*/my:params/*"/>
-
- <xsl:template match="text()" name="multiReplace">
-  <xsl:param name="pText" select="."/>
-  <xsl:param name="pPatterns" select="$vPats"/>
-
+      select="document('')/*[@name='params']"/>
+  
+	<xsl:message>current <xsl:copy-of select="."/> pats <xsl:copy-of select="$params"/></xsl:message>
+	
   <xsl:if test=
    "string-length($pText) >0">
 
