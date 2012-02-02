@@ -1,0 +1,208 @@
+Account Number	Account Name	Header	Balance	Account Type	Last Cheque Number	Tax Code	Inactive Account	AccountantLink Code	BSB Number	B/Account Number	B/Account Name	Company Trading Name	Create Bank Files	Bank Code	Direct Entry User ID	Self Balancing Transaction	Description	Classification for Statement of Cash Flow	Subtotal header Accounts
+10000	Assets	H	$118,980.18	Asset			N												Y
+11000	Current Assets	H	$47,202.47	Asset			N												Y
+11100	Cash On Hand	H	$161.80	Asset			N												Y
+11110	ANZ One - 65864		$0.00	Bank	239	N-T	Y						N			N			
+11115	ANZ Saver - 65725		$0.00	Bank	0	N-T	Y						N			N			
+11117	BENDIGO Chq Acct 6067		$8,728.42	Bank	1058	N-T	N		633-000	12580607	LEATHER FAMILY TRUST	GREENSCAPES	Y	BRN	343	N			
+11118	Leathers Family Trust - CLOSED		$0.00	Bank	140	N-T	Y						N			N			
+11119	Bendigo GST- 0820		$973.85	Bank	4	N-T	N						N			N			
+11130	Personal Funds Used		($10,026.91)	Bank	59	N-T	N						N			N			
+11140	Petty Cash		$486.44	Bank	8	N-T	N						N			N			
+11150	Contra Clearing Account		$0.00	Bank	0	N-T	N						N			N			
+11180	Undeposited Funds		$0.00	Bank	0	N-T	Y						N			N			
+11190	Electronic Clearing Account		$0.00	Bank	527	N-T	Y						N			N			
+11200	Trade Debtors		$47,040.67	Accounts Receivable		N-T	N											O	
+11950	Withholding Credits	H	$0.00	Asset			N												Y
+11960	Voluntary Withholding Credits		$0.00	Other Asset		N-T	N											O	
+11970	ABN Withholding Credits		$0.00	Other Asset		N-T	N											O	
+12000	Other Assets	H	$2,418.00	Asset			N												Y
+12010	Bond on unit		$1,980.00	Other Asset		N-T	N											O	
+12100	Deposits Paid		$0.00	Other Asset		N-T	Y											O	
+12150	Stock on Hand - at cost		$438.00	Other Asset		N-T	N											O	
+13000	Fixed Assets	H	$69,359.71	Asset			N												Y
+13100	Buildings	H	$12,135.00	Asset			N												Y
+13110	Buildings		$12,135.00	Other Asset		N-T	N											O	
+13120	Buildings Accum Dep		$0.00	Other Asset		N-T	N											O	
+13200	Nursery Improvements	H	$5,029.76	Asset			N												Y
+13210	Nursery Improve at Cost		$5,029.76	Other Asset		N-T	N											O	
+13220	Equipment Improve Accum Dep		$0.00	Other Asset		N-T	N											O	
+13300	Vehicles	H	$29,782.09	Asset			N												Y
+13310	Vehicles at Cost		$29,782.09	Other Asset		N-T	N											O	
+13320	Vehicles Accum Dep		$0.00	Other Asset		N-T	N											O	
+13400	Plant & Equipment	H	$22,412.86	Asset			N												Y
+13410	Plant & Euipment at cost		$22,412.86	Other Asset		N-T	N											O	
+13420	Plant & Equip Accum Dep		$0.00	Other Asset		N-T	N											O	
+14100	Borrowing Costs		$0.00	Other Asset		N-T	N											O	
+20000	Liabilities	H	$626,556.27	Liability			N												Y
+21000	Current Liabilities	H	$150,840.43	Liability			N												Y
+21030	ANZ Business Overdraft - 65493		$51,885.50	Credit Card	0	N-T	N						N			N		O	
+21040	Citibank Mastercard		$5,825.78	Credit Card	0	N-T	N						N			N		O	
+21050	Macquarie Loan 60194373Leather		$2,500.00	Credit Card	2	N-T	Y						N			N		O	
+21055	Macquarie Loan 72701219		$0.00	Credit Card	1	N-T	Y						N			N	Business and Home Loan combined by mistake.	O	
+21056	ANZ Visa - 8925		($11,095.40)	Credit Card	0	N-T	N						N			N		O	
+21060	L Leathers Loan		$6,067.50	Other Liability		N-T	N											O	
+21065	T Evans Loan		$10,000.00	Other Liability		N-T	N											O	
+21070	Toyota Finance		$9,872.28	Other Liability		N-T	N											O	
+21071	Unepired Interest		($5,647.30)	Other Liability		N-T	N											O	
+21200	Trade Creditors		$44,344.80	Accounts Payable		N-T	N											O	
+21300	GST Liabilities	H	$27,245.10	Liability			N												Y
+21310	GST Collected		$33,729.94	Other Liability		N-T	N											O	
+21330	GST Paid		($16,870.53)	Other Liability		N-T	N											O	
+21335	GST Rounding		($10.81)	Other Liability		N-T	N											O	
+21340	ATO Integrated Client Account		$10,396.50	Credit Card	0	N-T	N						N			N		O	
+21370	Voluntary Withholdings Payable		($594.00)	Other Liability		N-T	N											O	
+21380	ABN Withholdings Payable		($11,685.25)	Other Liability		N-T	N											O	
+21400	Payroll Liabilities	H	$21,549.61	Liability			N												Y
+21410	Payroll Accruals Payable		($9,930.40)	Other Liability		N-T	N											O	
+21420	PAYG Withholding Payable		$23,731.00	Other Liability		N-T	N											O	
+21430	Superannuation payable		$7,749.01	Other Liability		N-T	N											O	
+21600	Customer Deposits		$571.81	Other Liability		N-T	N											O	
+22000	Long-Term Liabilities	H	$485,525.84	Liability			N												Y
+22100	WBC Loan 012-0157143-000		$5,760.84	Other Liability		N-T	N										Loan for purchase of 4WD tractor	O	
+22200	ANZ Business Loan - 65864		$349,700.00	Credit Card	0	N-T	N						N			N		O	
+22300	ANZ Business Loan-94643		$130,065.00	Credit Card	0	N-T	N						N			N		O	
+22400	Landscape Info Guide		$0.00	Other Liability		N-T	N											O	
+24000	Suspense		$0.00	Other Liability		N-T	Y											O	
+25000	GE Money		($9,810.00)	Credit Card	0	N-T	N						N			N		O	
+30000	Equity	H	($507,576.09)	Equity			N												Y
+31000	Owner's Equity	H	($383,645.64)	Equity			N												Y
+31100	Owner's Capital		($14,844.75)	Equity		N-T	N											F	
+31200	Drawings - R&L Leathers		($368,800.89)	Equity		N-T	N											F	
+32000	Beneficiary Accounts	H	($141,636.88)	Equity			N												N
+32100	Richard Leathers	H	($89,339.63)	Equity			N												N
+32110	Drawings - Richard		($98,480.09)	Equity		N-T	N											F	
+32120	Capital - Richard		$9,140.46	Equity		N-T	N											F	
+32200	Lisa Leathers	H	($58,297.25)	Equity			N												N
+32210	Drawings - Lisa		($67,437.71)	Equity		N-T	N											F	
+32220	Capital - Lisa		$9,140.46	Equity		N-T	N											F	
+32300	Harry Leathers	H	$3,000.00	Equity			N												N
+32320	Capital - Harry Leathers		$3,000.00	Equity		N-T	N											F	
+32400	Kayte Leathers	H	$3,000.00	Equity			N												N
+32420	Capital - Kayte Leathers		$3,000.00	Equity		N-T	N											F	
+37000	TO BE SORTED		$0.00	Equity		N-T	N											F	
+38000	Retained Earnings		$109,619.92	Equity		N-T	N											F	
+39000	Current Year Earnings		$36,827.02	Equity		N-T	N												
+39999	Historical Balancing		($128,740.51)	Equity		N-T	N											F	
+40000	Income	H	$424,908.47	Income			N												Y
+41000	Sales	H	$424,908.47	Income			N												N
+41020	Landscaping		$194,642.92	Income		GST	N												
+41021	turf		$17,990.91	Income		N-T	N												
+41200	Wages Richard - Info Guide		$0.00	Income		N-T	N												
+43100	Soil Sold		$19,191.50	Income		N-T	N												
+43101	mulch sold		$10,264.63	Income		N-T	N												
+43102	Tip Fees		$60.00	Income		N-T	N												
+43200	Plants		$160,850.83	Income		GST	N												
+43201	Nursery sales		$1,257.82	Income		N-T	N												
+43202	CAD Design		$900.00	Income		N-T	N												
+43300	Stone Sold		$2,588.20	Income		N-T	N												
+43500	Other		$7,500.59	Income		N-T	N												
+43503	consulting fee		$8,675.23	Income		N-T	N												
+44000	Freight Fees Collected		$985.84	Income		N-T	N												
+44100	Apprentice Rebate		$0.00	Income		N-T	N												
+50000	Cost of Sales	H	$86,786.15	Cost of Sales			N												Y
+50481	rock		$0.00	Cost of Sales		N-T	N												
+51000	Purchases	H	$84,592.45	Cost of Sales			N												N
+51101	landscape cost		$11,829.75	Cost of Sales		N-T	N												
+51102	Potting mix		$7,152.92	Cost of Sales		GST	N												
+51103	Soil Bought		$13,256.21	Cost of Sales		GST	N												
+51104	Nursery Supplies		$5,767.34	Cost of Sales		GST	N												
+51180	Turf Bought		$9,376.74	Cost of Sales		GST	N												
+51200	Shrubs Bought		$16,531.27	Cost of Sales		GST	N												
+51300	Stone Bought		$2,367.66	Cost of Sales		GST	N												
+51310	Mulch		$1,502.71	Cost of Sales		GST	N												
+51320	Timber		$411.07	Cost of Sales		GST	N												
+51400	Fill Bought		$605.00	Cost of Sales		GST	N												
+51501	Machinery hire		$9,685.73	Cost of Sales		GST	N												
+51502	Bobcat hire		$6,106.05	Cost of Sales		GST	N												
+51503	Subcontractors/Labour Hire		$0.00	Cost of Sales		GST	N												
+51505	Labour Hire		$0.00	Cost of Sales		N-T	N												
+52000	Freight		$1,839.62	Cost of Sales		GST	N												
+53000	Nursery Plants		$354.08	Cost of Sales		GST	N												
+60000	Expenses	H	$285,535.00	Expense			N												Y
+60100	Administration Expenses	H	$84,683.88	Expense			N												Y
+60120	Advertising		$8,612.91	Expense		GST	N												
+60125	Administration		$157.50	Expense		GST	N												
+60140	Accounting Fees		$4,610.06	Expense		GST	N												
+60170	Bad Debts		$1,270.91	Expense		N-T	N												
+60180	Bank fees		$8,408.98	Expense		INP	N												
+60185	Merchant Fees		$533.09	Expense		GST	N												
+60200	Bookkeeping		$7,302.73	Expense		GST	N												
+60220	Business Development		$1,127.04	Expense		GST	N												
+60221	Borrowing Costs		$0.00	Expense		N-T	N												
+60245	Client Gifts		$136.36	Expense		GST	N												
+60246	Cleaning		$0.00	Expense		GST	N												
+60248	Commission		$0.00	Expense		GST	N												
+60250	Computer Expenses		$938.63	Expense		GST	N												
+60260	Donations		$169.65	Expense		N-T	N												
+60280	Dues & Subscriptions		$491.32	Expense		N-T	N												
+60300	Electricity		$2,445.85	Expense		N-T	N												
+60310	Freight		$0.00	Expense		GST	N												
+60315	Gas		$24.00	Expense		GST	N												
+60320	Equipment Rental Expense		$1,787.27	Expense		N-T	N												
+60325	Filing Fees		$277.00	Expense		N-T	N												
+60340	First Aid Supplies		$74.91	Expense		GST	N												
+60345	Gifts - Supplier		$0.00	Expense		GST	N												
+60346	Guard Dogs		$324.97	Expense		N-T	N												
+60360	Insurance		$1,239.35	Expense		N-T	N												
+60380	Interest Expense		$0.00	Expense		N-T	N												
+60400	Internet		$1,620.94	Expense		GST	N												
+60420	Late Fees Paid		$0.00	Expense		N-T	N												
+60432	Legal Fees		$0.00	Expense		GST	N												
+60460	License Fees		$0.00	Expense		N-T	N												
+60462	Legal		$0.00	Expense		N-T	Y												
+60465	Merchant Fees		$124.31	Expense		GST	N												
+60480	Nursery Expenses		$15,536.35	Expense		GST	N												
+60500	Nursery Supplies		$12,181.73	Expense		GST	N												
+60510	Network Meetings		$741.82	Expense		GST	N												
+60520	Office Supplies		$2,599.74	Expense		GST	N												
+60525	Uniforms/protective Clothing		$282.73	Expense		GST	N												
+60540	Postage		$106.71	Expense		GST	N												
+60545	Pay TV		$500.70	Expense		GST	N												
+60546	Protective clothing		$750.18	Expense		GST	N												
+60550	Professional Development		$0.00	Expense		GST	N												
+60560	Rates		$758.68	Expense		N-T	N												
+60565	Repairs & Maintenance - Generl		$964.63	Expense		GST	N												
+60580	Rent		$0.00	Expense		N-T	N												
+60585	Stamp Duty		$42.20	Expense		N-T	N												
+60600	Telephone		$7,500.92	Expense		GST	N												
+60605	Phone Rental		$264.00	Expense		GST	N												
+60610	Tolls & Parking		$85.28	Expense		GST	N												
+60615	Tools <$1000		$352.73	Expense		GST	N												
+60620	Waste Disposal		$337.70	Expense		GST	N												
+60625	Web site Hosting		$0.00	Expense		N-T	N												
+61000	Motor Vehicle 1 - Rodeo 698KKE	H	$23,423.08	Expense			N												Y
+61010	M/V Fuel-Rodeo 698KKE		$11,068.22	Expense		GST	N												
+61020	M/V Repairs & Maint-Rodeo		$8,060.76	Expense		GST	N												
+61030	M/V Rego & Insurance-Rodeo		$4,294.10	Expense		N-T	N												
+62000	Motor Vehicle 2-Hi Lux 499 IUF	H	$3,129.78	Expense			N												N
+62010	Fuel- Hi Lux 499IUF		$506.41	Expense		GST	N												
+62020	M/V Rep&Main - Hi Lux		$2,459.10	Expense		GST	N												
+62030	M/V Rego & Ins Hi Lux		$164.27	Expense		GST	N												
+63000	Motor Vehicle 3 -Commodore HOA	H	$1,765.23	Expense			N												N
+63010	Fuel - Commodore		$1,360.47	Expense		GST	N												
+63020	Repairs & Main - Commodore		$337.49	Expense		GST	N												
+63030	Rego & Ins - Commodore		$67.27	Expense		GST	N												
+63040	Rego & Insurance - Box Trailer		$0.00	Expense		GST	N												
+65000	Employment Expenses	H	$171,292.11	Expense			N												Y
+65020	Staff Amenities		$0.00	Expense		N-T	N												
+65030	Staff Training		$13,408.89	Expense		GST	N												
+65035	Tolls		$0.00	Expense		GST	N												
+65040	Superannuation		$10,828.96	Expense		N-T	N												
+65060	Wages & Salaries		$141,630.84	Expense		N-T	N												
+65070	Labour Hire		$4,692.18	Expense		GST	N												
+65080	Workers' Compensation		$731.24	Expense		N-T	N												
+65100	Other Employer Expenses		$0.00	Expense		N-T	N												
+66000	Travel & Entertainment	H	$1,240.92	Expense			N												Y
+66010	Meals - Non Deductible		$0.00	Expense		N-T	N												
+66020	Meals - Deductible		$0.00	Expense		GST	N												
+66030	Travel & Entertainment		$1,240.92	Expense		GST	N												
+66040	Bad debts written off		$0.00	Expense		N-T	N												
+67000	New Account		$0.00	Expense		N-T	N												
+80000	Other Income	H	$7.48	Other Income			N												Y
+81000	Interest Income		$7.48	Other Income		N-T	N												
+90000	Other Expenses	H	$15,767.78	Other Expense			N												Y
+91000	Interest Expense		$107.13	Other Expense		N-T	N												
+91100	Interest Macquarie Loan		$6,619.74	Other Expense		N-T	N												
+91200	Interest ANZ Overdraft		$9,040.91	Other Expense		N-T	N												
+91300	Interest ANZ Bus Loan 94643		$0.00	Other Expense		N-T	N												
