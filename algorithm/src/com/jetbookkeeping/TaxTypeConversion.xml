@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Alexander Kohl</Author>
+  <LastAuthor> </LastAuthor>
+  <Created>2012-01-30T23:45:52Z</Created>
+  <LastSaved>2012-01-30T23:57:24Z</LastSaved>
+  <Company>Jet Bookkeeping Australia Pty Ltd</Company>
+  <Version>11.9999</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8835</WindowHeight>
+  <WindowWidth>11340</WindowWidth>
+  <WindowTopX>480</WindowTopX>
+  <WindowTopY>120</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font x:Family="Swiss" ss:Color="#808080" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s24">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font x:Family="Swiss" ss:Color="#808080"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s25">
+   <NumberFormat ss:Format="Percent"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="10" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="80.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="89.25"/>
+   <Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="74.25"/>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">MYOB Tax Code</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Xero TAX TYPE</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">RATE</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Notes</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">CAP</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">CAPEXINPUT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">EXP</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">EXEMPTEXPORT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">GNR</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">EXEMPTINPUT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="38.25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">FRE</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">EXEMPTINPUT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">used for Expenses, Suppliers</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="25.5">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">FRE</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">EXEMPTOUTPUT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">used for Income, Clients</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="38.25">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">GST</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">INPUT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">GST on Expenses, Suppliers</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="25.5">
+    <Cell ss:StyleID="s23"><Data ss:Type="String">GST</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">OUTPUT</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">GST on Income, Clients</Data></Cell>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">INP</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">INPUTTAXED</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">N-T</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">NONE</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:Index="6" ss:StyleID="s25"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
