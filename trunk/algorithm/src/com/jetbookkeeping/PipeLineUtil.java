@@ -13,7 +13,7 @@ import org.xml.sax.XMLReader;
 
 public class PipeLineUtil {
 
-	public Transformer getPipeLine(String[] xsltFiles) throws Exception {
+	public XMLFilter getPipeLine(String[] xsltFiles) throws Exception {
 		// String xmlSource =
 		// "C:/applications/workspacesvn/algorithm/src/edu/java/xml/pipeline/source.xml";
 		// xsltFiles = {
@@ -33,8 +33,9 @@ public class PipeLineUtil {
 		// first filter parent is reader
 		// the rest is the previous filter
 		// set the result for the last one
+		XMLFilter filter = null;
 		try {
-			XMLFilter filter = tFactory.newXMLFilter(new StreamSource(getClass().getResourceAsStream(xsltFiles[0])));
+			filter = tFactory.newXMLFilter(new StreamSource(getClass().getResourceAsStream(xsltFiles[0])));
 			filter.setParent(reader);
 			for (int i = 1; i < xsltFiles.length; i++) {
 				XMLFilter nextFilter = tFactory.newXMLFilter(new StreamSource(getClass().getResourceAsStream(xsltFiles[i])));
@@ -44,8 +45,8 @@ public class PipeLineUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return filter;
 
-		Transformer t = tFactory.newTransformer();
-		return t;
 	}
 }
