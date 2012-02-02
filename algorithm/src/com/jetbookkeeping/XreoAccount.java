@@ -1,5 +1,8 @@
 package com.jetbookkeeping;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.sax.SAXSource;
@@ -20,13 +23,14 @@ public class XreoAccount {
 		String[] xsltFiles = new String[] {"csv2xml.xslt"};
 		XMLFilter filter = util.getPipeLine(xsltFiles);
 		
-		Result filterResult = new StreamResult(System.out);
+		File file = new File("c:/temp/out.xml");
+		Result filterResult = new StreamResult(new FileOutputStream(file));
 		SAXTransformerFactory tFactory = (SAXTransformerFactory) SAXTransformerFactory.newInstance();
 
 		//transform to the last filter
 		SAXSource tranformSource = new SAXSource(filter,new InputSource("src/com/jetbookkeeping/csv2xml.xslt"));
 		Transformer t = tFactory.newTransformer();
-		t.setParameter("pathToCSV", "ACCOUNTS.txt");
+		t.setParameter("pathToCSV", "file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.TXT");
 		System.out.println("Pipeline using Filter chain");
 		t.transform(tranformSource, filterResult);
 		
