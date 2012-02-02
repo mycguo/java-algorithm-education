@@ -6,7 +6,7 @@
 
 <xsl:output indent="yes" encoding="US-ASCII" />
 
-<xsl:param name="pathToCSV" select="'file:///c:/csv.csv'" />
+<xsl:param name="pathToCSV" select="'file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.TXT'" />
 
 <xsl:function name="fn:getTokens" as="xs:string+">
     <xsl:param name="str" as="xs:string" />
@@ -17,24 +17,26 @@
     </xsl:analyze-string>
 </xsl:function>
 
-<xsl:template match="/" name="IMPLICIT">
+<xsl:template match="/" name="main">
     <xsl:choose>
     <xsl:when test="unparsed-text-available($pathToCSV)">
         <xsl:variable name="csv" select="unparsed-text($pathToCSV)" />
-        <xsl:variable name="lines" select="tokenize($csv, ' ')" as="xs:string+" />
-        <xsl:variable name="elemNames" select="fn:getTokens($lines[1])" as="xs:string+" />
+        <xsl:variable name="lines" select="tokenize($csv, '&#10;')" as="xs:string+" />
+        <xsl:variable name="elemNames" select="tokenize($lines[1], '&#9;')" as="xs:string+" />
         <root>
         <xsl:for-each select="$lines[position() &gt; 1]">
-            <row>
-            <xsl:variable name="lineItems" select="fn:getTokens(.)" as="xs:string+" />
-
-            <xsl:for-each select="$elemNames">
-                <xsl:variable name="pos" select="position()" />
-                <elem name="{.}">
-                <xsl:value-of select="$lineItems[$pos]" />
-                </elem>
-            </xsl:for-each>
-            </row>
+        	<xsl:if test="string-length(string(.)) > 0">
+	            <row>
+	            <xsl:variable name="lineItems" select="tokenize(., '&#9;')" as="xs:string+" />
+	
+	            <xsl:for-each select="$elemNames">
+	                <xsl:variable name="pos" select="position()" />
+	                <elem name="{.}">
+	                <xsl:value-of select="$lineItems[$pos]" />
+	                </elem>
+	            </xsl:for-each>
+	            </row>
+            </xsl:if>
         </xsl:for-each>
         </root>
     </xsl:when>
