@@ -33,9 +33,7 @@ public class XreoAccount {
 		t.setParameter("pathToCSV", "file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.TXT");
 		System.out.println("Pipeline using Filter chain");
 		t.transform(tranformSource, filterResult);
-		
-		
-		t.transform(tranformSource, new StreamResult(System.out));
+
 		
 	}
 
