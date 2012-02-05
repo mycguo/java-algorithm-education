@@ -8,14 +8,6 @@
 
 <xsl:param name="pathToCSV" select="'file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.TXT'" />
 
-<xsl:function name="fn:getTokens" as="xs:string+">
-    <xsl:param name="str" as="xs:string" />
-    <xsl:analyze-string select="concat($str, ',')" regex='(("[^"]*")+|[^,]*),'>
-        <xsl:matching-substring>
-        <xsl:sequence select='replace(regex-group(1), "^""|""$|("")""", "$1")' />
-        </xsl:matching-substring>
-    </xsl:analyze-string>
-</xsl:function>
 
 <xsl:template match="/" name="main">
     <xsl:choose>
