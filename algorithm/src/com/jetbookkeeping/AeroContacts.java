@@ -14,7 +14,8 @@ import org.xml.sax.XMLFilter;
 
 public class AeroContacts {
 
-	public void convertContacts() throws Exception {
+
+	public static void main(String[] args) throws Exception {
 		PipeLineUtil util = new PipeLineUtil();
 		String[] xsltFiles = new String[] { "csv2xml.xslt" };
 		XMLFilter filter = util.getPipeLine(xsltFiles);

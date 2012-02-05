@@ -30,7 +30,7 @@ public class XreoAccount {
 		//transform to the last filter
 		SAXSource tranformSource = new SAXSource(filter,new InputSource("src/com/jetbookkeeping/csv2xml.xslt"));
 		Transformer t = tFactory.newTransformer();
-		t.setParameter("pathToCSV", "file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.TXT");
+		t.setParameter("pathToCSV", "file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.T");
 		System.out.println("Pipeline using Filter chain");
 		t.transform(tranformSource, filterResult);
 
