@@ -37,7 +37,7 @@
 		      <Addresses>
 		      	<!-- check for second address -->
 		      	<xsl:variable name="second" select="string(elem[@name='Addr 2 - Line 1']) or string(elem[@name='           - Line 2'][2]) or string(elem[@name='           - Line 3'][2]) or string(elem[@name='           - Line 4'][2])"/>
-		      	<xsl:variable name="firstAdd"  select="concat(string(elem[@name='Addr 1 - Line 1']) , string(elem[@name='           - Line 2'][2]) , string(elem[@name='           - Line 3'][2]) , string(elem[@name='           - Line 4'][2]))"/>
+		      	<xsl:variable name="firstAdd"  select="concat(string(elem[@name='Addr 1 - Line 1']) , string(elem[@name='           - Line 2'][1]) , string(elem[@name='           - Line 3'][1]) , string(elem[@name='           - Line 4'][1]))"/>
 		      	<xsl:variable name="secondAdd" select="concat(string(elem[@name='Addr 2 - Line 1']) , string(elem[@name='           - Line 2'][2]) , string(elem[@name='           - Line 3'][2]) , string(elem[@name='           - Line 4'][2]))"/>
 		      	<xsl:choose>
 		      		<!-- has seoncd address,  -->
@@ -119,6 +119,7 @@
 		      	</xsl:choose>
 		      </Addresses>
 		      <Phones>
+		      	<!-- how many phones ?? -->
 		        <Phone>
 		          <PhoneType>DEFAULT</PhoneType>
 		          <PhoneNumber>5996999</PhoneNumber>
