@@ -4,9 +4,9 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
   version="2.0" exclude-result-prefixes="xs fn">
 
-<xsl:output indent="yes" encoding="US-ASCII" />
+<xsl:output indent="yes" encoding="UTF-8" />
 
-<xsl:param name="pathToCSV" select="'file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/ACCOUNTS.TXT'" />
+<xsl:param name="pathToCSV" select="'file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/CUST.TXT'" />
 
 
 <xsl:template match="/" name="main">
