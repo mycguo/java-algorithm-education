@@ -17,13 +17,14 @@ public class AeroContacts {
 
 	public static void main(String[] args) throws Exception {
 		PipeLineUtil util = new PipeLineUtil();
-		String[] xsltFiles = new String[] { "csv2xml.xslt" };
+		String[] xsltFiles = new String[] { "csv2xml.xslt","CUST-SUPPLIERS-to-CONTACTS.xslt" };
 		XMLFilter filter = util.getPipeLine(xsltFiles);
 
 		File file = new File("c:/temp/Contacts.xml");
 		Result filterResult = new StreamResult(new FileOutputStream(file));
 
 		// transform to the last filter
+		//this source is dummy
 		SAXSource tranformSource = new SAXSource(filter, new InputSource("src/com/jetbookkeeping/csv2xml.xslt"));
 		TransformerHandler h = util.getTransformer(xsltFiles);
 		Transformer t = h.getTransformer();
