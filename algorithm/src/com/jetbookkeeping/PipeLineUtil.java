@@ -57,15 +57,15 @@ public class PipeLineUtil {
 			TransformerHandler handler = factory.newTransformerHandler(new StreamSource(getClass().getResourceAsStream(xsltFiles[0])));
 			TransformerHandler firstHandler = handler;
 			//set the content handler to be the next handler
-			for (int i=2; i< xsltFiles.length; i++) {
-				TransformerHandler nextHandler = factory.newTransformerHandler(new StreamSource(getClass().getResourceAsStream(xsltFiles[0])));
+			for (int i=1; i< xsltFiles.length; i++) {
+				TransformerHandler nextHandler = factory.newTransformerHandler(new StreamSource(getClass().getResourceAsStream(xsltFiles[i])));
 				handler.setResult(new SAXResult(nextHandler));
 				handler = nextHandler;
 			}
 			// last handler output is to the Result
 			//handler.setResult(result);
 			
-			return firstHandler;
+			return handler;
 			
 			//transform to the first handler
 			//System.out.println("Pipe line using transfomer handler");
