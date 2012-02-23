@@ -11,43 +11,112 @@
 <Contacts>
 	<xsl:for-each select="//row">
 		  <Contact>
-		      <ContactNumber>0006841301</ContactNumber>
-		      <Name>Ariki Properties</Name>
+		  	  <!-- from "Card ID" filed, contact number can be optional, don't create if it is none -->
+		  	  <xsl:if test="string(elem[@name='Card ID']) and not(contains(string(elem[@name='Card ID']),'None')) ">
+		  	  		<ContactNumber><xsl:value-of select="elem[@name='Card ID']"/></ContactNumber>		  	  		
+		  	  </xsl:if>
+		  	  <!-- IF First Name ="" THEN Co._Last Name=Name ELSE =Last Name  ?? -->
+		      <Name><xsl:value-of select="if (string(elem[@name='First Name'])) then concat(elem[@name='First Name'],' ', elem[@name='Co./Last Name']) else elem[@name='First Name']"/></Name>
 		      <ContactStatus>ACTIVE</ContactStatus>
-		      <EmailAddress>emailaddress@yourdomain.com</EmailAddress>
+		      <EmailAddress><xsl:value-of select="elem[contains(@name,'Email')][1]"/></EmailAddress>
+		      <!--  
 		      <SkypeUserName>Skype Name/Number</SkypeUserName>
-		      <BankAccountDetails>Bank Account Details</BankAccountDetails>
-		      <TaxNumber>Tax ID Number</TaxNumber>
+		      -->
+		      <!-- from BSB -->
+		      <BankAccountDetails><xsl:value-of select="elem[@name='BSB']"/></BankAccountDetails>
+		      <!-- A.B.N. -->
+		      <TaxNumber><xsl:value-of select="elem[contains(@name,'A.B.N.')][1]"/></TaxNumber>
+		      <!-- this is for CUST ?? -->
 		      <AccountsReceivableTaxType>OUTPUT</AccountsReceivableTaxType>
+		      <!-- this is for SUPPLIER ?? -->
 		      <AccountsPayableTaxType>INPUT</AccountsPayableTaxType>
-		      <FirstName>Simon</FirstName>
-		      <LastName>Greenville</LastName>
-		      <DefaultCurrency>USD</DefaultCurrency>
+		      
+		      <FirstName><xsl:value-of select="elem[@name='First Name']"/></FirstName>
+		      <LastName><xsl:value-of select="elem[@name='Co./Last Name']"/></LastName>
+		      <DefaultCurrency>AUD</DefaultCurrency>
 		      <Addresses>
-		        <Address>
-		          <AddressType>STREET</AddressType>
-		          <AttentionTo>Simon G.</AttentionTo>
-		          <AddressLine1>Level 71</AddressLine1>
-		          <AddressLine2>30 Rockefeller plaza</AddressLine2>
-		          <AddressLine3></AddressLine3>
-		          <AddressLine4></AddressLine4>
-		          <City>New York</City>
-		          <Region>New York State</Region>
-		          <PostalCode>10112</PostalCode>
-		          <Country>USA</Country>
-		        </Address>
-		        <Address>
-		          <AddressType>POBOX</AddressType>
-		          <AttentionTo>Simon G.</AttentionTo>
-		          <AddressLine1>PO Box 10112</AddressLine1>
-		          <AddressLine2></AddressLine2>
-		          <AddressLine3></AddressLine3>
-		          <AddressLine4></AddressLine4>
-		          <City>New York</City>
-		          <Region>New York State</Region>
-		          <PostalCode>10112</PostalCode>
-		          <Country>USA</Country>
-		        </Address>
+		      	<!-- check for second address -->
+		      	<xsl:variable name="second" select="string(elem[@name='Addr 2 - Line 1']) or string(elem[@name='           - Line 2'][2]) or string(elem[@name='           - Line 3'][2]) or string(elem[@name='           - Line 4'][2])"/>
+		      	<xsl:variable name="firstAdd"  select="concat(string(elem[@name='Addr 1 - Line 1']) , string(elem[@name='           - Line 2'][2]) , string(elem[@name='           - Line 3'][2]) , string(elem[@name='           - Line 4'][2]))"/>
+		      	<xsl:variable name="secondAdd" select="concat(string(elem[@name='Addr 2 - Line 1']) , string(elem[@name='           - Line 2'][2]) , string(elem[@name='           - Line 3'][2]) , string(elem[@name='           - Line 4'][2]))"/>
+		      	<xsl:choose>
+		      		<!-- has seoncd address,  -->
+		      		<xsl:when test="$second"> 
+		      			<!-- if seoncd has POBOX and first dont' have pobox, use it as the first, otherwise, use the first as pobox address -->
+		      			<xsl:choose>
+		      				<xsl:when test="(contains(lowercase($secondAdd),'po box') or contains(lowercase($secondAdd),'pobox')) and (not(contains(lowercase($firstAdd),'po box') or contains(lowercase($firstAdd),'pobox')))">
+						        <Address>
+						          <AddressType>POBOX</AddressType>
+						          <!-- 
+						          <AttentionTo>Simon G.</AttentionTo>
+						           -->
+						          <AddressLine1><xsl:value-of select="elem[@name='Addr 2 - Line 1']"/></AddressLine1>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][2]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine2>
+						          <City><xsl:value-of         select="elem[@name='           - City'][2]"/></City>
+						          <Region><xsl:value-of       select="elem[@name='           - State'][2]"/></Region>
+						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][2]"/></PostalCode>
+						          <Country><xsl:value-of      select="elem[@name='           - Country'][2]"/></Country>
+						        </Address>
+						        <Address>
+						          <AddressType>STREET</AddressType>
+						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine2>
+						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
+						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
+						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
+						          <Country><xsl:value-of      select="elem[@name='           - Country'][1]"/></Country>
+						        </Address>			      				
+		      				</xsl:when>
+		      				<xsl:otherwise>
+						        <Address>
+						          <AddressType>POBOX</AddressType>
+						          <!-- 
+						          <AttentionTo>Simon G.</AttentionTo>
+						           -->
+						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine2>
+						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
+						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
+						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
+						          <Country><xsl:value-of      select="elem[@name='           - Country'][1]"/></Country>
+						        </Address>
+						        <Address>
+						          <AddressType>STREET</AddressType>
+						          <AddressLine1><xsl:value-of select="elem[@name='Addr 2 - Line 1']"/></AddressLine1>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][2]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine2>
+						          <City><xsl:value-of         select="elem[@name='           - City'][2]"/></City>
+						          <Region><xsl:value-of       select="elem[@name='           - State'][2]"/></Region>
+						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][2]"/></PostalCode>
+						          <Country><xsl:value-of      select="elem[@name='           - Country'][2]"/></Country>
+						        </Address>			      				
+		      				</xsl:otherwise>
+		      			</xsl:choose>	      		
+		      		</xsl:when>
+		      		<xsl:otherwise>
+						        <Address>
+						          <AddressType>POBOX</AddressType>
+						          <!-- 
+						          <AttentionTo>Simon G.</AttentionTo>
+						           -->
+						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine2>
+						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine2>
+						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
+						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
+						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
+						          <Country><xsl:value-of      select="elem[@name='           - Country'][1]"/></Country>
+						        </Address>		      		
+		      		</xsl:otherwise>
+		      	</xsl:choose>
 		      </Addresses>
 		      <Phones>
 		        <Phone>
