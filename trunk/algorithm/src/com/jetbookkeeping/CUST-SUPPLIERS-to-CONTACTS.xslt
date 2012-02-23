@@ -4,12 +4,14 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
   version="2.0" exclude-result-prefixes="xs fn">
 
-<xsl:output indent="yes" encoding="UTF-8" />
+<xsl:output method="xml" indent="yes" encoding="UTF-8" />
 
 
 <xsl:template match="/">
+<xsl:message>context is <xsl:copy-of select="."/></xsl:message>
 <Contacts>
-	<xsl:for-each select="//row">
+	<xsl:message>I am here</xsl:message>
+	<xsl:for-each select="root/row">
 		  <Contact>
 		  	  <!-- from "Card ID" filed, contact number can be optional, don't create if it is none -->
 		  	  <xsl:if test="string(elem[@name='Card ID']) and not(contains(string(elem[@name='Card ID']),'None')) ">
@@ -44,7 +46,7 @@
 		      		<xsl:when test="$second"> 
 		      			<!-- if seoncd has POBOX and first dont' have pobox, use it as the first, otherwise, use the first as pobox address -->
 		      			<xsl:choose>
-		      				<xsl:when test="(contains(lowercase($secondAdd),'po box') or contains(lowercase($secondAdd),'pobox')) and (not(contains(lowercase($firstAdd),'po box') or contains(lowercase($firstAdd),'pobox')))">
+		      				<xsl:when test="(contains(lower-case($secondAdd),'po box') or contains(lower-case($secondAdd),'pobox')) and (not(contains(lower-case($firstAdd),'po box') or contains(lower-case($firstAdd),'pobox')))">
 						        <Address>
 						          <AddressType>POBOX</AddressType>
 						          <!-- 
