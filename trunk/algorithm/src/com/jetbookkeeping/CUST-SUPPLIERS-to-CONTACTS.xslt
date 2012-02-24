@@ -18,7 +18,7 @@
 		  	  		<ContactNumber><xsl:value-of select="elem[@name='Card ID']"/></ContactNumber>		  	  		
 		  	  </xsl:if>
 		  	  <!-- IF First Name ="" THEN Co._Last Name=Name ELSE =Last Name  ?? -->
-		      <Name><xsl:value-of select="if (string(elem[@name='First Name'])) then concat(elem[@name='First Name'],' ', elem[@name='Co./Last Name']) else elem[@name='First Name']"/></Name>
+		      <Name><xsl:value-of select="if (string(elem[@name='First Name'])) then concat(elem[@name='First Name'],' ', elem[@name='Co./Last Name']) else elem[@name='Co./Last Name']"/></Name>
 		      <ContactStatus>ACTIVE</ContactStatus>
 		      <EmailAddress><xsl:value-of select="elem[contains(@name,'Email')][1]"/></EmailAddress>
 		      <!--  
@@ -28,10 +28,39 @@
 		      <BankAccountDetails><xsl:value-of select="elem[@name='BSB']"/></BankAccountDetails>
 		      <!-- A.B.N. -->
 		      <TaxNumber><xsl:value-of select="elem[contains(@name,'A.B.N.')][1]"/></TaxNumber>
-		      <!-- this is for CUST ?? -->
-		      <AccountsReceivableTaxType>OUTPUT</AccountsReceivableTaxType>
-		      <!-- this is for SUPPLIER ?? -->
+		      
+		     <!--  
+					MYOB Tax Code	Xero TAX TYPE	RATE	Notes
+					CAP	CAPEXINPUT	10	
+					EXP	EXEMPTEXPORT	0	
+					GNR	EXEMPTINPUT	0	
+					FRE	EXEMPTINPUT	0	used for Expenses, Suppliers
+					FRE	EXEMPTOUTPUT	0	used for Income, Clients
+					GST	INPUT	10	GST on Expenses, Suppliers
+					GST	OUTPUT	10	GST on Income, Clients
+					INP	INPUTTAXED	0	
+					N-T	NONE	0	
+		      
+		      
+		 	  -->
+		      <!-- this is for CUST ??  <elem name="Tax Code">GST</elem> -->
+		      <xsl:variable name="taxCode" select="elem[name='Tax Code']"/>
+		      <xsl:variable name="newCode">
+		      	<xsl:choose>
+		      		<xsl:when test="$taxCode='CAP'">CAPEXINPUT</xsl:when>
+		      		<xsl:when test="$taxCode='EXP'">EXEMPTEXPORT</xsl:when>
+		      		<xsl:when test="$taxCode='GNR'">EXEMPTINPUT</xsl:when>
+		      		<xsl:when test="$taxCode='FRE'">EXEMPTOUTPUT</xsl:when>
+		      		<xsl:when test="$taxCode='GST'">OUTPUT</xsl:when>
+		      		<xsl:when test="$taxCode='INP'">INPUTTAXED</xsl:when>
+		      		<xsl:when test="$taxCode='N-T'">NONE</xsl:when>
+		      	</xsl:choose>
+		      
+		      </xsl:variable>
+		      <AccountsReceivableTaxType><xsl:value-of select="$newCode"/></AccountsReceivableTaxType>
+		      <!-- this is for SUPPLIER ?? 
 		      <AccountsPayableTaxType>INPUT</AccountsPayableTaxType>
+		      -->
 		      
 		      <FirstName><xsl:value-of select="elem[@name='First Name']"/></FirstName>
 		      <LastName><xsl:value-of select="elem[@name='Co./Last Name']"/></LastName>
@@ -124,27 +153,26 @@
 		      	<!-- how many phones ?? -->
 		        <Phone>
 		          <PhoneType>DEFAULT</PhoneType>
-		          <PhoneNumber>5996999</PhoneNumber>
-		          <PhoneAreaCode>877</PhoneAreaCode>
-		          <PhoneCountryCode>0001</PhoneCountryCode>
-		        </Phone>
-		        <Phone>
-		          <PhoneType>DDI</PhoneType>
-		          <PhoneNumber>1234567</PhoneNumber>
-		          <PhoneAreaCode>877</PhoneAreaCode>
-		          <PhoneCountryCode>0001</PhoneCountryCode>
-		        </Phone>
-		        <Phone>
-		          <PhoneType>FAX</PhoneType>
-		          <PhoneNumber>7654321</PhoneNumber>
-		          <PhoneAreaCode>877</PhoneAreaCode>
-		          <PhoneCountryCode>0001</PhoneCountryCode>
-		        </Phone>
-		        <Phone>
-		          <PhoneType>MOBILE</PhoneType>
-		          <PhoneNumber>5555555</PhoneNumber>
-		          <PhoneAreaCode>877</PhoneAreaCode>
-		          <PhoneCountryCode>0001</PhoneCountryCode>
+		          <!--  <elem name="           - Phone # 1"/> -->
+		          <xsl:variable name="phone" select="elem[@name='           - Phone # 1'][1]"/>
+		          <xsl:variable name="l" select="string-length($phone)"/>
+		          <xsl:choose>
+		          	<xsl:when test="$l &gt; 10">
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,$l)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,$l)"/></PhoneAreaCode>
+				          <PhoneCountryCode><xsl:value-of select="substring($phone,1,$l - 10)"/></PhoneCountryCode>		          	
+		          	</xsl:when>
+		          	<xsl:when test="$l &gt; 8">
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,$l)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,$l - 8)"/></PhoneAreaCode>
+				          <PhoneCountryCode></PhoneCountryCode>		          	
+		          	</xsl:when>	
+		          	<xsl:otherwise>
+				          <PhoneNumber><xsl:value-of select="$phone"/></PhoneNumber>
+				          <PhoneAreaCode></PhoneAreaCode>
+				          <PhoneCountryCode></PhoneCountryCode>		          	
+		          	</xsl:otherwise>		          
+		          </xsl:choose>
 		        </Phone>
 		      </Phones>
 		    </Contact>
