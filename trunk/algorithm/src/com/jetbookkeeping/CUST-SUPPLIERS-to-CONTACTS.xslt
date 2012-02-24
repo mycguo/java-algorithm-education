@@ -8,7 +8,7 @@
 
 
 <xsl:template match="/">
-<xsl:message>context is <xsl:copy-of select="."/></xsl:message>
+
 <Contacts>
 	<xsl:message>I am here</xsl:message>
 	<xsl:for-each select="root/row">
@@ -44,7 +44,7 @@
 		      
 		 	  -->
 		      <!-- this is for CUST ??  <elem name="Tax Code">GST</elem> -->
-		      <xsl:variable name="taxCode" select="elem[name='Tax Code']"/>
+		      <xsl:variable name="taxCode" select="elem[@name='Tax Code']"/>
 		      <xsl:variable name="newCode">
 		      	<xsl:choose>
 		      		<xsl:when test="$taxCode='CAP'">CAPEXINPUT</xsl:when>
