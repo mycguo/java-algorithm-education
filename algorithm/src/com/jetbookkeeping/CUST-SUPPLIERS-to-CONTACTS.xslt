@@ -159,7 +159,7 @@
 		          <xsl:choose>
 		          	<xsl:when test="$l &gt; 10">
 				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,$l)"/></PhoneNumber>
-				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,$l)"/></PhoneAreaCode>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,$l - 9)"/></PhoneAreaCode>
 				          <PhoneCountryCode><xsl:value-of select="substring($phone,1,$l - 10)"/></PhoneCountryCode>		          	
 		          	</xsl:when>
 		          	<xsl:when test="$l &gt; 8">
