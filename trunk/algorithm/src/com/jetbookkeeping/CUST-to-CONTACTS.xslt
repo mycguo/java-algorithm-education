@@ -14,7 +14,8 @@
 	<xsl:for-each select="root/row">
 		  <Contact>
 		  	  <!-- from "Card ID" filed,  -->
-		  	  <ContactNumber><xsl:value-of select="if (contains(string(elem[@name='Card ID']),'None')) then 0 else elem[@name='Card ID'] "/></ContactNumber>		  	  		
+		  	  <xsl:variable name="theNumber" select="if (contains(string(elem[@name='Card ID']),'None')) then 0 else replace(string(elem[@name='Card ID']), '[^0-9]', '') "/>
+		  	  <ContactNumber><xsl:value-of select="if (string($theNumber)) then $theNumber else 0"/></ContactNumber>		  	  		
 		  	  <!-- IF First Name ="" THEN Co._Last Name=Name ELSE =Last Name  ?? -->
 		      <Name><xsl:value-of select="if (string(elem[@name='First Name'])) then concat(elem[@name='First Name'],' ', elem[@name='Co./Last Name']) else elem[@name='Co./Last Name']"/></Name>
 		      <ContactStatus>ACTIVE</ContactStatus>
@@ -164,7 +165,7 @@
 		          	 	  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
 				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
 				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,2)"/></PhoneAreaCode>
-				          <PhoneCountryCode></PhoneCountryCode>		          	
+				          <PhoneCountryCode>0</PhoneCountryCode>		          	
 		          	</xsl:when>	
 		          	<xsl:otherwise>
 		          		  <PhoneType>DEFAULT</PhoneType>
@@ -228,7 +229,7 @@
 		          	 	  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
 				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
 				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,2)"/></PhoneAreaCode>
-				          <PhoneCountryCode></PhoneCountryCode>		          	
+				          <PhoneCountryCode>0</PhoneCountryCode>		          	
 		          	</xsl:when>	
 		          	<xsl:otherwise>
 		          		  <PhoneType>DDI</PhoneType>
