@@ -83,8 +83,8 @@
 						           -->
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 2 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][2]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine2>
+						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine3>
+						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][2]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][2]"/></Region>
 						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][2]"/></PostalCode>
@@ -94,8 +94,8 @@
 						          <AddressType>STREET</AddressType>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine2>
+						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine3>
+						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
 						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
@@ -110,8 +110,8 @@
 						           -->
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine2>
+						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine3>
+						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
 						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
@@ -121,8 +121,8 @@
 						          <AddressType>STREET</AddressType>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 2 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][2]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine2>
+						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine3>
+						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][2]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][2]"/></Region>
 						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][2]"/></PostalCode>
@@ -139,8 +139,8 @@
 						           -->
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine2>
-						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine2>
+						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine3>
+						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
 						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
