@@ -9,21 +9,19 @@
 
 <xsl:template match="/">
 
-<Contacts>
+<Contacts  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Contacts.xsd">
 	<xsl:message>I am here</xsl:message>
 	<xsl:for-each select="root/row">
 		  <Contact>
-		  	  <!-- from "Card ID" filed, contact number can be optional, don't create if it is none -->
-		  	  <xsl:if test="string(elem[@name='Card ID']) and not(contains(string(elem[@name='Card ID']),'None')) ">
-		  	  		<ContactNumber><xsl:value-of select="elem[@name='Card ID']"/></ContactNumber>		  	  		
-		  	  </xsl:if>
+		  	  <!-- from "Card ID" filed,  -->
+		  	  <ContactNumber><xsl:value-of select="if (contains(string(elem[@name='Card ID']),'None')) then 0 else elem[@name='Card ID'] "/></ContactNumber>		  	  		
 		  	  <!-- IF First Name ="" THEN Co._Last Name=Name ELSE =Last Name  ?? -->
 		      <Name><xsl:value-of select="if (string(elem[@name='First Name'])) then concat(elem[@name='First Name'],' ', elem[@name='Co./Last Name']) else elem[@name='Co./Last Name']"/></Name>
 		      <ContactStatus>ACTIVE</ContactStatus>
 		      <EmailAddress><xsl:value-of select="elem[contains(@name,'Email')][1]"/></EmailAddress>
-		      <!--  
-		      <SkypeUserName>Skype Name/Number</SkypeUserName>
-		      -->
+				<!-- always empty -->
+		      <SkypeUserName></SkypeUserName>
+
 		      <!-- from BSB -->
 		      <BankAccountDetails><xsl:value-of select="elem[@name='BSB']"/></BankAccountDetails>
 		      <!-- A.B.N. -->
@@ -58,9 +56,8 @@
 		      
 		      </xsl:variable>
 		      <AccountsReceivableTaxType><xsl:value-of select="$newCode"/></AccountsReceivableTaxType>
-		      <!-- this is for SUPPLIER ?? 
-		      <AccountsPayableTaxType>INPUT</AccountsPayableTaxType>
-		      -->
+
+		      <AccountsPayableTaxType></AccountsPayableTaxType>
 		      
 		      <FirstName><xsl:value-of select="elem[@name='First Name']"/></FirstName>
 		      <LastName><xsl:value-of select="elem[@name='Co./Last Name']"/></LastName>
@@ -77,55 +74,53 @@
 		      			<xsl:choose>
 		      				<xsl:when test="(contains(lower-case($secondAdd),'po box') or contains(lower-case($secondAdd),'pobox')) and (not(contains(lower-case($firstAdd),'po box') or contains(lower-case($firstAdd),'pobox')))">
 						        <Address>
-						          <AddressType>POBOX</AddressType>
-						          <!-- 
-						          <AttentionTo>Simon G.</AttentionTo>
-						           -->
+						          <AddressType>POBOX</AddressType> 
+						          <AttentionTo></AttentionTo>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 2 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][2]"/></AddressLine2>
 						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine3>
 						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][2]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][2]"/></Region>
-						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][2]"/></PostalCode>
+						          <PostalCode><xsl:value-of   select="if (string(elem[@name='           - Postcode'][2])) then elem[@name='           - Postcode'][2] else 0"/></PostalCode>
 						          <Country><xsl:value-of      select="elem[@name='           - Country'][2]"/></Country>
 						        </Address>
 						        <Address>
 						          <AddressType>STREET</AddressType>
+						          <AttentionTo></AttentionTo>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
 						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine3>
 						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
-						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
+						          <PostalCode><xsl:value-of   select="if  (string(elem[@name='           - Postcode'][1])) then elem[@name='           - Postcode'][1] else 0"/></PostalCode>
 						          <Country><xsl:value-of      select="elem[@name='           - Country'][1]"/></Country>
 						        </Address>			      				
 		      				</xsl:when>
 		      				<xsl:otherwise>
 						        <Address>
 						          <AddressType>POBOX</AddressType>
-						          <!-- 
-						          <AttentionTo>Simon G.</AttentionTo>
-						           -->
+						          <AttentionTo></AttentionTo>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
 						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine3>
 						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
-						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
+						          <PostalCode><xsl:value-of   select="if (string(elem[@name='           - Postcode'][1])) then elem[@name='           - Postcode'][1] else 0"/></PostalCode>
 						          <Country><xsl:value-of      select="elem[@name='           - Country'][1]"/></Country>
 						        </Address>
 						        <Address>
 						          <AddressType>STREET</AddressType>
+						          <AttentionTo></AttentionTo>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 2 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][2]"/></AddressLine2>
 						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][2]"/></AddressLine3>
 						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][2]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][2]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][2]"/></Region>
-						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][2]"/></PostalCode>
+						          <PostalCode><xsl:value-of   select="if (string(elem[@name='           - Postcode'][2])) then elem[@name='           - Postcode'][2] else 0"/></PostalCode>
 						          <Country><xsl:value-of      select="elem[@name='           - Country'][2]"/></Country>
 						        </Address>			      				
 		      				</xsl:otherwise>
@@ -134,46 +129,47 @@
 		      		<xsl:otherwise>
 						        <Address>
 						          <AddressType>POBOX</AddressType>
-						          <!-- 
-						          <AttentionTo>Simon G.</AttentionTo>
-						           -->
+						          <AttentionTo></AttentionTo>
 						          <AddressLine1><xsl:value-of select="elem[@name='Addr 1 - Line 1']"/></AddressLine1>
 						          <AddressLine2><xsl:value-of select="elem[@name='           - Line 2'][1]"/></AddressLine2>
 						          <AddressLine3><xsl:value-of select="elem[@name='           - Line 3'][1]"/></AddressLine3>
 						          <AddressLine4><xsl:value-of select="elem[@name='           - Line 4'][1]"/></AddressLine4>
 						          <City><xsl:value-of         select="elem[@name='           - City'][1]"/></City>
 						          <Region><xsl:value-of       select="elem[@name='           - State'][1]"/></Region>
-						          <PostalCode><xsl:value-of   select="elem[@name='           - Postcode'][1]"/></PostalCode>
+						          <PostalCode><xsl:value-of   select="if (string(elem[@name='           - Postcode'][1])) then elem[@name='           - Postcode'][1] else 0"/></PostalCode>
 						          <Country><xsl:value-of      select="elem[@name='           - Country'][1]"/></Country>
 						        </Address>		      		
 		      		</xsl:otherwise>
 		      	</xsl:choose>
 		      </Addresses>
 		      <Phones>
-		      	<!-- how many phones ?? -->
+		      	<!-- how many phones =3 -->
 		        <Phone>
-		          <PhoneType>DEFAULT</PhoneType>
-		          <!--  <elem name="           - Phone # 1"/> -->
-		          <xsl:variable name="phone" select="elem[@name='           - Phone # 1'][1]"/>
+		          <PhoneType>DEFAULT</PhoneType>          
+		          <xsl:variable name="phoneNumber" select="elem[@name='           - Phone # 1'][1]"/>
+		          <!-- remove all strings, other than + or space -->
+		          <xsl:variable name="phone" select="replace($phoneNumber, '[^0-9]', '')"/>
+		          <xsl:message>phonenumer=<xsl:copy-of select="$phoneNumber"/> phone=<xsl:copy-of select="$phone"/></xsl:message>
 		          <xsl:variable name="l" select="string-length($phone)"/>
 		          <xsl:choose>
 		          	<xsl:when test="$l &gt; 10">
-				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,$l)"/></PhoneNumber>
-				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,$l - 9)"/></PhoneAreaCode>
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,2)"/></PhoneAreaCode>
 				          <PhoneCountryCode><xsl:value-of select="substring($phone,1,$l - 10)"/></PhoneCountryCode>		          	
 		          	</xsl:when>
 		          	<xsl:when test="$l &gt; 8">
-				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,$l)"/></PhoneNumber>
-				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,$l - 8)"/></PhoneAreaCode>
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,2)"/></PhoneAreaCode>
 				          <PhoneCountryCode></PhoneCountryCode>		          	
 		          	</xsl:when>	
 		          	<xsl:otherwise>
-				          <PhoneNumber><xsl:value-of select="$phone"/></PhoneNumber>
+				          <PhoneNumber><xsl:value-of select="if (string($phone)) then $phone else 0"/></PhoneNumber>
 				          <PhoneAreaCode></PhoneAreaCode>
 				          <PhoneCountryCode></PhoneCountryCode>		          	
 		          	</xsl:otherwise>		          
 		          </xsl:choose>
 		        </Phone>
+		        		        
 		      </Phones>
 		    </Contact>
     </xsl:for-each>
