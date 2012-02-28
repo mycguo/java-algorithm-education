@@ -145,7 +145,7 @@
 		      <Phones>
 		      	<!-- how many phones =3 -->
 		        <Phone>
-		          <PhoneType>DEFAULT</PhoneType>          
+		                   
 		          <xsl:variable name="phoneNumber" select="elem[@name='           - Phone # 1'][1]"/>
 		          <!-- remove all strings, other than + or space -->
 		          <xsl:variable name="phone" select="replace($phoneNumber, '[^0-9]', '')"/>
@@ -153,23 +153,92 @@
 		          <xsl:variable name="l" select="string-length($phone)"/>
 		          <xsl:choose>
 		          	<xsl:when test="$l &gt; 10">
+		          		  <xsl:variable name="areaCode" select="substring($phone,$l - 9,2)"/>
+		          		  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
 				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
 				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,2)"/></PhoneAreaCode>
 				          <PhoneCountryCode><xsl:value-of select="substring($phone,1,$l - 10)"/></PhoneCountryCode>		          	
 		          	</xsl:when>
 		          	<xsl:when test="$l &gt; 8">
+		          	 	  <xsl:variable name="areaCode" select="substring($phone,1,2)"/>
+		          	 	  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
 				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
 				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,2)"/></PhoneAreaCode>
 				          <PhoneCountryCode></PhoneCountryCode>		          	
 		          	</xsl:when>	
 		          	<xsl:otherwise>
+		          		  <PhoneType>DEFAULT</PhoneType>
 				          <PhoneNumber><xsl:value-of select="if (string($phone)) then $phone else 0"/></PhoneNumber>
-				          <PhoneAreaCode></PhoneAreaCode>
-				          <PhoneCountryCode></PhoneCountryCode>		          	
+				          <PhoneAreaCode>0</PhoneAreaCode>
+				          <PhoneCountryCode>0</PhoneCountryCode>		          	
 		          	</xsl:otherwise>		          
 		          </xsl:choose>
 		        </Phone>
-		        		        
+		        <!-- seocnd phone -->
+		         <xsl:variable name="phoneNumber2" select="elem[@name='           - Phone # 2'][1]"/>
+		         <xsl:if test="string($phoneNumber2)">
+		        <Phone>
+		          <!-- remove all strings, other than + or space -->
+		          <xsl:variable name="phone" select="replace($phoneNumber2, '[^0-9]', '')"/>
+		          <xsl:message>phonenumer2=<xsl:copy-of select="$phoneNumber2"/> phone=<xsl:copy-of select="$phone"/></xsl:message>
+		          <xsl:variable name="l" select="string-length($phone)"/>
+		          <xsl:choose>
+		          	<xsl:when test="$l &gt; 10">
+		          		  <xsl:variable name="areaCode" select="substring($phone,$l - 9,2)"/>
+		          		  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,2)"/></PhoneAreaCode>
+				          <PhoneCountryCode><xsl:value-of select="substring($phone,1,$l - 10)"/></PhoneCountryCode>		          	
+		          	</xsl:when>
+		          	<xsl:when test="$l &gt; 8">
+		          	 	  <xsl:variable name="areaCode" select="substring($phone,1,2)"/>
+		          	 	  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,2)"/></PhoneAreaCode>
+				          <PhoneCountryCode>0</PhoneCountryCode>		          	
+		          	</xsl:when>	
+		          	<xsl:otherwise>
+		          		  <PhoneType>DEFAULT</PhoneType>
+				          <PhoneNumber><xsl:value-of select="if (string($phone)) then $phone else 0"/></PhoneNumber>
+				          <PhoneAreaCode>0</PhoneAreaCode>
+				          <PhoneCountryCode>0</PhoneCountryCode>		          	
+		          	</xsl:otherwise>		          
+		          </xsl:choose>
+		        </Phone>
+		        </xsl:if>
+
+		        <!-- third phone -->
+		         <xsl:variable name="phoneNumber3" select="elem[@name='           - Phone # 2'][1]"/>
+		         <xsl:if test="string($phoneNumber3)">
+		        <Phone>
+		          <!-- remove all strings, other than + or space -->
+		          <xsl:variable name="phone" select="replace($phoneNumber3, '[^0-9]', '')"/>
+		          <xsl:message>phonenumer2=<xsl:copy-of select="$phoneNumber3"/> phone=<xsl:copy-of select="$phone"/></xsl:message>
+		          <xsl:variable name="l" select="string-length($phone)"/>
+		          <xsl:choose>
+		          	<xsl:when test="$l &gt; 10">
+		          		  <xsl:variable name="areaCode" select="substring($phone,$l - 9,2)"/>
+		          		  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,$l - 9,2)"/></PhoneAreaCode>
+				          <PhoneCountryCode><xsl:value-of select="substring($phone,1,$l - 10)"/></PhoneCountryCode>		          	
+		          	</xsl:when>
+		          	<xsl:when test="$l &gt; 8">
+		          	 	  <xsl:variable name="areaCode" select="substring($phone,1,2)"/>
+		          	 	  <PhoneType><xsl:value-of select="if (contains($areaCode,'4')) then 'MOBILE' else 'DEFAULT'"/></PhoneType> 
+				          <PhoneNumber><xsl:value-of select="substring($phone,$l - 7,8)"/></PhoneNumber>
+				          <PhoneAreaCode><xsl:value-of select="substring($phone,1,2)"/></PhoneAreaCode>
+				          <PhoneCountryCode></PhoneCountryCode>		          	
+		          	</xsl:when>	
+		          	<xsl:otherwise>
+		          		  <PhoneType>DDI</PhoneType>
+				          <PhoneNumber><xsl:value-of select="if (string($phone)) then $phone else 0"/></PhoneNumber>
+				          <PhoneAreaCode>0</PhoneAreaCode>
+				          <PhoneCountryCode>0</PhoneCountryCode>		          	
+		          	</xsl:otherwise>		          
+		          </xsl:choose>
+		        </Phone>
+		        </xsl:if>		        		        
 		      </Phones>
 		    </Contact>
     </xsl:for-each>
