@@ -4,7 +4,7 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
   version="2.0" exclude-result-prefixes="xs fn">
 
-<xsl:output method="xml" indent="yes" encoding="UTF-8" />
+<xsl:output method="xhtml" indent="yes" encoding="UTF-8" />
 
 
 <xsl:template match="/">
