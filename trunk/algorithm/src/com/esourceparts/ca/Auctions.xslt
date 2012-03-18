@@ -8,4 +8,4 @@
 	<xsl:template name="Body">
 		<xsl:apply-templates select="/OnlineStore/Auctions"/>
 	</xsl:template>
-</xsl:stylesheet>Thread was being aborted.
+</xsl:stylesheet>

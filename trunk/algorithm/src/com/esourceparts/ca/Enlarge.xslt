@@ -7,4 +7,4 @@
 	<xsl:template match="/OnlineStore">
 		<xsl:call-template name="PictureViewer"/>
 	</xsl:template>
-</xsl:stylesheet>Thread was being aborted.
+</xsl:stylesheet>
