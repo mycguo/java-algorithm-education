@@ -21,4 +21,3 @@
 		
 	</xsl:template>
 </xsl:stylesheet>
-Thread was being aborted.
