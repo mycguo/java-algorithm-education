@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="html" version="4.0" encoding="UTF-8" indent="no" omit-xml-declaration="yes" />
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="html" version="4.0" indent="no"
+		omit-xml-declaration="yes" />
+
+
+	<xsl:template name="ProductImageLink">
+		***********ProductImageLink
+	</xsl:template>
+
+	<xsl:template name="ProductTextLink">
+		***********ProductTextLink
+	</xsl:template>
+
+	<xsl:template name="ProductTextLinkByNode">
+		***********ProductTextLinkByNode
+	</xsl:template>
+
+	<xsl:template name="ProductImageLinkByNode">
+		***********ProductImageLinkByNode
+	</xsl:template>
+
 
 </xsl:stylesheet>

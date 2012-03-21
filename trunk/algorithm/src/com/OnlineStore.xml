@@ -898,39 +898,39 @@
 	<PagesList>
 		<Page custompage="True" pageTypeId="0" pageId="10000774">
 			<Name>Testimonial</Name>
-			<Link>/Default.aspx?pid=10000774
+			<Link>/Default.aspx?pid=10000774</Link>
 		</Page>
 		<Page custompage="False" pageTypeId="9">
 			<Name>Auctions</Name>
-			<Link>/Auctions.aspx
+			<Link>/Auctions.aspx</Link>
 		</Page>
 		<Page custompage="False" pageTypeId="8">
 			<Name>Catalog</Name>
-			<Link>/Catalog.aspx
+			<Link>/Catalog.aspx</Link>
 		</Page>
 		<Page custompage="False" pageTypeId="7">
 			<Name>Login Page</Name>
-			<Link>/Login.aspx
+			<Link>/Login.aspx</Link>
 		</Page>
 		<Page custompage="True" pageTypeId="6" pageId="10000083">
 			<Name>Shopping Cart</Name>
-			<Link>/Cart.aspx
+			<Link>/Cart.aspx</Link>
 		</Page>
 		<Page custompage="True" pageTypeId="0" pageId="10000085">
 			<Name>ABOUT US</Name>
-			<Link>/Default.aspx?pid=10000085
+			<Link>/Default.aspx?pid=10000085</Link>
 		</Page>
 		<Page custompage="True" pageTypeId="3" pageId="10000296">
 			<Name>Contact Us</Name>
-			<Link>/Contacts.aspx
+			<Link>/Contacts.aspx</Link>
 		</Page>
 		<Page custompage="True" pageTypeId="2" pageId="10000097">
 			<Name>Shipping &amp; Policies</Name>
-			<Link>/AboutUs.aspx
+			<Link>/AboutUs.aspx</Link>
 		</Page>
 		<Page custompage="True" pageTypeId="1" pageId="10000081">
 			<Name>Home</Name>
-			<Link>/Default.aspx
+			<Link>/Default.aspx</Link>
 		</Page>
 	</PagesList>
 </OnlineStore>
