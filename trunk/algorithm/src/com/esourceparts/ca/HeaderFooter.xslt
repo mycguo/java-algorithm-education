@@ -188,6 +188,68 @@
 							</div>
 		
 						</div>
+						
+						<div id="container">
+
+ 							<div id="notification"> </div>
+
+							<div class="wrap-content">
+							<div id="column-left">
+
+    <script type="text/javascript">
+
+	$(document).ready(function(){
+
+	   $(".act-cat").toggle( 
+
+				function() { 
+
+					 $(this).next('.level-2-cat').slideToggle("slow"),{
+
+						duration: 'slow',
+
+						easing: 'easeOutBounce'
+
+					};
+
+				}, 
+
+				function() { 
+
+					 $(this).next('.level-2-cat').slideToggle("slow"),{
+
+						duration: 'slow',
+
+						easing: 'easeOutBounce'
+
+					};
+
+				} 
+
+			);
+
+		$('.box-category > ul > li').last().addClass('last');
+
+		$('.level-2-cat > li').last().addClass('last');
+
+		
+
+	});
+
+	
+
+</script>
+
+
+
+								<div class="box category">
+
+  									<div class="box-content">
+
+    									<div class="box-category">
+
+      										<div class="box-category">
+						
 			
 			
 																		<!--left navigation-->
@@ -307,8 +369,15 @@
 						<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
 							<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
 						</xsl:if>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						</div>
+					</div>
+				</div>
 			</body>
 
 		</html>
