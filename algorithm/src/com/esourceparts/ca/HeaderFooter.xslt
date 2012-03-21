@@ -109,7 +109,7 @@
 										<ul class="links">
 		
 											<li class="m1">
-												<a href="/catalog.aspx"">Catalog<strong></strong></a>
+												<a href="/catalog.aspx">Catalog<strong></strong></a>
 											</li>
 		
 											<li class="m2">
@@ -194,7 +194,7 @@
  							<div id="notification"> </div>
 
 							<div class="wrap-content">
-							<div id="column-left">
+								<div id="column-left">
 
     <script type="text/javascript">
 
@@ -249,12 +249,9 @@
     									<div class="box-category">
 
       										<div class="box-category">
-						
-			
-			
-																		<!--left navigation-->
-																		<xsl:apply-templates select="/OnlineStore/CategoryList"/>
-																		<!--/left navigation-->
+												<!--left navigation-->
+												<xsl:apply-templates select="/OnlineStore/CategoryList"/>
+												<!--/left navigation-->
 
 																<!--Featured Product-->
 																<xsl:call-template name="MainPromoProduct">
@@ -372,6 +369,15 @@
 												</div>
 											</div>
 										</div>
+									</div> 
+
+									
+								</div><!-- left column -->
+								
+																	
+								<div id="content"> <!-- main content -->
+									<div class="slideshow">
+										
 									</div>
 								</div>
 							</div>
