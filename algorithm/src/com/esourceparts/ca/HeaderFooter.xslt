@@ -22,352 +22,295 @@
 				</META>
 				<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
 				<script type="text/javascript" language="javascript" src="/Design/Templates/14/js/rollovers.js"/>
+				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/stylesheet.css"/>
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/css.css"/>
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/checkout.css"/>
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/error.css"/>
 				<meta name='google-site-verification' content='Cfd3vuJoZn9HBXrxmfe6S6KErljI3WCEur-8lkokToo'/>
 				<xsl:value-of select="/OnlineStore/Header/HeaderCodeElement" disable-output-escaping="yes"/>
 			</head>
-			<body bgcolor="#D4CFBB" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="text">
-				<br/>
-				<table width="100%" border="0" cellspacing="0" cellpadding="0">
-					<tr>
-						<td width="6%">
-&#160;
-                </td>
-						<td>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr>
-									<td width="100%" valign="top" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/59.gif" style="background-position:bottom ">
-										<table width="100%" border="0" cellspacing="0" cellpadding="0">
-											<tr>
-												<td>
-													<table width="100%" border="0" cellspacing="0" cellpadding="0" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/52.gif">
-														<tr>
-															<td>
-																<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/51.gif" width="42" height="38" alt=""/>
-															</td>
-															<td width="50%" class="special_text pad3">
-																<!-- korzina -->
-																<xsl:call-template name="Header_Footer_Cart">
-																	<xsl:with-param name="Cart" select="/OnlineStore/Cart"/>
+			
+			<body class="common-home">
+
+    			<div class="content-padd">
+
+    				<div class="content-bg">
+
+						<p id="back-top"> <a href="#top"><span></span></a> </p>
+			
+						<div class="row-1">
+		
+							<div id="header">
+		
+								<div id="logo">
+									<a
+										href="http://www.esourceparts.ca/">
+										<img
+											src="http://www.esourceparts.ca/pictures/_11/10107/10106246.jpg"
+											title="Electronics Store" alt="Electronics Store" />
+									</a>
+								</div>
+
+		                        <!--  
+								<form
+									action="http://livedemo00.template-help.com/opencart_38241/index.php?route=common/home"
+									method="post" enctype="multipart/form-data">
+		
+									<div id="currency">
+		
+										<a title="Euro"
+											onclick="$('input[name=\'currency_code\']').attr('value', 'EUR').submit(); $(this).parent().parent().submit();">
+											<span>€</span>
+										</a>
+		
+										<a title="Pound Sterling"
+											onclick="$('input[name=\'currency_code\']').attr('value', 'GBP').submit(); $(this).parent().parent().submit();">
+											<span>£</span>
+										</a>
+		
+										<a title="US Dollar">
+											<span class="act">$</span>
+										</a>
+		
+										<input type="hidden" name="currency_code" value="" />
+		
+										<input type="hidden" name="redirect"
+											value="http://livedemo00.template-help.com/opencart_38241/index.php?route=common/home" />
+		
+									</div>
+		
+								</form>
+		                         -->
+								<div id="search">
+		
+									<div class="button-search"></div>
+		
+									<span class="search-bg">
+											<!-- search form -->
+											<form action="/Catalog.aspx" method="get">
+												<div class="special_text pad3">&#160;search:&#160;
+		                                      		<input type="Text" name="srchSearchCriteria" class="inp"/>&#160;
+		                                      		<input type="submit" value="Enter search keywords here" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" title="Search" class="button_go"/></div>
+											</form>
+											<!--/search form -->
+									</span>
+		
+									<!--  
+									<a class="adv-search" href="index.php?route=product/search">Advanced
+										Search</a>
+									-->
+		
+								</div>
+		
+								<div class="right-header">
+		
+									<div class="wrapper">
+		
+										<ul class="links">
+		
+											<li class="m1">
+												<a href="/catalog.aspx"">Catalog<strong></strong></a>
+											</li>
+		
+											<li class="m2">
+												<a href="/auctions.aspx">Auctions<strong></strong></a>
+											</li>
+		
+											<li class="m3">
+												<a href="/contacts.aspx">Contact Us<strong></strong></a>
+											</li>
+		
+											<li class="m4">
+												<a href="/aboutus.aspx">Shipping &amp; Policies<strong></strong></a>
+											</li>
+		
+											<li class="m5">
+												<a href="/cart.aspx">Cart<strong></strong></a>
+											</li>
+
+											<li class="m5">
+												<a ref="/checkout.aspx">Checkout<strong></strong></a>
+											</li>											
+		
+										</ul>
+		
+										<div id="cart">
+		
+											<div class="cart_inner">
+		
+												<div class="heading">
+		
+													<h4>Shopping Cart:</h4>
+													<!-- korzina -->
+													<xsl:call-template name="Header_Footer_Cart">
+															<xsl:with-param name="Cart" select="/OnlineStore/Cart"/>
+													</xsl:call-template>
+													<!--/korzina -->													
+													
+													<!--  
+													<a
+														href="http://livedemo00.template-help.com/opencart_38241/index.php?route=checkout/cart"
+														id="cart_total">
+														<strong>0 item(s)</strong>
+														- $0.00
+													</a>
+		
+													<span class="sc-button"></span>
+													-->
+		
+												</div>
+		
+											</div>
+		
+											<div class="content"></div>
+		
+										</div>
+		
+									</div>
+		
+		
+		
+								</div>
+		
+								<div id="welcome">
+		
+									Welcome visitor you can
+									<a
+										href="https://www.esourceparts.ca/Login.aspx">login</a>
+									or
+									<a
+										href="https://www.esourceparts.ca/ShipmentInfo.aspx?quick=true">create an account</a>
+									.
+								</div>
+		
+		
+		
+							</div>
+		
+						</div>
+			
+			
+																		<!--left navigation-->
+																		<xsl:apply-templates select="/OnlineStore/CategoryList"/>
+																		<!--/left navigation-->
+
+																<!--Featured Product-->
+																<xsl:call-template name="MainPromoProduct">
+																	<xsl:with-param name="productGroup" select="/OnlineStore/PromoProductGroup"/>
 																</xsl:call-template>
-																<!--/korzina -->
-															</td>
-															<td>
-																<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/53.gif" width="42" height="38" alt=""/>
-															</td>
-															<!-- search form -->
-															<form action="/Catalog.aspx" method="get">
-																<td width="50%" class="special_text pad3">
-&#160;
-                                      search:
-&#160;
-                                      <input type="Text" name="srchSearchCriteria" class="inp"/>
-&#160;
-                                      <input type="submit" value="" title="Search" class="button_go"/>
-																</td>
-															</form>
-															<!--/search form -->
-														</tr>
-													</table>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<table width="100%" border="0" cellspacing="0" cellpadding="0">
-														<tr>
-															<td>
-																<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/58.gif" width="9" height="88" alt=""/>
-															</td>
-															<td width="100%" align="left" valign="middle" style="color:#4C4C4C; font-size: 16px; font-weight: bold; font-family: Arial;">
-																<table cellpadding="0" cellspacing="0" align="left" width="100%">
-																	<tr>
-																		<td>
-																			<!-- logo -->
-																			<xsl:if test="string(Logo/@type) = 'image'">
-																				<a href="/">
-																					<img src="{Logo}" alt="Logo" border="0"/>
-																				</a>
-																			</xsl:if>
-																			<xsl:if test="string(Logo/@type) = 'text'">
-																				<img src="/Design/Templates/13/vision/spacer.gif" width="222" height="1" align="absmiddle"/>
-																				<br/>
-																				<nobr>
-																					<a href="/">
-																						<xsl:value-of select="Logo"/>
-																					</a>
-																				</nobr>
-																			</xsl:if>
-																			<!--/logo -->
-																		</td>
-																		<td valign="middle" align="middle" width="95%" style="font-family: Arial, Helvetica, sans-serif; font-size: 36px; font-weight: bold; font-style:italic">“Your source for electronics and parts!”</td>
-																	</tr>
-																</table>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-									<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/59.gif" style="background-position:bottom ">
-										<table width="100%" border="0" cellspacing="0" cellpadding="0" style="background:url(/Design/Templates/{/OnlineStore/@designDirectory}/images/70.gif) bottom right no-repeat">
-											<tr>
-												<td>
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/91.gif" width="42" height="16" alt=""/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/56.gif" align="right">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/56.gif" width="112" height="16" border="0" hspace="0" vspace="0" alt=""/>
-													<!--                              <img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="112" height="1" /> -->
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/57.gif" width="11" height="16" border="0" hspace="0" vspace="0" alt=""/>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/90.gif" width="42" height="16" alt=""/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/60.gif">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker-2.gif" width="3" height="3" hspace="5" align="absmiddle"/>
-													<a class="menu" href="/catalog.aspx">Catalog</a>
-												</td>
-											</tr>
-											<tr>
-												<td valign="top">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/72.gif" width="12" height="6" alt=""/>
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/61.gif" alt="" width="30" height="16" align="top"/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/62.gif" class="special_text">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker-2.gif" width="3" height="3" hspace="5" align="absmiddle"/>
-													<a class="menu" href="/auctions.aspx">Auctions</a>
-												</td>
-											</tr>
-											<tr>
-												<td align="right">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/63.gif" width="30" height="16" alt=""/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/64.gif" class="special_text">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker-2.gif" width="3" height="3" hspace="5" align="absmiddle"/>
-													<a class="menu" href="/contacts.aspx">Contact Us</a>
-												</td>
-											</tr>
-											<tr>
-												<td align="right">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/63.gif" width="30" height="16" alt=""/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/64.gif" class="special_text">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker-2.gif" width="3" height="3" hspace="5" align="absmiddle"/>
-													<a class="menu" href="/aboutus.aspx">Shipping &amp; Policies</a>
-												</td>
-											</tr>
-											<tr>
-												<td align="right">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/65.gif" width="30" height="16" alt=""/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/67.gif" class="special_text">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker-2.gif" width="3" height="3" hspace="5" align="absmiddle"/>
-													<a class="menu" href="/cart.aspx">Cart</a>
-												</td>
-											</tr>
-											<tr>
-												<td align="right">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/68.gif" width="30" height="16" alt=""/>
-												</td>
-												<td background="/Design/Templates/{/OnlineStore/@designDirectory}/images/69.gif" class="special_text">
-													<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker-2.gif" width="3" height="3" hspace="5" align="absmiddle"/>
-													<a class="menu" href="/checkout.aspx">Checkout</a>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<img src="/Design/Templates/common/images/i.gif" width="1" height="1" border="0" alt=""/>
-												</td>
-												<td style="height: 14px;background-color:transparent">
-													<img src="/Design/Templates/common/images/i.gif" width="1" height="1" border="0" alt=""/>
-													<!--                              <img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/70.gif" width="9" height="30" alt="" /> -->
-												</td>
-											</tr>
-										</table>
-									</td>
-								</tr>
-							</table>
-							<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="1" height="8"/>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr>
-									<td valign="top" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/17.gif" style="background-position:left; background-repeat:repeat-y" bgcolor="#ECEAE1">
-										<table width="100%" border="0" cellspacing="0" cellpadding="0">
-											<tr>
-												<td>
-													<table width="100%" border="0" cellspacing="0" cellpadding="0">
-														<tr>
-															<td>
-																<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_37.gif" width="42" height="38" alt=""/>
-															</td>
-															<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3" onClick="document.location.href='/catalog.aspx'" style="cursor: hand">
-                                    Categories
-                                    <img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="150" height="1" align="absmiddle"/>
-															</td>
-														</tr>
-													</table>
-												</td>
-											</tr>
-											<tr>
-												<td valign="top">
-													<table width="100%" border="0" cellspacing="0" cellpadding="0">
-														<tr>
-															<td>
-																<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
-															</td>
-															<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/18.gif" style="background-repeat:repeat-x; padding: 10px 10px 10px ">
-																<!--left navigation-->
-																<xsl:apply-templates select="/OnlineStore/CategoryList"/>
-																<!--/left navigation-->
-															</td>
-														</tr>
-														<!--Featured Product-->
-														<xsl:call-template name="MainPromoProduct">
-															<xsl:with-param name="productGroup" select="/OnlineStore/PromoProductGroup"/>
-														</xsl:call-template>
-														<!--/Featured Product-->
-													</table>
-												</td>
-											</tr>
-										</table>
-									</td>
-									<td width="100%" valign="top" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/19.gif" style="background-position:left; background-repeat:repeat-y" bgcolor="#ECEAE1">
-										<table width="100%" border="0" cellspacing="0" cellpadding="0">
-											<tr>
-												<td valign="top">
-													<!--main-->
-													<xsl:choose>
-														<xsl:when test="@type = 'checkout'">
-															<!-- header -->
-															<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																<tr>
-																	<td width="100%">
-																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																			<tr>
-																				<td>
-																					<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_39.gif" width="42" height="38" alt=""/>
-																				</td>
-																				<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3">
-																					<!--Page Name-->
-																					<span class="window_header">
-																						<xsl:value-of select="@pageName"/>
-																					</span>
-																					<!--/Page Name-->
-																				</td>
-																			</tr>
-																		</table>
-																	</td>
-																</tr>
-															</table>
-															<!-- /header -->
-															<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																<tr>
-																	<td>
-																		<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
-																	</td>
-																	<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/18.gif" style="background-repeat:repeat-x " class="pad">
-																		<xsl:call-template name="Body"/>
-																	</td>
-																</tr>
-															</table>
-														</xsl:when>
-														<xsl:when test="@type = 'rma'">
-															<xsl:call-template name="Body"/>
-														</xsl:when>
-														<xsl:when test="@pageName = 'Catalog'">
-															<xsl:call-template name="Body"/>
-														</xsl:when>
-														<xsl:when test="@pageName = 'SearchResults'">
-															<xsl:call-template name="Body"/>
-														</xsl:when>
-														<xsl:otherwise>
-															<!--main table-->
-															<!-- header -->
-															<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																<tr>
-																	<td width="100%">
-																		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																			<tr>
-																				<td>
-																					<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_39.gif" width="42" height="38" alt=""/>
-																				</td>
-																				<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3">
-																					<!--Page Name-->
-																					<span class="window_header">
-																						<xsl:value-of select="@pageName"/>
-																					</span>
-																					<!--/Page Name-->
-																				</td>
-																			</tr>
-																		</table>
-																	</td>
-																</tr>
-															</table>
-															<!-- /header -->
-															<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																<tr>
-																	<td>
-																		<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
-																	</td>
-																	<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/18.gif" style="background-repeat:repeat-x " class="pad">
-																		<!-- call body -->
-																		<xsl:call-template name="Body"/>
-																		<!-- /call body -->
-																	</td>
-																</tr>
-															</table>
-															<!-- /main table-->
-														</xsl:otherwise>
-													</xsl:choose>
-													<!-- /main -->
-													<!--PromoProductGroup-->
-													<xsl:apply-templates select="/OnlineStore/PromoProductGroup"/>
-													<!--/PromoProductGroup-->
-												</td>
-											</tr>
-										</table>
-									</td>
-									<td valign="top" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/20.gif" style="background-position:left; background-repeat:repeat-y">
-										<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/16.gif" width="11" height="32" alt=""/>
-									</td>
-								</tr>
-							</table>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/25.gif">
-								<tr>
-									<td>
-										<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/24.gif" width="42" height="38" alt=""/>
-									</td>
-									<td width="100%" class="pad3" align="center">
-										<span class="special_text">&#169; Kyozou.com
-		<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>
-		. All Rights Reserved.</span>
-									</td>
-									<td>
-										<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/26.gif" width="11" height="38" alt=""/>
-									</td>
-								</tr>
-							</table>
-						</td>
-						<td width="6%">
-&#160;
-                </td>
-					</tr>
-				</table>
-				<br/>
-				<div align="center">
-					<span id="siteseal">
-						<script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=VdjeMcXs2gfVvqJGbMYi63vk6BwU0acLEuSUECLYBJJSFGZAOOt13Is"/>
-						<br/>
-						<a href='https://www.godaddy.com/gdshop/ssl/ssl.asp'>SSL Certificates</a>
-					</span>
-				</div>
-				<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
-					<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
-				</xsl:if>
+																<!--/Featured Product-->
+
+
+															<!--main-->
+															<xsl:choose>
+																<xsl:when test="@type = 'checkout'">
+																	<!-- header -->
+																	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																		<tr>
+																			<td width="100%">
+																				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																					<tr>
+																						<td>
+																							<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_39.gif" width="42" height="38" alt=""/>
+																						</td>
+																						<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3">
+																							<!--Page Name-->
+																							<span class="window_header">
+																								<xsl:value-of select="@pageName"/>
+																							</span>
+																							<!--/Page Name-->
+																						</td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																	</table>
+																	<!-- /header -->
+																	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																		<tr>
+																			<td>
+																				<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
+																			</td>
+																			<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/18.gif" style="background-repeat:repeat-x " class="pad">
+																				<xsl:call-template name="Body"/>
+																			</td>
+																		</tr>
+																	</table>
+																</xsl:when>
+																<xsl:when test="@type = 'rma'">
+																	<xsl:call-template name="Body"/>
+																</xsl:when>
+																<xsl:when test="@pageName = 'Catalog'">
+																	<xsl:call-template name="Body"/>
+																</xsl:when>
+																<xsl:when test="@pageName = 'SearchResults'">
+																	<xsl:call-template name="Body"/>
+																</xsl:when>
+																<xsl:otherwise>
+																	<!--main table-->
+																	<!-- header -->
+																	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																		<tr>
+																			<td width="100%">
+																				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																					<tr>
+																						<td>
+																							<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_39.gif" width="42" height="38" alt=""/>
+																						</td>
+																						<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3">
+																							<!--Page Name-->
+																							<span class="window_header">
+																								<xsl:value-of select="@pageName"/>
+																							</span>
+																							<!--/Page Name-->
+																						</td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																	</table>
+																	<!-- /header -->
+																	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																		<tr>
+																			<td>
+																				<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
+																			</td>
+																			<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/18.gif" style="background-repeat:repeat-x " class="pad">
+																				<!-- call body -->
+																				<xsl:call-template name="Body"/>
+																				<!-- /call body -->
+																			</td>
+																		</tr>
+																	</table>
+																	<!-- /main table-->
+																</xsl:otherwise>
+															</xsl:choose>
+															<!-- /main -->
+															<!--PromoProductGroup-->
+															<xsl:apply-templates select="/OnlineStore/PromoProductGroup"/>
+															<!--/PromoProductGroup-->
+
+
+
+						<span class="special_text">&#169; Kyozou.com
+				<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>
+				. All Rights Reserved.</span>
+						<!--  
+						<div align="center">
+							<span id="siteseal">
+								<script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=VdjeMcXs2gfVvqJGbMYi63vk6BwU0acLEuSUECLYBJJSFGZAOOt13Is"/>
+								<br/>
+								<a href='https://www.godaddy.com/gdshop/ssl/ssl.asp'>SSL Certificates</a>
+							</span>
+						</div>
+						-->
+						<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
+							<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
+						</xsl:if>
+						</div>
+						</div>
 			</body>
+
 		</html>
 	</xsl:template>
 	<!-- templates -->
