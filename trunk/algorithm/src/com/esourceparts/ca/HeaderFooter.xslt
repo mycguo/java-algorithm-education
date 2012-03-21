@@ -23,9 +23,11 @@
 				<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
 				<script type="text/javascript" language="javascript" src="/Design/Templates/14/js/rollovers.js"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/stylesheet.css"/>
+				<!--  
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/css.css"/>
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/checkout.css"/>
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/error.css"/>
+				-->
 				<meta name='google-site-verification' content='Cfd3vuJoZn9HBXrxmfe6S6KErljI3WCEur-8lkokToo'/>
 				<xsl:value-of select="/OnlineStore/Header/HeaderCodeElement" disable-output-escaping="yes"/>
 			</head>
