@@ -252,13 +252,103 @@
 												<!--left navigation-->
 												<xsl:apply-templates select="/OnlineStore/CategoryList"/>
 												<!--/left navigation-->
+												</div>
+											</div>
+										</div>
+									</div> 
 
+									
+								</div><!-- left column -->
+								
+																	
+								<div id="content"> 
+									<div class="slideshow">
 																<!--Featured Product-->
 																<xsl:call-template name="MainPromoProduct">
 																	<xsl:with-param name="productGroup" select="/OnlineStore/PromoProductGroup"/>
 																</xsl:call-template>
-																<!--/Featured Product-->
+																<!--/Featured Product-->										
+									</div>
+									
 
+									<div id="banner0" class="banner">
+									
+									      <div><a href="index.php?route=product/product&amp;path=69&amp;product_id=43"><img src="http://livedemo00.template-help.com/opencart_38241/image/cache/data/baner-column-150x266.jpg" alt="baner" title="baner" /></a></div>
+									
+									</div>
+									
+									<script type="text/javascript"><!--
+									
+									var banner = function() {
+									
+										$('#banner0').cycle({
+									
+											before: function(current, next) {
+									
+												$(next).parent().height($(next).outerHeight());
+									
+											}
+									
+										});
+									
+									}
+									
+									
+									
+									setTimeout(banner, 2000);
+									
+									//--></script>
+									<script type="text/javascript">
+									
+										$(function(){
+									
+											$('.info-list li').last().addClass('last');
+									
+										});
+									
+									</script>
+
+									
+									<div class="info-box">
+									
+									  <div class="info-box-title">Follow <strong>us:</strong></div>
+									
+									  <div class="info-box-content">
+									
+									  <ul class="list-services">
+									
+									        <li class="second"><a class="tooltips" title="facebook" href="facebook.com"></a></li>
+									
+											<li class="first"><a class="tooltips" title="twitter" href="twitter.com"></a></li>
+									
+									        <li class="five"><a class="tooltips" title="youtube" href="youtube.com"></a></li>
+									
+									  </ul>
+									
+									  </div>
+									
+									</div> <!-- info-box -->
+									<script type="text/javascript">
+									
+											(function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
+									
+										$(window).load(function(){
+									
+											if($(".maxheight").length){
+									
+											$(".maxheight").equalHeights()}
+									
+										})
+									
+									</script>
+									
+									<div class="box new-products">
+									
+									  <div class="box-heading">Featured products</div>
+									
+									  <div class="box-content">
+									
+									    <div class="box-product">
 
 															<!--main-->
 															<xsl:choose>
@@ -351,39 +441,35 @@
 
 
 
-						<span class="special_text">&#169; Kyozou.com
-				<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>
-				. All Rights Reserved.</span>
-						<!--  
-						<div align="center">
-							<span id="siteseal">
-								<script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=VdjeMcXs2gfVvqJGbMYi63vk6BwU0acLEuSUECLYBJJSFGZAOOt13Is"/>
-								<br/>
-								<a href='https://www.godaddy.com/gdshop/ssl/ssl.asp'>SSL Certificates</a>
-							</span>
-						</div>
-						-->
-						<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
-							<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
-						</xsl:if>
-												</div>
-											</div>
-										</div>
-									</div> 
+															<div class="special_text" align="center">&#169; Kyozou.com
+																	<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>
+																	. All Rights Reserved.
+															</div>
+																			<!--  
+																			<div align="center">
+																				<span id="siteseal">
+																					<script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=VdjeMcXs2gfVvqJGbMYi63vk6BwU0acLEuSUECLYBJJSFGZAOOt13Is"/>
+																					<br/>
+																					<a href='https://www.godaddy.com/gdshop/ssl/ssl.asp'>SSL Certificates</a>
+																				</span>
+																			</div>
+																			-->
+															<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
+																<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
+															</xsl:if>
 
+
+									    
+									    </div>
+									   </div>
+									 </div>  <!-- box new-products -->
 									
-								</div><!-- left column -->
-								
-																	
-								<div id="content"> <!-- main content -->
-									<div class="slideshow">
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+									
+								</div> <!-- content -->
+							</div> <!-- wrap-content -->
+						</div> <!-- container -->
+					</div> <!-- content-bg -->
+				</div> <!-- content-padd -->
 			</body>
 
 		</html>
