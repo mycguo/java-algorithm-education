@@ -92,9 +92,8 @@
 									<span class="search-bg">
 											<!-- search form -->
 											<form action="/Catalog.aspx" method="get">
-												<div class="special_text pad3">&#160;search:&#160;
 		                                      		<input type="Text" name="srchSearchCriteria" class="inp"/>&#160;
-		                                      		<input type="submit" value="Enter search keywords here" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" title="Search" class="button_go"/></div>
+		                                      		<input type="submit" value="Enter search keywords here" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" title="Search" class="button_go"/>
 											</form>
 											<!--/search form -->
 									</span>
