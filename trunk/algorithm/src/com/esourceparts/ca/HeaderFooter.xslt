@@ -24,6 +24,21 @@
 				<script type="text/javascript" language="javascript" src="/Design/Templates/14/js/rollovers.js"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/stylesheet.css"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/slideshow.css"  media="screen" />
+
+				<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/jquery-1.6.1.min.js"></script>
+				
+				<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+				
+				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/js/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+				
+				<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/ui/external/jquery.cookie.js"></script>
+				
+				<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+				
+				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/js/jquery/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+				
+				
+				
 				<link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css' />
 				
 				<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
