@@ -154,31 +154,20 @@
 		
 								</form>
 		                         -->
-								<div id="search">
-		
-									<div class="button-search"></div>
-		
-									<span class="search-bg">
-															<!-- search form -->
-															<form action="/Catalog.aspx" method="get">
-																<td width="50%" class="special_text pad3">
-&#160;
-                                      search:
-&#160;
-                                      <input type="Text" name="srchSearchCriteria" class="inp"/>
-&#160;
-                                      <input type="submit" value="" title="Search" class="button_go"/>
-																</td>
-															</form>
-															<!--/search form -->
-									</span>
-		
-									<!--  
-									<a class="adv-search" href="index.php?route=product/search">Advanced
-										Search</a>
-									-->
-		
-								</div>
+
+							  <div id="search">
+						
+						       <div class="button-search"></div>
+						
+						                    <span class="search-bg"> <input type="text" name="srchSearchCriteria" value="Enter search keywords here" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" /></span>
+						
+						                    <a class="adv-search" href="/Catalog.aspx" >Advanced Search</a>
+						
+						        </div>
+
+        						
+		                         
+			
 		
 								<div class="right-header">
 		
@@ -294,14 +283,20 @@
 								
 																	
 								<div id="content"> 
+									
+									
+									<xsl:if test="@pageName = 'Home'">
 									<div class="slideshow">
+										 <img src="http://www.esourceparts.ca/pictures/_15/14295/14294672.jpg" width="630" height="380"/>
+										 <!--  
 										 <div id="slideshow0" class="nivoSlider" style="width: 630px; height: 380px;">
-																<!--Featured Product-->
+																
 																<xsl:call-template name="MainPromoProduct">
 																	<xsl:with-param name="productGroup" select="/OnlineStore/PromoProductGroup"/>
 																</xsl:call-template>
-																<!--/Featured Product-->								
-										</div>		
+																								
+										</div>	
+										-->	
 									</div>
 									
 
@@ -331,20 +326,9 @@
 									  </div>
 									
 									</div> <!-- info-box -->
-									<!-- 
-									<script type="text/javascript">
-									
-											(function($){$.fn.equalHeights=function(minHeight,maxHeight){tallest=(minHeight)?minHeight:0;this.each(function(){if($(this).height()>tallest){tallest=$(this).height()}});if((maxHeight)&&tallest>maxHeight)tallest=maxHeight;return this.each(function(){$(this).height(tallest)})}})(jQuery)
-									
-										$(window).load(function(){
-									
-											if($(".maxheight").length){
-									
-											$(".maxheight").equalHeights()}
-									
-										})
-									
-									</script>  -->
+									 
+
+									</xsl:if>
 									
 									<div class="box new-products">
 									
