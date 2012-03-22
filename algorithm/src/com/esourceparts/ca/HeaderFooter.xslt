@@ -265,11 +265,13 @@
 																	
 								<div id="content"> 
 									<div class="slideshow">
+										 <div id="slideshow0" class="nivoSlider" style="width: 630px; height: 380px;">
 																<!--Featured Product-->
 																<xsl:call-template name="MainPromoProduct">
 																	<xsl:with-param name="productGroup" select="/OnlineStore/PromoProductGroup"/>
 																</xsl:call-template>
-																<!--/Featured Product-->										
+																<!--/Featured Product-->								
+										</div>		
 									</div>
 									
 
@@ -706,67 +708,26 @@
 	</xsl:template>
 	<xsl:template name="MainPromoProduct">
 		<xsl:param name="productGroup"/>
-		<xsl:if test="count($productGroup/Product) &gt; 0">
-			<tr>
-				<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/22.gif" colspan="2">
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
-						<tr>
-							<td>
-								<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_43.gif" width="42" height="38" alt=""/>
-							</td>
-							<td width="100%" class="special_text pad3">
-                    Featured Product
-                  </td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
-				</td>
-				<td width="100%">
-					<table width="100%" border="0" cellspacing="9" cellpadding="0">
-						<tr>
-							<td colspan="2" align="center">
-								<xsl:call-template name="ProductTextLinkByNode">
-									<xsl:with-param name="node" select="$productGroup/Product[1]"/>
-									<xsl:with-param name="text" select="$productGroup/Product[1]/Title"/>
-									<xsl:with-param name="class">style1</xsl:with-param>
-								</xsl:call-template>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<!-- sm photo -->
-								<xsl:call-template name="ProductImageLinkByNode">
-									<xsl:with-param name="node" select="$productGroup/Product[1]"/>
-									<xsl:with-param name="alt" select="$productGroup/Product[1]/Title"/>
-									<xsl:with-param name="class">image</xsl:with-param>
-									<xsl:with-param name="w">80</xsl:with-param>
-									<xsl:with-param name="h">80</xsl:with-param>
-									<xsl:with-param name="image" select="concat('/Picture.aspx?width=80&amp;height=80&amp;id=', $productGroup/Product[1]/ProductPictureID)"/>
-								</xsl:call-template>
-							</td>
-							<td width="100%" valign="bottom">
-								<div align="center" class="Price_Promo_Main">
-									<xsl:value-of select="$productGroup/Product[1]/EComPrice/Money/Formated" disable-output-escaping="yes"/>
-								</div>
-								<br/>
-								<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker.gif" width="10" height="9" hspace="7" vspace="3" align="absmiddle"/>
-								<xsl:call-template name="ProductTextLinkByNode">
-									<xsl:with-param name="node" select="$productGroup/Product[1]"/>
-									<xsl:with-param name="text">More info</xsl:with-param>
-									<xsl:with-param name="class">style3</xsl:with-param>
-								</xsl:call-template>
-								<br/>
-								<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/marker.gif" width="10" height="9" hspace="7" vspace="3" align="absmiddle"/>
-								<a href="/Cart.aspx?addProductId={$productGroup/Product[1]/@id}" class="style3">Add to cart</a>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
+		<xsl:if test="count($productGroup/Product) &gt; 0">  
+			<div class="box-heading">								
+				<xsl:call-template name="ProductTextLinkByNode">  <!-- Feature Products -->
+							<xsl:with-param name="node" select="$productGroup/Product[1]"/>
+							<xsl:with-param name="text">More info</xsl:with-param>
+							<xsl:with-param name="class">style3</xsl:with-param>
+				</xsl:call-template>
+			</div>
+
+			<a href="/Cart.aspx?addProductId={$productGroup/Product[1]/@id}" class="style3">								<!-- sm photo -->
+				<xsl:call-template name="ProductImageLinkByNode">
+					<xsl:with-param name="node" select="$productGroup/Product[1]"/>
+					<xsl:with-param name="alt" select="$productGroup/Product[1]/Title"/>
+					<xsl:with-param name="class">image</xsl:with-param>
+					<xsl:with-param name="w">630</xsl:with-param>
+					<xsl:with-param name="h">380</xsl:with-param>
+					<xsl:with-param name="image" select="concat('/Picture.aspx?width=80&amp;height=80&amp;id=', $productGroup/Product[1]/ProductPictureID)"/>
+				</xsl:call-template>
+			</a>
+
 		</xsl:if>
 	</xsl:template>
 </xsl:stylesheet>
