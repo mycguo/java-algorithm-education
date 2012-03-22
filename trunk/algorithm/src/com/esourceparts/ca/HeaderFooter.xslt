@@ -23,7 +23,13 @@
 				<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
 				<script type="text/javascript" language="javascript" src="/Design/Templates/14/js/rollovers.js"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/stylesheet.css"/>
-				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/slideshow.css"/>
+				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/slideshow.css"  media="screen" />
+				<link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css' />
+				
+				<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
+							
+				<!--[if lt IE 8]><div style='clear:both;height:59px;padding:0 15px 0 15px;position:relative;z-index:10000;text-align:center;'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+				
 				
 				<!--  
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/css.css"/>
@@ -90,12 +96,18 @@
 									<div class="button-search"></div>
 		
 									<span class="search-bg">
-											<!-- search form -->
-											<form action="/Catalog.aspx" method="get">
-		                                      		<input type="Text" name="srchSearchCriteria" class="inp"/>&#160;
-		                                      		<input type="submit" value="Enter search keywords here" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" title="Search" class="button_go"/>
-											</form>
-											<!--/search form -->
+															<!-- search form -->
+															<form action="/Catalog.aspx" method="get">
+																<td width="50%" class="special_text pad3">
+&#160;
+                                      search:
+&#160;
+                                      <input type="Text" name="srchSearchCriteria" class="inp"/>
+&#160;
+                                      <input type="submit" value="" title="Search" class="button_go"/>
+																</td>
+															</form>
+															<!--/search form -->
 									</span>
 		
 									<!--  
@@ -199,52 +211,6 @@
 							<div class="wrap-content">
 								<div id="column-left">
 
-    <script type="text/javascript">
-
-	$(document).ready(function(){
-
-	   $(".act-cat").toggle( 
-
-				function() { 
-
-					 $(this).next('.level-2-cat').slideToggle("slow"),{
-
-						duration: 'slow',
-
-						easing: 'easeOutBounce'
-
-					};
-
-				}, 
-
-				function() { 
-
-					 $(this).next('.level-2-cat').slideToggle("slow"),{
-
-						duration: 'slow',
-
-						easing: 'easeOutBounce'
-
-					};
-
-				} 
-
-			);
-
-		$('.box-category > ul > li').last().addClass('last');
-
-		$('.level-2-cat > li').last().addClass('last');
-
-		
-
-	});
-
-	
-
-</script>
-
-
-
 								<div class="box category">
 
   									<div class="box-content">
@@ -281,37 +247,6 @@
 									      <div><a href="index.php?route=product/product&amp;path=69&amp;product_id=43"><img src="http://livedemo00.template-help.com/opencart_38241/image/cache/data/baner-column-150x266.jpg" alt="baner" title="baner" /></a></div>
 									
 									</div>
-									
-									<script type="text/javascript"><!--
-									
-									var banner = function() {
-									
-										$('#banner0').cycle({
-									
-											before: function(current, next) {
-									
-												$(next).parent().height($(next).outerHeight());
-									
-											}
-									
-										});
-									
-									}
-									
-									
-									
-									setTimeout(banner, 2000);
-									
-									//--></script>
-									<script type="text/javascript">
-									
-										$(function(){
-									
-											$('.info-list li').last().addClass('last');
-									
-										});
-									
-									</script>
 
 									
 									<div class="info-box">
@@ -428,15 +363,7 @@
 																	<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>
 																	. All Rights Reserved.
 															</div>
-																			<!--  
-																			<div align="center">
-																				<span id="siteseal">
-																					<script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=VdjeMcXs2gfVvqJGbMYi63vk6BwU0acLEuSUECLYBJJSFGZAOOt13Is"/>
-																					<br/>
-																					<a href='https://www.godaddy.com/gdshop/ssl/ssl.asp'>SSL Certificates</a>
-																				</span>
-																			</div>
-																			-->
+
 															<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
 																<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
 															</xsl:if>
