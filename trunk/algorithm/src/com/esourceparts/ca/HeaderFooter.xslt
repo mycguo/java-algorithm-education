@@ -23,6 +23,8 @@
 				<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
 				<script type="text/javascript" language="javascript" src="/Design/Templates/14/js/rollovers.js"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/stylesheet.css"/>
+				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/slideshow.css"/>
+				
 				<!--  
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/css.css"/>
 				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/checkout.css"/>
