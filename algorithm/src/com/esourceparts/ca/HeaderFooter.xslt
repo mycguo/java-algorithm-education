@@ -21,7 +21,6 @@
 					<xsl:attribute name="CONTENT"><xsl:value-of select="/OnlineStore/Page/MetaKeywords"/></xsl:attribute>
 				</META>
 				<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
-				<script type="text/javascript" language="javascript" src="/Design/Templates/14/js/rollovers.js"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/stylesheet.css"/>
 				<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/slideshow.css"  media="screen" />
 
@@ -42,16 +41,65 @@
 				<link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css' />
 				
 				<link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css' />
-							
-				<!--[if lt IE 8]><div style='clear:both;height:59px;padding:0 15px 0 15px;position:relative;z-index:10000;text-align:center;'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+										
+			<!--[if IE]>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/fancybox/jquery.fancybox-1.3.4-iefix.js"></script>
+			
+			<![endif]-->
+			
+			<!--[if lt IE 8]><div style='clear:both;height:59px;padding:0 15px 0 15px;position:relative;z-index:10000;text-align:center;'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/tabs.js"></script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/easyTooltip.js"></script>
+			
+			<script type="text/javascript">
+			
+				$(document).ready(function() { 
+			
 				
-				
-				<!--  
-				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/css.css"/>
-				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/checkout.css"/>
-				<link rel="stylesheet" type="text/css" href="/Design/Templates/{/OnlineStore/@designDirectory}/css/error.css"/>
-				-->
-				<meta name='google-site-verification' content='Cfd3vuJoZn9HBXrxmfe6S6KErljI3WCEur-8lkokToo'/>
+			
+				$(".list-services a.tooltips").easyTooltip();
+			
+			}); 
+			
+			</script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/common.js"></script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jQuery.equalHeights.js"></script>
+			
+			<script type="text/JavaScript" src="http://hosting.kyozou.com/esource/js/cloud-zoom.1.0.2.js"></script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery.prettyPhoto.js"></script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jscript_zjquery.anythingslider.js"></script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/nivo-slider/jquery.nivo.slider.pack.js"></script>
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/jquery/jquery.cycle.js"></script>
+			
+			<!--[if  IE 7]>
+			
+			<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/ie7.css" />
+			
+			<![endif]-->
+			
+			<!--[if lt IE 7]>
+			
+			<link rel="stylesheet" type="text/css" href="http://hosting.kyozou.com/esource/css/ie6.css" />
+			
+			<script type="text/javascript" src="http://hosting.kyozou.com/esource/js/DD_belatedPNG_0.0.8a-min.js"></script>
+			
+			<script type="text/javascript">
+			
+			DD_belatedPNG.fix('#logo img');
+			
+			</script>
+			
+			<![endif]-->
+			<meta name='google-site-verification' content='Cfd3vuJoZn9HBXrxmfe6S6KErljI3WCEur-8lkokToo'/>
 				<xsl:value-of select="/OnlineStore/Header/HeaderCodeElement" disable-output-escaping="yes"/>
 			</head>
 			
