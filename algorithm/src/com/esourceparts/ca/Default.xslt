@@ -9,15 +9,8 @@
 		<xsl:apply-templates select="/OnlineStore/Default" />
 	</xsl:template>
 	<xsl:template match="Default">
-		<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom: 1px solid #0C69B7; padding-bottom: 5px; padding-top: 5px;">
-			<tr>
-				<td>
-					<p class="information_text">
-						<xsl:value-of select="/OnlineStore/Page/CustomContent" disable-output-escaping="yes"/>
-					</p>
-				</td>
-			</tr>
-		</table>
-		
+
+		<xsl:value-of select="/OnlineStore/Page/CustomContent" disable-output-escaping="yes"/>
+
 	</xsl:template>
 </xsl:stylesheet>

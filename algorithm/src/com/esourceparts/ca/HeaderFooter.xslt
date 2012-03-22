@@ -403,40 +403,17 @@
 																<xsl:otherwise>
 																	<!--main table-->
 																	<!-- header -->
-																	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																		<tr>
-																			<td width="100%">
-																				<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																					<tr>
-																						<td>
-																							<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_39.gif" width="42" height="38" alt=""/>
-																						</td>
-																						<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3">
-																							<!--Page Name-->
-																							<span class="window_header">
-																								<xsl:value-of select="@pageName"/>
-																							</span>
-																							<!--/Page Name-->
-																						</td>
-																					</tr>
-																				</table>
-																			</td>
-																		</tr>
-																	</table>
+																	<!--Page Name-->
+																	<span class="window_header">
+																			<xsl:value-of select="@pageName"/>
+																	</span>
+																	<!--/Page Name-->
+				
 																	<!-- /header -->
-																	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-																		<tr>
-																			<td>
-																				<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="11" height="1"/>
-																			</td>
-																			<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/18.gif" style="background-repeat:repeat-x " class="pad">
-																				<!-- call body -->
-																				<xsl:call-template name="Body"/>
-																				<!-- /call body -->
-																			</td>
-																		</tr>
-																	</table>
-																	<!-- /main table-->
+																	<!-- call body -->
+																	<xsl:call-template name="Body"/>
+																	<!-- /call body -->
+
 																</xsl:otherwise>
 															</xsl:choose>
 															<!-- /main -->
@@ -498,22 +475,8 @@
 	<xsl:template match="PromoProductGroup">
 		<xsl:if test="count(Product) &gt; 1">
 			<!-- In The Spotlight header-->
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/22.gif" colspan="2">
-						<table width="100%" border="0" cellspacing="0" cellpadding="0">
-							<tr>
-								<td>
-									<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_43.gif" width="42" height="38" alt=""/>
-								</td>
-								<td width="100%" class="special_text pad3">
-                      In The Spotlight
-                    </td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
+			<div class="box-heading">In The Spotlight</div>
+
 			<!-- /In The Spotlight header-->
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
