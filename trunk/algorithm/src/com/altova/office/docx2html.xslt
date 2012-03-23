@@ -7,7 +7,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:docx="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
 	xmlns:docxpkgrels="http://schemas.openxmlformats.org/package/2006/relationships">
-	<xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
 		<html>
 			<head>
