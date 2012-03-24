@@ -370,10 +370,7 @@
 																			<td width="100%">
 																				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 																					<tr>
-																						<td>
-																							<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_39.gif" width="42" height="38" alt=""/>
-																						</td>
-																						<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif" class="special_text pad3">
+																						<td width="100%" class="special_text pad3">
 																							<!--Page Name-->
 																							<span class="window_header">
 																								<xsl:value-of select="@pageName"/>
