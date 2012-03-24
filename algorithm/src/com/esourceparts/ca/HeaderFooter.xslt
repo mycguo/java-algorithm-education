@@ -310,7 +310,7 @@
 									
 									<xsl:if test="@pageName = 'Home'">
 									<div class="slideshow">
-										 <img src="http://www.esourceparts.ca/pictures/_15/14295/14294672.jpg" width="630" height="380"/>
+										 <img src="http://hosting.kyozou.com/esource/image/main.png" width="630" height="380"/>
 										 <!--  
 										 <div id="slideshow0" class="nivoSlider" style="width: 630px; height: 380px;">
 																
@@ -355,7 +355,9 @@
 									
 									<div class="box new-products">
 									
+									  <xsl:if test="@pageName = 'Home'">	
 									  <div class="box-heading">Featured products</div>
+									  </xsl:if>
 									
 									  <div class="box-content">
 									
