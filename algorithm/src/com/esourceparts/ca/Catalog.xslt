@@ -14,11 +14,8 @@
 	<xsl:template match="Catalog">
 		<xsl:call-template name="DisplayCategoryDescription"/>
 		<!--header-->
-		<table width="100%" border="0" cellspacing="0" cellpadding="0" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/12.gif">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td width="100%">
-					<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/spacer.gif" width="1" height="15" align="absmiddle"/>
-				</td>
 				<td>
 					<!--top Scroll-->
 					<xsl:if test="count(ProductGroup)!=0">
@@ -42,7 +39,7 @@
 		</xsl:choose>
 		<!--main-->
 		<!--bottom scroll-->
-		<table width="100%" border="0" cellspacing="0" cellpadding="0" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/22.gif">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td align="right" style="padding-left: 15px;">
 					<xsl:if test="count(ProductGroup)!=0">
@@ -62,12 +59,10 @@
 		<!--header-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td width="100%" background="/Design/Templates/{/OnlineStore/@designDirectory}/images/22.gif" colspan="2">
+				<td width="100%" colspan="2">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
-							<td>
-								<img src="/Design/Templates/{/OnlineStore/@designDirectory}/images/18-verh-1psd_43.gif" width="42" height="38" alt=""/>
-							</td>
+
 							<td width="100%" class="special_text pad3">
 								<nobr>
 									<!--title-->
