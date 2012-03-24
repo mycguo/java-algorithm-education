@@ -263,11 +263,11 @@
 							<div class="wrap-content">
 								<div id="column-left">
 
-								<div class="box category">
+									<div class="box category">
 
-  									<div class="box-content">
+  										<div class="box-content">
 
-    									<div class="box-category">
+    										<div class="box-category">
 
       										<div class="box-category">
 												<!--left navigation-->
@@ -277,6 +277,29 @@
 											</div>
 										</div>
 									</div> 
+									
+									<div class="box manufacturers">
+									
+									  <div class="box-heading">Brands</div>
+									
+									  <div class="box-content"></div>
+									 </div> <!-- manufactuerers  -->
+									 
+																		 
+									<div class="box specials">
+									
+									  <div class="box-heading special-heading">Specials</div>
+									
+									  <div class="box-content">
+									
+									    <div class="box-product">
+									
+									            <div class="special-container1"></div>
+										</div>
+									   </div>
+									  </div> <!-- special --> 									            
+									 
+									
 
 									
 								</div><!-- left column -->
