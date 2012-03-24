@@ -277,13 +277,13 @@
 											</div>
 										</div>
 									</div> 
-									
+									<!--  
 									<div class="box manufacturers">
 									
 									  <div class="box-heading">Brands</div>
 									
 									  <div class="box-content"></div>
-									 </div> <!-- manufactuerers  -->
+									 </div>  manufactuerers  
 									 
 																		 
 									<div class="box specials">
@@ -297,9 +297,9 @@
 									            <div class="special-container1"></div>
 										</div>
 									   </div>
-									  </div> <!-- special --> 									            
+									  </div>  special								            
 									 
-									
+									-->
 
 									
 								</div><!-- left column -->
