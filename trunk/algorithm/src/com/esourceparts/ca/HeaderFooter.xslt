@@ -355,9 +355,9 @@
 									
 									<div class="box new-products">
 									
-									  <xsl:if test="@pageName = 'Home'">	
+									  <!-- 	
 									  <div class="box-heading">Featured products</div>
-									  </xsl:if>
+									   -->
 									
 									  <div class="box-content">
 									
