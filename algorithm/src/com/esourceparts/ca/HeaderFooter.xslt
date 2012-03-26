@@ -156,7 +156,16 @@
 		                         -->
 
 							  <div id="search">
-						
+							  
+							       
+							       <!-- search form -->
+                                  <form action="/Catalog.aspx" method="get">
+                                     <span class="search-bg"><input type="Text" name="srchSearchCriteria" value="Enter search keywords here and press Enter" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" /></span>
+                                     <a class="adv-search" href="/Catalog.aspx" >Advanced Search</a>
+                                  </form>
+                               </div>
+                                  <!--/search form -->
+								<!--  
 						       <div class="button-search"></div>
 						
 						                    <span class="search-bg"> <input type="text" name="srchSearchCriteria" value="Enter search keywords here" onclick="this.value = '';" onkeydown="this.style.color = '#b3b3b3';" /></span>
@@ -164,6 +173,7 @@
 						                    <a class="adv-search" href="/Catalog.aspx" >Advanced Search</a>
 						
 						        </div>
+						        -->
 
         						
 		                         
@@ -194,10 +204,11 @@
 											<li class="m5">
 												<a href="/cart.aspx">Cart<strong></strong></a>
 											</li>
-
-											<li class="m5">
-												<a ref="/checkout.aspx">Checkout<strong></strong></a>
-											</li>											
+											<!-- 							
+											<li class="m6">
+												<a ref="/Checkout.aspx">Checkout<strong></strong></a>
+											</li>	
+											 -->										
 		
 										</ul>
 		
