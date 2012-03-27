@@ -16,7 +16,7 @@
 		<!--header-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td>
+				<td align="right" style="padding-left: 15px;">
 					<!--top Scroll-->
 					<xsl:if test="count(ProductGroup)!=0">
 						<xsl:apply-templates select="PageScroll"/>
