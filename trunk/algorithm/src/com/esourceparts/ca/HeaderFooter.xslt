@@ -224,13 +224,13 @@
 											<div class="cart_inner">
 		
 												<div class="heading">
-		
-													<h4>Shopping Cart:</h4>
+													<h4>Shopping Cart: </h4>
 													<!-- korzina -->
 													<xsl:call-template name="Header_Footer_Cart">
 															<xsl:with-param name="Cart" select="/OnlineStore/Cart"/>
 													</xsl:call-template>
-													<!--/korzina -->													
+													<!--/korzina -->
+												
 													
 													<!--  
 													<a
@@ -343,7 +343,8 @@
 
 									<div id="banner0" class="banner">
 									
-									      <div><a href="index.php?route=product/product&amp;path=69&amp;product_id=43"><img src="http://livedemo00.template-help.com/opencart_38241/image/cache/data/baner-column-150x266.jpg" alt="baner" title="baner" /></a></div>
+									      <div><a href="http://www.esourceparts.ca/MP3-PLAYERS/IPOD-ACCESSORIES-10000167/11186182-Belkin-Slim-iPad-2-Folio/ProductInfo.aspx">
+									      <img src="http://livedemo00.template-help.com/opencart_38241/image/cache/data/baner-column-150x266.jpg" alt="baner" title="baner" /></a></div>
 									
 									</div>
 
@@ -356,7 +357,7 @@
 									
 									  <ul class="list-services">
 									
-									        <li class="second"><a class="tooltips" title="facebook" href="facebook.com"></a></li>
+									        <li class="second"><a class="tooltips" title="facebook" href="http://www.facebook.com/home.php?#!/pages/Esource-parts/153231694719234"></a></li>
 									
 											<li class="first"><a class="tooltips" title="twitter" href="twitter.com"></a></li>
 									
@@ -475,17 +476,13 @@
 	<!-- templates -->
 	<xsl:template name="Header_Footer_Cart">
 		<xsl:param name="Cart"/>
-		<nobr>
-          Shopping-cart:
           <strong>
 				<xsl:value-of select="sum($Cart/Product/CartQuantity)"/>
 			</strong>
           item
           <strong>
 				<xsl:value-of select="$Cart/Subtotal/Money/Formated" disable-output-escaping="yes"/>
-			</strong>
-          cost
-        </nobr>
+		  </strong>
 	</xsl:template>
 	<!--navigation-->
 	<xsl:template match="PromoProductGroup">
