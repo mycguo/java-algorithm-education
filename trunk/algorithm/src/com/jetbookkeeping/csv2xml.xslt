@@ -6,7 +6,7 @@
 
 <xsl:output indent="yes" encoding="UTF-8" />
 
-<xsl:param name="pathToCSV" select="'file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/CUST.TXT'" />
+<xsl:param name="pathToCSV" select="'file:///C:/Users/cg/workspace/JavaProject/src/com/jetbookkeeping/SUPPLIERS.TXT'" />
 
 
 <xsl:template match="/" name="main">
