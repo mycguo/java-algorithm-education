@@ -126,7 +126,7 @@
 									<a
 										href="http://www.esourceparts.ca/">
 										<img
-											src="http://www.esourceparts.ca/pictures/_11/10107/10106246.jpg"
+											src="http://hosting.kyozou.com/esource/logo.jpg"
 											title="Electronics Store" alt="Electronics Store" />
 									</a>
 								</div>
@@ -445,12 +445,6 @@
 															<!--/PromoProductGroup-->
 
 
-
-															<div class="special_text" align="center">&#169; Kyozou.com
-																	<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>
-																	. All Rights Reserved.
-															</div>
-
 															<xsl:if test="not(contains(/OnlineStore/@currentUrl, 'https://'))">
 																<xsl:value-of select="/OnlineStore/Header/AnalyticsCodeElement" disable-output-escaping="yes"/>
 															</xsl:if>
@@ -468,8 +462,7 @@
 						
 						<div class="footer-wrap">
 							<div id="footer">
-							
-							<div id="powered" align="center"> www.esourceparts.ca &#169;<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>. All Rights Reserved.</div>
+								<div class="special_text" align="center"> www.esourceparts.ca &#169;<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>. All Rights Reserved.</div>
 							</div>
 							
 						</div> <!-- footer-wrap -->
