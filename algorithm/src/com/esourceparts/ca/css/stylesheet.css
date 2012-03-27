@@ -2,12 +2,11 @@ html {
 	margin: 0;
 	padding: 0;
 }
-body { width:100%; text-align: center;}
+body { width:100%;}
 html, body {
   margin:0;
   padding:0;
   height:100%;
-  text-align: center;
 }
 body {	background:url(../image/tail-bg.gif) left top repeat-x #f4f4f4;
 	color: #6e6e6e;
@@ -16,7 +15,6 @@ body {	background:url(../image/tail-bg.gif) left top repeat-x #f4f4f4;
 	padding: 0px;
 	font-size:11px;
 	line-height:16px;
-	text-align: center;
 }
 td, th, input, textarea, select, a {
 	font-size: 12px;
@@ -24,16 +22,13 @@ td, th, input, textarea, select, a {
 .content-bg {
 	width:950px;
 	margin:0 auto;
-	text-align: center;
 }
 .content-padd {
 	padding:0px 0 27px 0;
-	text-align: center;
 }
 .wrapper {
 	width:100%;
 	overflow:hidden;
-	text-align: center;
 }
 .extra-wrap{ overflow:hidden;}
 .clear {
@@ -43,7 +38,6 @@ td, th, input, textarea, select, a {
 	visibility: hidden;
 	width: 0;
 	height: 0;
-	text-align: center;
 }
 .spacing { margin-right:20px;} 
 h1 {
@@ -55,7 +49,7 @@ h1 {
 	margin-bottom:13px;
 }
 
-.row-1{ width:950px; margin:0 auto; text-align: center;}
+.row-1{ width:950px; margin:0 auto;}
 .button-2.left-button-prod{ float:right;}
 .price.special-price{ float:none;}
 h2 {
@@ -119,7 +113,6 @@ label {
 	margin-right: auto;
 	text-align: left;
 	padding:0;
-	text-align: center;
 }
 #column-left {
 	float: left;
@@ -142,7 +135,6 @@ label {
 	margin-bottom:0px; 
 	padding-top:0px; 
 	padding-left:10px;
-	text-align: center;
 }
 #banner4{ border-bottom:1px solid #cecece; border-top:1px solid #cecece; margin-bottom:20px;}
 #column-left + #column-right + #content, #column-left + #content {
@@ -159,13 +151,11 @@ label {
 	margin-bottom: 16px;
 	position: relative;
 	z-index: 99;
-	text-align: center;
 }
 #header #logo {
 	position: absolute;
 	top:15px;
 	left:1px;
-	text-align: center;
 }
 #language {
 	position: absolute;
@@ -234,14 +224,12 @@ label {
 	padding-right:9px;
 	float:left;
 	line-height:15px;
-	text-align: center;
 }
 #header #cart .heading {
 	padding:0 0 0 0px;
 	position: relative; 
 	z-index: 1;
 	overflow:hidden;
-	text-align: center;
 }
 #header .links li.last{ padding-right:0; background:none;}
 #tab-review #captcha{ margin-top:10px;}
@@ -2956,6 +2944,7 @@ color:#191919;
     display: inline-block;
 	background:#fff;
     margin: 0 2px 11px;
+    
     padding: 10px;
     vertical-align: top;
     width:170px;
