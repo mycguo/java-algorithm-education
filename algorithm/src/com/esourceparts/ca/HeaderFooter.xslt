@@ -465,6 +465,14 @@
 								</div> <!-- content -->
 							</div> <!-- wrap-content -->
 						</div> <!-- container -->
+						
+						<div class="footer-wrap">
+							<div id="footer">
+							
+							<div id="powered" align="center"> www.esourceparts.ca &#169;<xsl:value-of select="substring(/OnlineStore/@currentDate, 0, 5)" disable-output-escaping="yes"/>. All Rights Reserved.</div>
+							</div>
+							
+						</div> <!-- footer-wrap -->
 					</div> <!-- content-bg -->
 				</div> <!-- content-padd -->
 			</body>
