@@ -359,9 +359,9 @@
 									
 									        <li class="second"><a class="tooltips" title="facebook" href="http://www.facebook.com/home.php?#!/pages/Esource-parts/153231694719234"></a></li>
 									
-											<li class="first"><a class="tooltips" title="twitter" href="twitter.com"></a></li>
+											<li class="first"><a class="tooltips" title="twitter" href="http://twitter.com/#!/Esourceparts"></a></li>
 									
-									        <li class="five"><a class="tooltips" title="youtube" href="youtube.com"></a></li>
+									        <li class="five"><a class="tooltips" title="youtube" href="http://www.youtube.com/esourceparts"></a></li>
 									
 									  </ul>
 									
