@@ -8,6 +8,10 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:derby:/users/cguo/derby/EmpServDB;create=true"/>
             <property name="javax.persistence.jdbc.user" value="APP"/>
             <property name="javax.persistence.jdbc.password" value="APP"/>
+            
+            <!-- EclipseLink should create the database schema automatically -->
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database" />
             <!-- enable this property to see SQL and other logging -->
             <!-- property name="eclipselink.logging.level" value="FINE"/ -->
         </properties>
