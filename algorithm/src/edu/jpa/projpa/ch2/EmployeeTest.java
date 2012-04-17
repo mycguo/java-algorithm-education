@@ -12,18 +12,23 @@ public class EmployeeTest {
     public static void main(String[] args) {
         EntityManagerFactory emf = 
                 Persistence.createEntityManagerFactory("EmployeeService");
+        
+       
+        
         EntityManager em = emf.createEntityManager();
         EmployeeService service = new EmployeeService(em);
         
         //  create and persist an employee
         em.getTransaction().begin();
-        Employee emp = service.createEmployee(158, "John Doe", 45000);
+        Employee emp = service.createEmployee(159, "John Doe", 45000);
         em.getTransaction().commit();
         System.out.println("Persisted " + emp);
         
         // find a specific employee
-        emp = service.findEmployee(158);
+        emp = service.findEmployee(159);
         System.out.println("Found " + emp);
+        
+        em.persist(emp);
         
         // find all employees
         Collection<Employee> emps = service.findAllEmployees();
