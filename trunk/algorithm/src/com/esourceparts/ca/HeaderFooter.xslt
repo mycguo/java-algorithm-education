@@ -191,23 +191,23 @@
 									<div class="wrapper">
 		
 										<ul class="links">
-		
+										
 											<li class="m1">
+												<a href="/aboutus.aspx">About Us<strong></strong></a>
+											</li>										
+		
+											<li class="m2">
 												<a href="/catalog.aspx">Catalog<strong></strong></a>
 											</li>
 		
-											<li class="m2">
+											<li class="m3">
 												<a href="/auctions.aspx">Auctions<strong></strong></a>
 											</li>
 		
-											<li class="m3">
+											<li class="m4">
 												<a href="/contacts.aspx">Contact Us<strong></strong></a>
 											</li>
-		
-											<li class="m4">
-												<a href="/aboutus.aspx">Shipping &amp; Policies<strong></strong></a>
-											</li>
-		
+			
 											<li class="m5">
 												<a href="/cart.aspx">Cart<strong></strong></a>
 											</li>
