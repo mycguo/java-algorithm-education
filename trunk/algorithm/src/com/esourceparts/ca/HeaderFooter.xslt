@@ -215,12 +215,14 @@
 											<li class="m6">
 												<a ref="/Checkout.aspx">Checkout<strong></strong></a>
 											</li>	
-											 -->										
+											 -->	
+											 <li><a href="https://twitter.com/#!/Esourceparts" target="_blank"><img src="http://www.esourcepartswholesale.ca/skin/frontend/codecreatives/esourceparts/images/twitter.png" alt=""/></a></li>
+											 <li><a href="http://www.facebook.com/esourceparts" target="_blank"><img src="http://www.esourcepartswholesale.ca/skin/frontend/codecreatives/esourceparts/images/facebook.png" alt=""/></a></li>									
 		
 										</ul>
-		
+
 										<div id="cart">
-		
+											
 											<div class="cart_inner">
 		
 												<div class="heading">
