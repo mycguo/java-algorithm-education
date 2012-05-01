@@ -344,7 +344,7 @@
 									<div id="banner0" class="banner">
 									
 									      <div><a href="http://www.esourceparts.ca/MP3-PLAYERS/IPOD-ACCESSORIES-10000167/11186182-Belkin-Slim-iPad-2-Folio/ProductInfo.aspx">
-									      <img src="http://livedemo00.template-help.com/opencart_38241/image/cache/data/baner-column-150x266.jpg" alt="baner" title="baner" /></a></div>
+									      <img src="http://hosting.kyozou.com/esource/image/baner-column.jpg" alt="baner" title="baner" /></a></div>
 									
 									</div>
 
