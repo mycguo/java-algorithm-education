@@ -25,21 +25,21 @@
 					<td>
 						<table cellpadding="0" cellspacing="0" border="0">
 							<tr>
-								<td width="99%" align="right">
+								<td width="99%" align="right"><b>
 									<span class="cart_subtotal_text">
                         Subtotal:&#160;
-                      </span>
+                      </span></b>
 								</td>
-								<td class="cart_subtotal_price" valign="center">
+								<td class="cart_subtotal_price" valign="center"><b>
 									<xsl:choose>
 										<xsl:when test="number(/OnlineStore/Cart/Subtotal/Money/Amount) = 0">0</xsl:when>
 										<xsl:otherwise>
 											<xsl:value-of select="/OnlineStore/Cart/Subtotal/Money/Formated" disable-output-escaping="yes"/>
 										</xsl:otherwise>
-									</xsl:choose>
+									</xsl:choose></b>
 								</td>
 								<td>
-									<table cellpadding="0" cellspacing="0" border="0">
+									<table cellpadding="0" cellspacing="0" >
 										<tr>
 											<td class="update_btn">
 												<input type="submit" value="Update Cart" title="Update Cart" class="button"/>
@@ -52,8 +52,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="left" valign="top">
-						<table width="100%" cellpadding="0" cellspacing="0" border="0" class="cart">
+					<td align="center" valign="top">
+						<table width="100%" cellpadding="0" cellspacing="0" class="cart" border="1">
 							<xsl:choose>
 								<xsl:when test="count(/OnlineStore/Cart/Product) != 0">
 									<tr>
