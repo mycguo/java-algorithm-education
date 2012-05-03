@@ -56,9 +56,11 @@
 												<td align="center" class="small_text">Price:&#160;</td>
 											</tr>
 											<tr>
-												<td align="center" class="item_details_price">
+												<td align="center">
 													<strong>
-														<xsl:value-of select="EComPrice/Money/Formated" disable-output-escaping="yes"/>
+														<h3>
+															<xsl:value-of select="EComPrice/Money/Formated" disable-output-escaping="yes"/>
+														</h3>
 													</strong>
 												</td>
 											</tr>
@@ -128,9 +130,9 @@
 						<tr>
 							<td valign="middle" align="left" height="99%">
 								
-								<input type="button" class="button" value="Shipping Price" style="width:80px" onClick="window.open('/ShippingCalculator.aspx?id={@id}', 'ShippingCalculator','menubar=no, scrollbars=yes, toolbar=no, location=no, directories=no, resizable=no, width=700, height=500');" title="View Shipping Price"/>
+								<input type="button" class="button" value="Shipping Price" style="width:120px" onClick="window.open('/ShippingCalculator.aspx?id={@id}', 'ShippingCalculator','menubar=no, scrollbars=yes, toolbar=no, location=no, directories=no, resizable=no, width=700, height=500');" title="View Shipping Price"/>
 								<xsl:if test="Quantity != 0">
-									<input type="button" class="button" value="Add To Cart" style="width:80px" onClick="document.location.href='/Cart.aspx?addProductId={@id}'"/>
+									<input type="button" class="button" value="Add To Cart" style="width:120px" onClick="document.location.href='/Cart.aspx?addProductId={@id}'"/>
 								</xsl:if>
 							</td>
 						</tr>
