@@ -27,6 +27,9 @@
 											<img src="/Picture.aspx?width=190&amp;height=190&amp;id={ProductPictureID}" class="image" vspace="0" alt="{Title}" onclick="window.open('/Enlarge.aspx?id={@id}')" style="cursor:hand" width="190" height="190"/>
 										</td>
 									</tr>
+									<tr>
+										<td align="center"><input type="button" class="button" value="Enlarge" style="width:80px" onClick="window.open('/Enlarge.aspx?id={@id}', 'ShippingCalculator','menubar=no, scrollbars=yes, toolbar=no, location=no, directories=no, resizable=no, width=700, height=500');" title="Enlarge"/></td>
+									</tr>
 								</table>
 							</td>
 						</tr>
@@ -124,7 +127,7 @@
 						</tr>
 						<tr>
 							<td valign="middle" align="left" height="99%">
-								<input type="button" class="button" value="Enlarge" style="width:80px" onClick="window.open('/Enlarge.aspx?id={@id}', 'ShippingCalculator','menubar=no, scrollbars=yes, toolbar=no, location=no, directories=no, resizable=no, width=700, height=500');" title="Enlarge"/>
+								
 								<input type="button" class="button" value="Shipping Price" style="width:80px" onClick="window.open('/ShippingCalculator.aspx?id={@id}', 'ShippingCalculator','menubar=no, scrollbars=yes, toolbar=no, location=no, directories=no, resizable=no, width=700, height=500');" title="View Shipping Price"/>
 								<xsl:if test="Quantity != 0">
 									<input type="button" class="button" value="Add To Cart" style="width:80px" onClick="document.location.href='/Cart.aspx?addProductId={@id}'"/>
