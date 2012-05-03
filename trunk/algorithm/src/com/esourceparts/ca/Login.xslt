@@ -51,12 +51,12 @@ Please make sure to enter valid eBay Item Number. Valid eBay item number is alwa
 	<xsl:template name="LoginInformation">
 	</xsl:template>
 	<xsl:template name="EcommerceLoginTitle">
-		Ecommerce Login
+		<h3>Ecommerce Login</h3>
 	</xsl:template>
 	<xsl:template name="CustomerRegistrationButton">
 		<img src="/Design/Templates/4/vision/register.gif" width="200" height="80" border="0" hspace="2"/>
 	</xsl:template>
 	<xsl:template name="ShoppingCartTitle">
-		Shopping Cart
+		<h3>Shopping Cart</h3>
 	</xsl:template>
 </xsl:stylesheet>
