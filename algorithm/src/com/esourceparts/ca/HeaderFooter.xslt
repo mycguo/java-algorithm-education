@@ -226,11 +226,12 @@
 											<div class="cart_inner">
 		
 												<div class="heading">
-													<h4>Shopping Cart: </h4>
+													<h4>Shopping Cart: 
 													<!-- korzina -->
 													<xsl:call-template name="Header_Footer_Cart">
 															<xsl:with-param name="Cart" select="/OnlineStore/Cart"/>
 													</xsl:call-template>
+													</h4>
 													<!--/korzina -->
 												
 													
