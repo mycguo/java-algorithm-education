@@ -261,9 +261,9 @@
 		
 								<div id="welcome">
 		
-									Welcome visitor you can
+									
 									<a
-										href="https://www.esourceparts.ca/Login.aspx">login</a>
+										href="https://www.esourceparts.ca/Login.aspx">Welcome visitor you can login</a>
 									or
 									<a
 										href="https://www.esourceparts.ca/ShipmentInfo.aspx?quick=true">create an account</a>
