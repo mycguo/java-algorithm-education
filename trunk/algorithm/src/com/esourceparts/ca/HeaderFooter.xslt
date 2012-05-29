@@ -299,10 +299,7 @@
 										</div>
 									</div> 
 									<div class="box manufacturers">
-									
-									  <div class="box-heading"></div>
-									
-									  <div class="box-content"><a href=""><img src="http://hosting.kyozou.com/esource/image/our_showroom.png"/></a></div>
+										<a href=""><img src="http://hosting.kyozou.com/esource/image/our_showroom.png"/></a>
 									</div> 
 									<!--  
 									<div class="box manufacturers">
