@@ -298,6 +298,12 @@
 											</div>
 										</div>
 									</div> 
+									<div class="box manufacturers">
+									
+									  <div class="box-heading"></div>
+									
+									  <div class="box-content"><a href=""><img src="http://hosting.kyozou.com/esource/image/our_showroom.png"/></a></div>
+									</div> 
 									<!--  
 									<div class="box manufacturers">
 									
@@ -347,7 +353,7 @@
 									<div id="banner0" class="banner">
 									
 									      <div><a href="http://www.esourceparts.ca/MP3-PLAYERS/IPOD-ACCESSORIES-10000167/11186182-Belkin-Slim-iPad-2-Folio/ProductInfo.aspx">
-									      <img src="http://hosting.kyozou.com/esource/image/baner-column.jpg" alt="baner" title="baner" /></a></div>
+									      <img src="http://hosting.kyozou.com/esource/image/wholesale_2.png" alt="baner" title="baner" /></a></div>
 									
 									</div>
 
@@ -360,11 +366,11 @@
 									
 									  <ul class="list-services">
 									
-									        <li class="second"><a class="tooltips" title="facebook" href="http://www.facebook.com/home.php?#!/pages/Esource-parts/153231694719234"></a></li>
+									        <li class="second"><a class="tooltips" title="EBay" href="http://www.facebook.com/home.php?#!/pages/Esource-parts/153231694719234"></a></li>
 									
-											<li class="first"><a class="tooltips" title="twitter" href="http://twitter.com/#!/Esourceparts"></a></li>
+											<li class="first"><a class="tooltips" title="Amazon" href="http://www.amazon.ca/shops/esourceparts"></a></li>
 									
-									        <li class="five"><a class="tooltips" title="youtube" href="http://www.youtube.com/esourceparts"></a></li>
+									        <li class="five"><a class="tooltips" title="Kajiji" href="http://toronto.kijiji.ca/c-PostersOtherAds-W0QQUserIdZ49402529"></a></li>
 									
 									  </ul>
 									
