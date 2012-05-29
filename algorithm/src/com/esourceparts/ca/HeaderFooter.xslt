@@ -194,21 +194,26 @@
 										
 											<li class="m1">
 												<a href="/aboutus.aspx">About Us<strong></strong></a>
+											</li>	
+											
+											<li class="m2">
+												<a href="/Default.aspx?pid=10000778">Customer Service<strong></strong></a>
 											</li>										
 		
-											<li class="m2">
+		
+											<li class="m3">
 												<a href="/catalog.aspx">Catalog<strong></strong></a>
 											</li>
 		
-											<li class="m3">
+											<li class="m4">
 												<a href="/auctions.aspx">Auctions<strong></strong></a>
 											</li>
 		
-											<li class="m4">
+											<li class="m5">
 												<a href="/contacts.aspx">Contact Us<strong></strong></a>
 											</li>
 			
-											<li class="m5">
+											<li class="m6">
 												<a href="/cart.aspx">Cart<strong></strong></a>
 											</li>
 											<!-- 							
