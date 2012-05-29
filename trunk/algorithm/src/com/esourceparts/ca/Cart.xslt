@@ -21,36 +21,7 @@
 						</p>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<table cellpadding="0" cellspacing="0" border="0">
-							<tr>
-								<td width="99%" align="right"><b>
-									<span class="cart_subtotal_text">
-                        Subtotal:&#160;
-                      </span></b>
-								</td>
-								<td class="cart_subtotal_price" valign="center"><b>
-									<xsl:choose>
-										<xsl:when test="number(/OnlineStore/Cart/Subtotal/Money/Amount) = 0">0</xsl:when>
-										<xsl:otherwise>
-											<xsl:value-of select="/OnlineStore/Cart/Subtotal/Money/Formated" disable-output-escaping="yes"/>
-										</xsl:otherwise>
-									</xsl:choose></b>
-								</td>
-								<td>
-									<table cellpadding="0" cellspacing="0" >
-										<tr>
-											<td class="update_btn">
-												<input type="submit" value="Update Cart" title="Update Cart" class="button"/>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
+
 				<tr>
 					<td align="center" valign="top">
 						<table width="100%" cellpadding="0" cellspacing="0" class="cart" border="1">
@@ -158,6 +129,38 @@
 						</table>
 					</td>
 				</tr>
+				
+				<tr>
+					<td>
+						<table cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td width="99%" align="right"><b>
+									<span class="cart_subtotal_text">
+                        Subtotal:&#160;
+                      </span></b>
+								</td>
+								<td class="cart_subtotal_price" valign="center"><b>
+									<xsl:choose>
+										<xsl:when test="number(/OnlineStore/Cart/Subtotal/Money/Amount) = 0">0</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="/OnlineStore/Cart/Subtotal/Money/Formated" disable-output-escaping="yes"/>
+										</xsl:otherwise>
+									</xsl:choose></b>
+								</td>
+								<td>
+									<table cellpadding="0" cellspacing="0" >
+										<tr>
+											<td class="update_btn">
+												<input type="submit" value="Update Cart" title="Update Cart" class="button"/>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+								
 				<tr>
 					<td align="center">
 						<input type="button" title="Continue Shopping" value="Continue Shopping" class="button" onclick="window.location.replace('/Catalog.aspx')" id="btn_shoppingcart_continueshopping"/>
