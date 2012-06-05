@@ -126,7 +126,7 @@
 									<a
 										href="http://www.esourceparts.ca/">
 										<img
-											src="http://hosting.kyozou.com/esource/logo.jpg"
+											src="http://hosting.kyozou.com/esource/image/Esource-W.png"
 											title="Electronics Store" alt="Electronics Store" />
 									</a>
 								</div>
@@ -304,7 +304,7 @@
 										</div>
 									</div> 
 									<div class="box manufacturers">
-										<a href=""><img src="http://hosting.kyozou.com/esource/image/our_showroom.png"/></a>
+										<a href="/Default.aspx?pid=10000779"><img src="http://hosting.kyozou.com/esource/image/our_showroom.png"/></a>
 									</div> 
 									<!--  
 									<div class="box manufacturers">
@@ -354,7 +354,7 @@
 
 									<div id="banner0" class="banner">
 									
-									      <div><a href="http://www.esourceparts.ca/MP3-PLAYERS/IPOD-ACCESSORIES-10000167/11186182-Belkin-Slim-iPad-2-Folio/ProductInfo.aspx">
+									      <div><a href="http://www.esourcepartswholesale.ca">
 									      <img src="http://hosting.kyozou.com/esource/image/wholesale_2.png" alt="baner" title="baner" /></a></div>
 									
 									</div>
