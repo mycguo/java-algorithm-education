@@ -212,6 +212,11 @@
 											<li class="m5">
 												<a href="/contacts.aspx">Contact Us<strong></strong></a>
 											</li>
+
+											<li class="m5">
+												<a href="/Default.aspx?pid=10000085">Shipping<strong></strong></a>
+											</li>			
+			
 			
 											<li class="m6">
 												<a href="/cart.aspx">Cart<strong></strong></a>
