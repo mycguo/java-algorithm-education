@@ -126,7 +126,7 @@
 									<a
 										href="http://www.esourceparts.ca/">
 										<img
-											src="http://hosting.kyozou.com/esource/image/Esource-W.png"
+											src="http://hosting.kyozou.com/esource/image/Esource-W.jpg"
 											title="Electronics Store" alt="Electronics Store" />
 									</a>
 								</div>
@@ -367,13 +367,13 @@
 									
 									<div class="info-box">
 									
-									  <div class="info-box-title">Follow <strong>us:</strong></div>
+									  <div class="info-box-title">Shop <strong></strong></div>
 									
 									  <div class="info-box-content">
 									
 									  <ul class="list-services">
 									
-									        <li class="second"><a class="tooltips" title="EBay" href="http://www.facebook.com/home.php?#!/pages/Esource-parts/153231694719234"></a></li>
+									        <li class="second"><a class="tooltips" title="EBay" href="http://stores.ebay.ca/esourceparts416"></a></li>
 									
 											<li class="first"><a class="tooltips" title="Amazon" href="http://www.amazon.ca/shops/esourceparts"></a></li>
 									
