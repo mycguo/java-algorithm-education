@@ -367,7 +367,7 @@
 									
 									<div class="info-box">
 									
-									  <div class="info-box-title">Shop <strong></strong></div>
+									  <div class="info-box-title">Shop Here<strong></strong></div>
 									
 									  <div class="info-box-content">
 									
