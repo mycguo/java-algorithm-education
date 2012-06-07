@@ -105,6 +105,7 @@
 															<td class="td_1_1">
 																<xsl:value-of select="@name"/>
 															</td>
+															<td>&#160;&#160;&#160;&#160;&#160;</td>
 															<td class="td_1_2">
 																<xsl:value-of select="@value"/>
 															</td>
