@@ -40,17 +40,6 @@ app.configure('development', function() {
 	}));
 });
 
-function requireLogin(req, res, next) {
-	if (req.session && req.session.user) {
-		console.log('go to next');
-		next();
-	} else {
-		console.log('redirect to ' + req.url);
-		res.redirect('sessions/new?redir=' + req.url);
-	}
-
-};
-
 app.get('/', function(req, res) {
 	res.render('index', {
 		title : 'express'
@@ -58,20 +47,20 @@ app.get('/', function(req, res) {
 
 });
 
-app.get('/products', requireLogin, function(req, res) {
+app.get('/products', function(req, res) {
 	res.render('products/index', {
 		products : products.all
 	})
 });
 
-app.get('/products/new', requireLogin, function(req, res) {
+app.get('/products/new', function(req, res) {
 	console.log("calling new");
 	res.render('products/new', {
 		product : req.body && req.body.product || products.newp()
 	});
 })
 
-app.post('/products', requireLogin, function(req, res) {
+app.post('/products', function(req, res) {
 	var id = products.insert(req.body.product);
 	res.redirect('products');
 })
@@ -91,7 +80,7 @@ app.get('/products/:id/edit', function(req, res) {
 	})
 });
 
-app.put('/products/:id', requireLogin, function(req, res) {
+app.put('/products/:id', function(req, res) {
 	console.log("replace POST with PUT");
 	var prod = {
 		name : req.body.product_name,
