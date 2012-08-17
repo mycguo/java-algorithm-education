@@ -4,10 +4,14 @@
 
 var express = require('express'), routes = require('./routes'), http = require('http');
 
-var products = require('./products');
+
 
 var fs = require('fs');
 
+var mongoose = require('mongoose'), Schema = mongoose.Schema;
+
+var db = mongoose.connect('mongodb://localhost/mydatabase'); 
+	
 var app = express();
 
 var MemStore = express.session.MemoryStore;
@@ -47,53 +51,80 @@ app.get('/', function(req, res) {
 
 });
 
+var products = require('./products');
+var Product = mongoose.model('Product');
+
 app.get('/products', function(req, res) {
-	res.render('products/index', {
-		products : products.all
-	})
+	console.log("inside products");
+	Product.find(function(err,products) {
+		
+		console.log("callign product index page");
+		res.render('products/index', {
+			products : products
+		});
+	});
+	
+
 });
 
 app.get('/products/new', function(req, res) {
 	console.log("calling new");
 	res.render('products/new', {
-		product : req.body && req.body.product || products.newp()
+		product : req.body && req.body.product || new Product()
 	});
 })
 
 app.post('/products', function(req, res) {
-	var id = products.insert(req.body.product);
-	res.redirect('products');
+	var product = new Product();
+	product.name = req.body.product.name;
+	product.description = req.body.product.description;
+	product.price = req.body.product.price;
+	
+	console.log("start save method: " + req.body.product.name);
+	//have to save it first
+	product.save(function(err,product) {
+		res.redirect('/products/' + product._id.toHexString());		
+	});
+
 })
 
 app.get('/products/:id', function(req, res) {
-	console.log("calling show");
-	var product = products.find(req.params.id);
-	res.render('products/show', {
-		product : product
-	})
+	console.log("calling show " + req.params.id);
+	Product.findById(req.params.id, function(err, product) {
+		res.render('products/show', {
+			product : product
+		})		
+	});
+
 });
 
 app.get('/products/:id/edit', function(req, res) {
-	var product = products.find(req.params.id);
-	res.render('products/edit', {
-		product : product
+	Product.findById(req.params.id, function(err,product) {
+		res.render('products/edit', {
+			product : product
+		})
 	})
 });
 
 app.put('/products/:id', function(req, res) {
 	console.log("replace POST with PUT");
-	var prod = {
-		name : req.body.product_name,
-		description : req.body.product_description,
-		price : req.body.product_price
-	};
-	console.log("name: " + req.params.id);
-	products.set(req.params.id, prod);
-	res.redirect('/products/' + req.params.id);
+
+	Product.findById(req.params.id, function(err, product) {
+		product.name = req.body.product_name;
+		product.description = req.body.product_description;
+		product.price = req.body.product_price;
+		
+		product.save(function(err, product) {
+			res.redirect('products/' + product._id.toHexString())
+		})
+		
+	})
+
 
 });
 
 app.get('/show', function(req, res) {
+	console.log("request: " + req.query);
 	var filename = req.query["fileName"];
 	console.log("show " + fileName);
 	fs.readFile(fileName, "binary", function(error, file) {
@@ -140,8 +171,25 @@ app.post('/photos', function(req, res) {
 					+ req.files.photo.size + ' bytes');
 		});
 	});
-	// res.redirect('/show?fileName=' + target_path);
-	res.redirect('/products');
+	//res.redirect('/show?fileName=' + target_path);
+	//res.redirect('/products');
+	
+	fs.readFile(target_path, "binary", function(error, file) {
+		if (error) {
+			res.writeHead(500, {
+				"Content-Type" : "text/plain"
+			});
+			res.write(error + "\n");
+			res.end();
+		} else {
+			res.writeHead(200, {
+				"Content-Type" : "image/png"
+			});
+			//res.write("<h1>Photo you upload: " + target_path + " </h1>");
+			res.write(file, "binary");
+			res.end();
+		}
+	});
 
 })
 
