@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/* --------------------------------------------------------------------
+
+# FUJITSU CSS v1.0 -- FUJITSU.COM EDITION #
+
+Copyright 2004 FUJITSU LIMITED 
+
+-------------------------------------------------------------------- */
+
+/* (1) page format -------------------------------------------------------- */
+
+/* home fixed */
+body { color: #444444; }
+
+/* home only */
+#wrapper { width: 100%; background: url(http://www.fujitsu.com/imgv4/common/home/home-bottom-bg.gif) repeat-x left bottom; }
+#container { width: 100%; background: url(http://www.fujitsu.com/imgv4/common/home/contents-bg.png) no-repeat center top; }
+.bodyarea { padding-bottom: 15px; }
+.contentsarea { width: 980px; }
+.maincontents { width: 980px; }
+
+.maincontents ul { padding-left: 0; }
+.maincontents ol { padding-left: 0; }
+.maincontents li { list-style: none; background: url("http://www.fujitsu.com/imgv4/common/li_dot_lv1.gif") no-repeat 0 0.3em; padding: 0 0 0 16px; zoom: 1; }
+.maincontents ol li { list-style-type: decimal; background: none; list-style-position: inside; padding: 0; }
+.maincontents ol li li { padding-left: 16px; }
+
+.maincontents #rownews { clear: left; margin-top: -14px; }
+
+.maincontents div.accd1span,
+.maincontents div.accd2span,
+.maincontents div.accd3span,
+.maincontents div.accd4span,
+.maincontents div.accd5span { padding-bottom: 15px !important; }
+.maincontents div.accd1span ul.inside-box li,
+.maincontents div.accd2span ul.inside-box li,
+.maincontents div.accd3span ul.inside-box li,
+.maincontents div.accd4span ul.inside-box li,
+.maincontents div.accd5span ul.inside-box li { background: none; }
+
+.maincontents div.frm-grd { margin-bottom: 15px; }
+.maincontents div.frm-grd div.innerblock { padding: 8px 8px 0px 8px; }
+.maincontents div.frm-grd div.highlight_v { padding: 3px 8px 0px 8px !important; } /* <-- This is className on boxrounded.js. for IE & Opera */ 
+
+.maincontents div.frm-bg.title { margin-bottom: 7px; }
+.maincontents div.frm-bg.title div.innerblock { padding: 10px; }
+.maincontents div.frm-bg.title div.highlight_v { padding: 4px 10px 10px 10px !important; } /* <-- This is className on boxrounded.js. for IE & Opera */ 
+.maincontents div.frm-bg.title div.innerblock h2 { margin-bottom: 0; }
+.maincontents div.frm-bg.title div.innerblock h3 { margin-bottom: 0; }
+.maincontents div.frm-bg.title div.innerblock h4 { margin-bottom: 0; }
+.maincontents div.frm-bg.title div.innerblock h5 { margin-bottom: 0; }
+.maincontents div.frm-bg.title div.innerblock h6 { margin-bottom: 0; }
+
+.maincontents div.home-banner { margin-bottom: 15px; }
+.maincontents div.home-banner p { padding: 0; margin-bottom: 0; line-height: 1; }
+.maincontents div.home-banner p img { vertical-align: baseline; }
+
+.pickup-shortlead div.highlight_v { padding: 3px 8px 0 8px !important; }
+.pickup-shortlead h2 { padding: 0; margin-bottom: 8px; }
+.pickup-shortlead h3 { padding: 0; margin-bottom: 3px; font-weight: normal; }
+.pickup-shortlead p { margin: 0; }
+.pickup-shortlead img { margin: 0; }
+.pickup-shortlead img.alignleft { margin: 0 5px 5px 0; }
+.pickup-shortlead img.alignright { margin: 0 0 5px 5px; }
+.pickup-shortlead img { margin-bottom: 5px; }
+
+.pickup-shortlead div.moreinfo p img { margin-left: 5px; margin-bottom: 0; border: none; }
+
+.maincontents div.tabnav .tablist li { padding: 0; margin: 0px 10px 0px 0px; }
+.maincontents div.tabnav div.content div.next-prev ul li { padding: 0; background: none; }
+
+.maincontents ul.togglebox { padding-left: 0 !important; }
+
+
+.maincontents img.rss { vertical-align: middle; margin-top: -0.15em; margin-left: 0.5em; }
+* html .maincontents img.rss { margin-top: -0.25em; }
+*:first-child+html .maincontents img.rss { margin-top: -0.1em; }
+
+
+#featurestory { clear: both; margin-bottom: 15px; }
+#featurestory p { margin: 0 0 1px 0; line-height: 0; }
+#featurestory Object { margin: 0; }
+.maincontents div.frm-grd #featurestory { margin-bottom: 15px; }
+
+#featurestory p.altmsg { line-height: 1.5; }
+#featurestory ul.alternativecontent li { border-top: 1px solid #e8e8e8; padding: 5px 0 0; background: none; }
+#featurestory ul.alternativecontent li a img { margin-right: 5px; }
+
+#offering { position: relative; width: 980px; z-index: 5000; }
+#offering div.grid1span { width: 180px; }/* <-- with clearfix class */
+#offering div.grid2span { width: 375px; }/* <-- with clearfix class */
+#offering div.grid3span { width: 570px; }/* <-- with clearfix class */
+#offering div.grid4span { width: 765px; }/* <-- with clearfix class */
+#offering div.grid5span { width: 960px; }/* <-- with clearfix class */
+#offering div.col1span { width: 180px; float: left; margin-right: 15px; }
+#offering div.col2span { width: 375px; float: left; margin-right: 15px; }
+#offering div.col3span { width: 570px; float: left; margin-right: 15px; }
+#offering div.col4span { width: 765px; float: left; margin-right: 15px; }
+#offering div.lastcol { margin-right: 0px; }
+
+
+#offering p.offeringthumb { margin: 0; padding: 0; }
+#offering .offeringtitle { color: #ce0000; font-weight: bold; border-bottom: 1px solid #ce0000; margin-bottom: 0; }
+	#offering .offeringtitle a:link,
+	#offering .offeringtitle a:visited,
+	#offering .offeringtitle a:active { color: #bb0000; text-decoration: none; }
+	#offering .offeringtitle a:hover { text-decoration: underline; }
+
+/* For Dropdown in MegaDrop -----------------*/
+
+#offering ul.dropdown-box  { list-style: none;  padding: 0; }
+#offering ul.dropdown-box li { color: #444444; margin: 0px; padding: 0px; background: none; cursor: pointer; border-bottom: 1px solid #e8e8e8; zoom: 1; }
+#offering ul.dropdown-box li a { display: block; margin: 0px; padding: 2px 16px 2px 0px; zoom: 1; }
+#offering ul.dropdown-box li span { display: block; margin: 0px; padding: 2px 16px 2px 0px; zoom: 1; }
+*:first-child+html #offering ul.dropdown-box li a { display: inline-block; }
+* html #offering ul.dropdown-box  li a { display: inline-block; width: 100%; }
+*:first-child+html #offering ul.dropdown-box li span { display: inline-block; }
+* html #offering ul.dropdown-box  li span { display: inline-block; width: 100%; }
+#offering ul.dropdown-box li ul { list-style: none; display: none; position: absolute; top: 0px; left: 100%; margin: 0px; padding: 0px; border-bottom: solid 1px #aaaaaa; zoom: 1; z-index: 1003; }
+#offering ul.dropdown-box li.right ul { left: -100%; }
+#offering ul.dropdown-box li.bottom ul { }
+
+/* If menu is secondary */
+#offering ul.dropdown-box li li { list-style: none; margin-bottom: 0px; padding: 0px; border-style: solid; border-width: 1px 1px 0px 1px; border-color: #aaaaaa; background-color: #f3f3f3; }
+#offering ul.dropdown-box li li a { padding-left: 4px; }
+#offering ul.dropdown-box li li span { padding-left: 4px; }
+
+/* If menu has children */
+#offering ul.dropdown-box li.has_children { background-image: url(http://www.fujitsu.com/imgv4/common/arrows/dropdown-list-arrow.gif); background-repeat: no-repeat; background-position: 98% 50%; }
+
+/* If menu has selected */
+#offering ul.dropdown-box li.selected,
+#offering ul.dropdown-box a.selected:link,
+#offering ul.dropdown-box a.selected:visited,
+#offering ul.dropdown-box a.selected:active,
+#offering ul.dropdown-box a.selected:hover { background: #555555; color: #ffffff !important; }
+#offering ul.dropdown-box li.selected ul { display: block; }
+
+/* If menu has out of focus */
+#offering ul.dropdown-box li.hidden ul { display: none; }
+
+#countryselector { margin-bottom : 15px; }
