@@ -545,3 +545,16 @@ body.subsidiary div#permanentmenu ul.parentcom li div.cssbtn div.innerblock { pa
 .container-fluid h4 { clear: both; margin: 1.5em 0px 0px 0px; padding: 0px; font-size: 100%; text-align: left; }
 .container-fluid h5 { clear: both; margin: 1.5em 0px 0px 0px; padding: 0px; font-size: 90%; text-align: left;  }
 .container-fluid h6 { clear: both; margin: 1.5em 0px 0px 0px; padding: 0px; font-size: 84%; text-align: left; }
+
+.sidebar-nav-fixed {
+    padding: 9px 0;
+    left:20px;
+    top:60px;
+    width:250px;
+    overflow:auto;
+}
+
+.row-fluid > .span-fixed-sidebar {
+    margin-left: 290px;
+    overflow:auto;
+}
