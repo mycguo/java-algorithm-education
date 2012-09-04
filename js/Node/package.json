@@ -1,6 +1,6 @@
 {
   "name": "fujitsu",
-  "version": "0.0.1-5",
+  "version": "0.0.1-17",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -8,7 +8,8 @@
   "dependencies": {
     "express": "3.0.0beta7",
     "formidable": "*",
-    "jade": "*"
+    "jade": "*",
+    "ejs": "*"
   },
   "engines": {
     "node": "0.6.x"
