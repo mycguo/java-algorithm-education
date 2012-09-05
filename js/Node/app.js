@@ -7,6 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http');
 
+var querystring = require('querystring');
+
 var app = express();
 
 app.configure(function(){
@@ -56,6 +58,41 @@ app.get('/', function(req, res) {
 	response.write(body);
 	response.end();
 	
+});
+
+app.post('/form', function(req, res) {
+
+			console.log("[200] " + req.method + " to " + req.url);
+
+		
+				res.writeHead(200, "OK", {'Content-Type': 'text/html'});
+				res.write('<html><head><title>Post data</title></head><body>');
+				res.write('<style>th, td {text-align:left; padding:5px; color:black}\n');
+				res.write('th {background-color:grey; color:white; min-width:10em}\n');
+				res.write('td {background-color:lightgrey}\n');
+				res.write('caption {font-weight:bold}</style>');
+				res.write('<table border="1"><caption>Form Data</caption>');
+				res.write('<tr><th>Name</th><th>Value</th>');
+				console.log(req.body);
+				var dBody = querystring.parse(req.body);
+				console.log('dbody' + dBody);
+				for (var prop in dBody) {
+				res.write("<tr><td>" + prop + "</td><td>" + dBody[prop] + "</td></tr>");
+			}
+			res.write('</table></body></html>');
+			res.end();
+			
+
+
+
+	
+});
+
+app.get("/form", function(req,res) {
+	console.log("[405] " + req.method + " to " + req.url);
+	res.writeHead(405, "Method not supported", {'Content-Type': 'text/html'});
+	res.end('<html><head><title>405 - Method not supported</title></head><body>' +
+	'<h1>Method not supported.</h1></body></html>');	
 });
 
 //Dummy users
