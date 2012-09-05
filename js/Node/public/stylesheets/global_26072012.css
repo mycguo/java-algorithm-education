@@ -90,7 +90,7 @@
 	position: absolute;
 	width: 980px;
 	z-index: 1;
-	background:url("../images/featurestory/featurestory-tab-edge.png") no-repeat 100% 0;
+	background:url("http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab-edge.png") no-repeat 100% 0;
 }
 * html .featurestory-enabled .featurestory-tablist-root
 {
@@ -104,12 +104,12 @@
 	right:0;
 	width:49px;
 	height:66px;
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/featurestory/featurestory-tab-edge.png,     sizingMethod=crop   )
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab-edge.png,     sizingMethod=crop   )
 }
 .featurestory-enabled .featurestory-tablist-wrapper
 {
 	display:table;
-	background:url("../images/featurestory/featurestory-tab.png") repeat-x 0 0
+	background:url("http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab.png") repeat-x 0 0
 }
 *:first-child+html .featurestory-enabled .featurestory-tablist-wrapper
 {
@@ -120,7 +120,7 @@
 	display:inline;
 	background-image:none;
 	zoom:1;
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/featurestory/featurestory-tab.png,     sizingMethod=scale   )
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab.png,     sizingMethod=scale   )
 }
 .featurestory-tablist
 {
@@ -131,7 +131,7 @@
 }
 .featurestory-enabled .featurestory-tablist
 {
-	background:url("../images/featurestory/featurestory-tab-active.png") no-repeat 0 0
+	background:url("http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab-active.png") no-repeat 0 0
 }
 * html .featurestory-enabled .featurestory-tablist
 {
@@ -146,7 +146,7 @@
 .featurestory-enabled .featurestory-tab
 {
 	float:left;
-	background:url("../images/featurestory/featurestory-tab-border.png") no-repeat 100% 0
+	background:url("http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab-border.png") no-repeat 100% 0
 }
 .featurestory-tab a
 {
@@ -245,12 +245,12 @@
 	padding:0 1px 2px 1px;
 	display:block;
 	float:left;
-	background:url("../images/featurestory/featurestory-tab-img-shadow.png") no-repeat 0 0
+	background:url("http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab-img-shadow.png") no-repeat 0 0
 }
 * html .featurestory-img-text-img
 {
 	background-image:none;
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=../images/featurestory/featurestory-tab-img-shadow.png,     sizingMethod=crop   )
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=http://www.fujitsu.com/uk/resources/design/stylesheets/images/featurestory/featurestory-tab-img-shadow.png,     sizingMethod=crop   )
 }
 .featurestory-img-text-text
 {

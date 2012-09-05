@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Example</title>
+<meta name="author" content="Adam Freeman" />
+<meta name="description" content="A simple example" />
+</head>
+<body>
+	<form id="voteform" method="post" action="http://localhost:8080/form"
+		enctype="multipart/form-data" target="_b">
+		<fieldset>
+			<legend>Enter Your Details</legend>
+			<p>
+				<label for="name">Name: <input id="name" name="name" list="fruitlist" /></label>
+			</p>
+			<p>
+				<label for="name">City: <input id="city" name="city" /></label>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>Vote For Your Three Favorite Fruits</legend>
+			<p>
+				<label for="fave1">#1: <input id="fave1" name="fave1" /></label>
+			</p>
+			<p>
+				<label for="fave2">#2: <input id="fave2" name="fave2" /></label>
+			</p>
+			<p>
+				<label for="fave3">#3: <input id="fave3" name="fave3" /></label>
+			</p>
+		</fieldset>
+		
+		<input type="text" list="fruitlist" placeholder="choose your fruits"/>
+		
+		<input type="file" src="photosKoala.jpg" name="submit"/>
+		
+	</form>
+	
+	<button form="voteform" type="submit">Submit Vote</button>
+	<button form="voteform" type="reset">Reset</button>
+
+	<datalist id="fruitlist">
+		<option value="Apples" label="Lovely Apples" />
+		<option value="Oranges" label="Refreshing Oranges"/>
+		<option value="Cherries" label="Cherris" />
+	</datalist>
+</body>
+</html>

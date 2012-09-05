@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Example</title>
+	</head>
+	<body>
+		<div>
+			<button>Apples</button>
+			<button>Cherries</button>
+			<button>Bananas</button>
+		</div>
+		<div id="target">Press a button</div>
+		<script>
+			var buttons = document.getElementsByTagName("button");
+			for ( var i = 0; i < buttons.length; i++) {
+				buttons[i].onclick = handleButtonPress;
+			}
+			var httpRequest;
+			function handleButtonPress(e) {
+				httpRequest = new XMLHttpRequest();
+				httpRequest.onreadystatechange = handleResponse;
+				httpRequest.open("GET", "http://localhost:8080/" + e.target.innerHTML);
+				httpRequest.send();
+			}
+			function handleResponse() {
+				if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+					document.getElementById("target").innerHTML = httpRequest.responseText;
+				}
+			}
+		</script>
+	</body>
+</html>
