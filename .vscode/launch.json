@@ -1,0 +1,1311 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SynchronizationTimer<JavaProject>",
+            "request": "launch",
+            "mainClass": "EDU.oswego.cs.dl.util.concurrent.misc.SynchronizationTimer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AeroContacts<JavaProject>",
+            "request": "launch",
+            "mainClass": "com.jetbookkeeping.AeroContacts",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XreoAccount<JavaProject>",
+            "request": "launch",
+            "mainClass": "com.jetbookkeeping.XreoAccount",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RunTests<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.annotations.RunTests",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestExtendedEnum<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.annotations.TestExtendedEnum",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StopThread<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.concurrency.StopThread",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NutritionFacts<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.construct.NutritionFacts",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Arith<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.interview.Arith",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArrayStack<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.interview.ArrayStack",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StackQueue<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.interview.StackQueue",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MutablePeriod<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.serialization.MutablePeriod",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Period<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.effective.java.serialization.Period",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-WithAnnotation<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.annotation.WithAnnotation",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SampleDigester<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.commons.digester.SampleDigester",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-GamePlayer<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.concurrent.ch3.GamePlayer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ProducerCousumerChannel<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.concurrent.channel.ProducerCousumerChannel",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DeskSearch<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.concurrent.inpractice.DeskSearch",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OneShotLatch<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.concurrent.inpractice.OneShotLatch",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BoundedBuffer<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.concurrent.lock.BoundedBuffer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EunmSample<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.enumerate.EunmSample",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.management.mbean.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RMIAgent<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.management.mbean.RMIAgent",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.management.mbean.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleAgent<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.management.mbean.SimpleAgent",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JMXBrowser<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.management.mbean.jboss.JMXBrowser",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SendRecvClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.management.mbean.jboss.SendRecvClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestRegex<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.regex.TestRegex",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ProcessTest<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.system.ProcessTest",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XSLTPipeLine<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.pipeline.XSLTPipeLine",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestDriver<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.pull.TestDriver",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ViewProxy<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.reflection.ViewProxy",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ParserWithValidation<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.validation.ParserWithValidation",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CatalogXPath<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xpath.CatalogXPath",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-S9APIExamples<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xpath.S9APIExamples",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XPathExample<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xpath.XPathExample",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AWTViewer<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.AWTViewer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DOM2PDF<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.DOM2PDF",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FO2JPSPrint<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.FO2JPSPrint",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FO2PDF<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.FO2PDF",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FO2PDFUsingSAXParser<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.FO2PDFUsingSAXParser",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FO2RTF<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.FO2RTF",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Obj2PDF<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.Obj2PDF",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Obj2XML<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.Obj2XML",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SVG2PDF<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.SVG2PDF",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XML2FO<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xml.xslt.fop.XML2FO",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RunSaxon<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.java.xslt.saxon.RunSaxon",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EmployeeTest<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.jpa.projpa.ch2.EmployeeTest",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-InsertionSort<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.mit.algorithm.InsertionSort",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MergeSort<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.mit.algorithm.MergeSort",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-QuickSort<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.mit.algorithm.QuickSort",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestVisitor<JavaProject>",
+            "request": "launch",
+            "mainClass": "edu.pattern.visitor.TestVisitor",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<JavaProject>",
+            "request": "launch",
+            "mainClass": "junit.runner.Version",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestRunner<JavaProject>",
+            "request": "launch",
+            "mainClass": "junit.textui.TestRunner",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Compile<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.Compile",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Query<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.Query",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Transform<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.Transform",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.Version",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CharacterSetFactory<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.charcode.CharacterSetFactory",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UnicodeDataGenerator<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.codenorm.UnicodeDataGenerator",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DOMTransform<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.dom.DOMTransform",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PullEventTracer<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.evpull.PullEventTracer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SequenceComposer<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.evpull.SequenceComposer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaxToEventBridge<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.evpull.StaxToEventBridge",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PathMap<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.expr.PathMap",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Tokenize<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.functions.Tokenize",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UnparsedText<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.functions.UnparsedText",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JDK14RegexTranslator<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.java.JDK14RegexTranslator",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JDK15RegexTranslator<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.java.JDK15RegexTranslator",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JDOMQuery<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.jdom.JDOMQuery",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JDOMTransform<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.jdom.JDOMTransform",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Name10Checker<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.om.Name10Checker",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaxBridge<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.pull.StaxBridge",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RuleBasedSubstringMatcher<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.sort.RuleBasedSubstringMatcher",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SaxonCollation<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.style.SaxonCollation",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XPathEvaluator<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.sxpath.XPathEvaluator",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TinyTreeWalker<JavaProject>",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.tinytree.TinyTreeWalker",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XPathEvaluator<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "net.sf.saxon.xpath.XPathEvaluator",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.apps.rasterizer.Main",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.apache.batik.apps.slideshow.Main",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<JavaProject>(2)",
+            "request": "launch",
+            "mainClass": "org.apache.batik.apps.svgbrowser.Main",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<JavaProject>(3)",
+            "request": "launch",
+            "mainClass": "org.apache.batik.apps.svgpp.Main",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<JavaProject>(4)",
+            "request": "launch",
+            "mainClass": "org.apache.batik.apps.ttf2svg.Main",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JAffineTransformChooser<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.ext.swing.JAffineTransformChooser",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SVGFont<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.svggen.font.SVGFont",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrintTranscoder<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.transcoder.print.PrintTranscoder",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-WMFTranscoder<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.transcoder.wmf.tosvg.WMFTranscoder",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ClassFileUtilities<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.util.ClassFileUtilities",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CSSMediaPanel<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.batik.util.gui.CSSMediaPanel",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Main<JavaProject>(5)",
+            "request": "launch",
+            "mainClass": "org.apache.fop.cli.Main",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PFMReader<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.fonts.apps.PFMReader",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TTFReader<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.fonts.apps.TTFReader",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TTFFile<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.fonts.truetype.TTFFile",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HyphenationTree<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.hyphenation.HyphenationTree",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PatternParser<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.hyphenation.PatternParser",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SerializeHyphPattern<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.hyphenation.SerializeHyphPattern",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TernaryTree<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.hyphenation.TernaryTree",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RtfFile<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.render.rtf.rtflib.rtfdoc.RtfFile",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestConverter<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.tools.TestConverter",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FontListMain<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.fop.tools.fontlist.FontListMain",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CertsInFilesystemDirectoryResolver<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.xml.security.keys.storage.implementations.CertsInFilesystemDirectoryResolver",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-KeyStoreResolver<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.xml.security.keys.storage.implementations.KeyStoreResolver",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Base64<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.xml.security.utils.Base64",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RFC2253Parser<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.apache.xml.security.utils.RFC2253Parser",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JBossWebConfigBeanRoot<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.deployment.spi.beans.JBossWebConfigBeanRoot",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DynCircularBuffer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.mq.il.uil2.msgs.DynCircularBuffer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XElementTester<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.mq.xml.XElementTester",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AgentID<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.mx.util.AgentID",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<JavaProject>(2)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.Version",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DetectorUtil<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.detection.util.DetectorUtil",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CompressedClassBytes<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.loading.CompressedClassBytes",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-KeyGeneratorUtil<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.marshal.encryption.KeyGeneratorUtil",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CallbackClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.callback.CallbackClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CallbackServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.callback.CallbackServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CallbackAcknowledgeClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.callback.acknowledgement.CallbackAcknowledgeClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CallbackAcknowledgeServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.callback.acknowledgement.CallbackAcknowledgeServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CallbackClient<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.callback.statistics.CallbackClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CallbackServer<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.callback.statistics.CallbackServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Chat<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.Chat",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ChatFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.ChatFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CloseableFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.CloseableFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CreateFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.CreateFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-InfoFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.InfoFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JoinFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.JoinFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ListFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.ListFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TalkFrame<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.client.TalkFrame",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ChatManagerLauncher<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.server.ChatManagerLauncher",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Parameters<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.chat.utility.Parameters",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleDetectorClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.jndi.SimpleDetectorClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleDetectorServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.jndi.SimpleDetectorServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleJNDIServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.jndi.SimpleJNDIServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleSSLDetectorClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.jndi.ssl.SimpleSSLDetectorClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleSSLDetectorServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.jndi.ssl.SimpleSSLDetectorServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleDetectorClient<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.multicast.SimpleDetectorClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleDetectorServer<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.detection.multicast.SimpleDetectorServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.http.SimpleClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.http.SimpleServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FactoryExample<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.FactoryExample",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-N_SocketScenarioClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.N_SocketScenarioClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-N_SocketScenarioServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.N_SocketScenarioServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrimeScenarioExampleClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.PrimeScenarioExampleClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrimeScenarioExampleServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.PrimeScenarioExampleServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SymmetricScenarioClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.SymmetricScenarioClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SymmetricScenarioServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.SymmetricScenarioServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client2Server1<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.Client2Server1",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client2Server2<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.Client2Server2",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client3Server1<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.Client3Server1",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MultiplexInvokerServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.MultiplexInvokerServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server2Client1<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.Server2Client1",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server2Client2<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.Server2Client2",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server3Client1<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.multiplex.invoker.Server3Client1",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OnewayClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.oneway.OnewayClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-OnewayServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.oneway.OnewayServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SerializationClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.serialization.SerializationClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SerializationServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.serialization.SerializationServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleClient<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.simple.SimpleClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimpleServer<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.simple.SimpleServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StreamingClient<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.stream.StreamingClient",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StreamingServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.stream.StreamingServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.basic.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.basic.server.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(2)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.clustered.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HTTPServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.clustered.server.HTTPServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RMIServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.clustered.server.RMIServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SocketServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.clustered.server.SocketServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(3)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.complex.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>(2)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.complex.server.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(4)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.custom.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HTTPServer<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.custom.server.HTTPServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JNDIServer<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.custom.server.JNDIServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RMIServer<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.custom.server.RMIServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SocketServer<JavaProject>(1)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.custom.server.SocketServer",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(5)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.multiple.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>(3)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.multiple.server.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(6)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.proxy.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>(4)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.proxy.server.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(7)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.serialization.client.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>(5)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.serialization.server.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Client<JavaProject>(8)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.simple.Client",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Server<JavaProject>(6)",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.samples.transporter.simple.Server",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PortUtil<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.remoting.transport.PortUtil",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Base64Encoder<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.security.Base64Encoder",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PBEUtils<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.security.plugins.PBEUtils",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<JavaProject>(3)",
+            "request": "launch",
+            "mainClass": "org.jboss.serial.Version",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JarUtils<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.jboss.util.file.JarUtils",
+            "projectName": "JavaProject"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-JUnitCore<JavaProject>",
+            "request": "launch",
+            "mainClass": "org.junit.runner.JUnitCore",
+            "projectName": "JavaProject"
+        }
+    ]
+}
